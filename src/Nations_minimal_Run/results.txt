@@ -1,0 +1,10 @@
+ key    model  seed  epochs    MRR    H@1   H@10
+DistMult_s999_e100 DistMult   999     100 0.6243 0.4627 0.9826
+  ConvKB_s123_e100   ConvKB   123     100 0.6201 0.4502 0.9826
+ DistMult_s42_e100 DistMult    42     100 0.6194 0.4627 0.9876
+  ConvKB_s999_e100   ConvKB   999     100 0.6156 0.4279 0.9876
+DistMult_s123_e100 DistMult   123     100 0.5993 0.4428 0.9652
+   ConvKB_s42_e100   ConvKB    42     100 0.5762 0.3930 0.9826
+  TransH_s999_e100   TransH   999     100 0.4029 0.0896 0.9801
+   TransH_s42_e100   TransH    42     100 0.3959 0.0821 0.9801
+  TransH_s123_e100   TransH   123     100 0.3909 0.0547 0.9776
