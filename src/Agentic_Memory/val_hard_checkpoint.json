@@ -1,0 +1,1831 @@
+{
+  "china|relexports|cuba": {
+    "triple": "(china, relexports, cuba)",
+    "true_tail": "cuba",
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'cuba' has more shared relations with 'china' compared to 'uk'",
+        "Historical evidence shows that Agent A has a higher confidence score and is correct in similar past episodes"
+      ],
+      "shared_relations": [
+        "treaties",
+        "commonbloc2",
+        "militaryalliance",
+        "officialvisits"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of relations unique to 'uk', which it incorrectly prioritized over the stronger shared relations with 'cuba'."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "relexports"
+      ],
+      "path_found": "china --relexports--> cuba",
+      "reasoning": "The key relation'relexports' directly connects China to Cuba.",
+      "failure_diagnosis": "The model likely failed due to the presence of more specific relations between China and the UK, which it incorrectly prioritized."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "overlap": [
+        "commonbloc2",
+        "militaryalliance",
+        "officialvisits",
+        "treaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 1.2
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "overlap": [],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 0.0
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher combined score and a history of winning in resolved scenarios.",
+      "selected_relations": [
+        "treaties",
+        "commonbloc2",
+        "militaryalliance",
+        "officialvisits"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "poland|intergovorgs|israel": {
+    "triple": "(poland, intergovorgs, israel)",
+    "true_tail": "israel",
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "evidence": [
+        "israel is more similar to poland in terms of shared relations",
+        "the model incorrectly prioritized USA over ISRAEL based on embedding similarity scores"
+      ],
+      "shared_relations": [
+        "relintergovorgs",
+        "commonbloc1",
+        "reldiplomacy"
+      ],
+      "failure_diagnosis": "The model was misled by the higher embedding similarity scores of USA, despite ISRAEL having more relevant shared relations."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "relintergovorgs",
+        "commonbloc1",
+        "reldiplomacy"
+      ],
+      "path_found": "poland --relintergovorgs--> israel",
+      "reasoning": "The key relations between Poland and Israel include relintergovorgs, commonbloc1, and reldiplomacy, which align closely with the model's predictions.",
+      "failure_diagnosis": "The model likely failed due to the presence of more specific and numerous relations between Poland and USA, overshadowing the direct relevant relations with Israel."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "overlap": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 1.2
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "overlap": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 1.2
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a slightly higher combined score and won in past patterns on key relations.",
+      "selected_relations": [
+        "relintergovorgs",
+        "commonbloc1",
+        "reldiplomacy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "poland|ngoorgs3|ussr": {
+    "triple": "(poland, ngoorgs3, ussr)",
+    "true_tail": "ussr",
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "ussr is more similar to poland in terms of shared relations"
+      ],
+      "shared_relations": [
+        "tourism",
+        "relintergovorgs",
+        "lostterritory",
+        "reldiplomacy",
+        "dependent",
+        "exports3",
+        "timesincewar",
+        "militaryalliance"
+      ],
+      "failure_diagnosis": "The model may have been influenced by the presence of 'usa' in the local subgraph, which shares several relations with 'poland'."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.4,
+      "key_relations": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0"
+      ],
+      "path_found": "poland --accusation--> usa or poland --blockpositionindex--> usa or poland --booktranslations--> usa",
+      "reasoning": "The model likely favored USA due to shared relations like accusation and book translations.",
+      "failure_diagnosis": "The model may have misinterpreted the context of shared relations, favoring USA over USSR."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "overlap": [
+        "dependent",
+        "exports3",
+        "lostterritory",
+        "militaryalliance",
+        "reldiplomacy",
+        "relintergovorgs",
+        "timesincewar",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 1.2
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "overlap": [],
+      "prediction_correct": false,
+      "confidence": 0.4,
+      "combined_score": 0.0
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher combined score and a higher confidence level.",
+      "selected_relations": [
+        "tourism",
+        "relintergovorgs",
+        "lostterritory",
+        "reldiplomacy",
+        "dependent",
+        "exports3",
+        "timesincewar",
+        "militaryalliance"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "israel|ngoorgs3|brazil": {
+    "triple": "(israel, ngoorgs3, brazil)",
+    "true_tail": "brazil",
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "brazil is the most similar tail entity to israel",
+        "brazil shares common bloc relations with israel"
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized indirect relations over direct ones."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.9,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "israel --commonbloc1--> brazil",
+      "reasoning": "Israel shares the common bloc relationship with Brazil, which is not present with UK.",
+      "failure_diagnosis": "The model was misled by the presence of multiple relations between Israel and UK, which overshadowed the unique common bloc relationship with Brazil."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "overlap": [],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 0.0
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "overlap": [],
+      "prediction_correct": true,
+      "confidence": 0.9,
+      "combined_score": 0.0
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher confidence score.",
+      "selected_relations": [
+        "commonbloc1"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "poland|ngo|india": {
+    "triple": "(poland, ngo, india)",
+    "true_tail": "india",
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between poland and India is higher than USA",
+        "India shares more unique relations with Poland such as relintergovorgs, commonbloc1, and unweightedunvote"
+      ],
+      "shared_relations": [
+        "relintergovorgs",
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "failure_diagnosis": "The model may have been influenced by the higher number of shared relations with USA."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.5,
+      "key_relations": [
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0",
+        "pprotests",
+        "students",
+        "relbooktranslations",
+        "relintergovorgs",
+        "reltreaties",
+        "ngo",
+        "negativebehavior",
+        "negativecomm",
+        "relemigrants",
+        "treaties",
+        "unweightedunvote",
+        "accusation",
+        "eemigrants",
+        "expeldipolmats"
+      ],
+      "path_found": "poland --blockpositionindex--> usa",
+      "reasoning": "The model likely favored USA due to shared relations like blockpositionindex and booktranslations, but missed the specific NGO-related path.",
+      "failure_diagnosis": "The model failed to recognize the specific NGO-related path between Poland and India, instead focusing on other shared relations with USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "overlap": [
+        "commonbloc1",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95,
+      "combined_score": 1.2
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.667,
+      "overlap": [
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.5,
+      "combined_score": 0.533
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher confidence score and relevant evidence supporting the prediction.",
+      "selected_relations": [
+        "relintergovorgs",
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "burma|intergovorgs3|indonesia": {
+    "triple": "(burma, intergovorgs3, indonesia)",
+    "true_tail": "indonesia",
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.85,
+      "evidence": [
+        "The embedding similarity score between burma and Indonesia is very high (0.91)",
+        "Indonesia shares more specific relations with Burma (commonbloc2, relexports, exports3)"
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "relexports",
+        "exports3"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of the 'intergovorgs3' relation with USA, which is not shared with Indonesia."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.1,
+      "key_relations": [
+        "commonbloc1",
+        "commonbloc2",
+        "intergovorgs3"
+      ],
+      "path_found": "burma --commonbloc2--> indonesia",
+      "reasoning": "Indonesia shares more common bloc relations with Burma than USA.",
+      "failure_diagnosis": "The model prioritized unique relations with USA over shared common bloc relations with Indonesia."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "overlap": [
+        "commonbloc2",
+        "exports3",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.85,
+      "combined_score": 1.2
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.333,
+      "overlap": [
+        "commonbloc2"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.1,
+      "combined_score": 0.267
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "A",
+      "confidence": 0.85,
+      "reason": "Agent A had a higher embedding similarity score and shared more specific relations with Burma.",
+      "selected_relations": [
+        "commonbloc2",
+        "relexports",
+        "exports3"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "israel|timesincewar|jordan": {
+    "triple": "(israel, timesincewar, jordan)",
+    "true_tail": "jordan",
+    "agent_a": {
+      "prediction": "jordan",
+      "confidence": 0.95,
+      "evidence": [
+        "israel and jordan have the highest embedding similarity score",
+        "jordan shares the most relations with israel"
+      ],
+      "shared_relations": [
+        "pprotests",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "negativecomm",
+        "militaryactions",
+        "accusation"
+      ],
+      "failure_diagnosis": "The model failed to recognize the strong embedding similarity and shared relation counts between Israel and Jordan."
+    },
+    "agent_b": {
+      "prediction": "jordan",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation"
+      ],
+      "path_found": "israel --accusation--> jordan",
+      "reasoning": "The relation 'accusation' directly connects Israel to Jordan.",
+      "failure_diagnosis": "The model may have been influenced by the presence of other relations that are more commonly associated with USA, leading to a lower score for Jordan."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "militaryactions",
+        "negativecomm",
+        "pprotests"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "militaryactions",
+        "negativecomm",
+        "pprotests"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "militaryactions",
+        "negativecomm",
+        "pprotests"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.143,
+      "quality_score": 0.143,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "militaryactions",
+        "negativecomm",
+        "pprotests"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "jordan",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher quality score than Agent B.",
+      "selected_relations": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "lostterritory",
+        "militaryactions",
+        "negativecomm",
+        "pprotests"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "poland|reldiplomacy|cuba": {
+    "triple": "(poland, reldiplomacy, cuba)",
+    "true_tail": "cuba",
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "cuba is the most similar to poland among all options",
+        "cuba shares the unique relation 'commonbloc2' with poland"
+      ],
+      "shared_relations": [
+        "commonbloc2"
+      ],
+      "failure_diagnosis": "The model failed to recognize the unique shared relation between Poland and Cuba."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.9,
+      "key_relations": [
+        "commonbloc0",
+        "commonbloc1",
+        "commonbloc2"
+      ],
+      "path_found": "poland --commonbloc0--> usa; poland --commonbloc1--> burma; poland --commonbloc2--> cuba",
+      "reasoning": "Cuba shares the 'commonbloc2' relation with Poland, which is unique among the options.",
+      "failure_diagnosis": "The model likely failed due to the presence of more specific and negative relations between Poland and USA, overshadowing the less frequent but relevant 'commonbloc2' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "commonbloc2"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.833,
+      "contamination": 0.333,
+      "overlap_tail": [
+        "commonbloc2"
+      ],
+      "overlap_pred": [
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "commonbloc0",
+        "commonbloc1",
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "commonbloc2"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "B",
+      "confidence": 0.833,
+      "reason": "Agent B has a higher quality score despite both predicting correctly.",
+      "selected_relations": [
+        "commonbloc0",
+        "commonbloc1",
+        "commonbloc2"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "uk|tourism3|egypt": {
+    "triple": "(uk, tourism3, egypt)",
+    "true_tail": "egypt",
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between uk and egypt is high (0.87)",
+        "Egypt shares more relations with UK (30) than USA (42)"
+      ],
+      "shared_relations": [
+        "timesincewar",
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "failure_diagnosis": "The model was misled by the higher number of shared relations between UK and USA."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "path_found": "uk --commonbloc1--> egypt",
+      "reasoning": "The UK and Egypt share the 'commonbloc1' relation, indicating a strong connection.",
+      "failure_diagnosis": "The model may have been influenced by the stronger connections of USA with UK, such as'students','relexports', and 'tourism3'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Both agents had equal quality scores, but Agent B has lower contamination.",
+      "selected_relations": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "brazil|commonbloc1|india": {
+    "triple": "(brazil, commonbloc1, india)",
+    "true_tail": "india",
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between 'india' and the head entity 'brazil' is higher than that of 'egypt'",
+        "The shared relations between 'india' and 'brazil' include specific relations like 'intergovorgs3','relintergovorgs','relngo', 'conferences', and 'ngoorgs3' which are not present in 'egypt'"
+      ],
+      "shared_relations": [
+        "commonbloc0",
+        "intergovorgs3",
+        "relintergovorgs",
+        "relngo",
+        "conferences",
+        "ngoorgs3"
+      ],
+      "failure_diagnosis": "The model may have been misled by the presence of the relation 'commonbloc1' in 'egypt', which is not a strong enough indicator to outweigh the higher embedding similarity and shared relations with 'india'."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "brazil --commonbloc1--> egypt or brazil --commonbloc1--> burma",
+      "reasoning": "India shares more common bloc relations with Brazil than Egypt.",
+      "failure_diagnosis": "The model may have been misled by the shared relations between Brazil and Egypt, underestimating the unique relation between Brazil and India."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc0",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B identified better structural evidence despite not predicting correctly.",
+      "selected_relations": [
+        "commonbloc1"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  "india|intergovorgs|burma": {
+    "triple": "(india, intergovorgs, burma)",
+    "true_tail": "burma",
+    "agent_a": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "evidence": [
+        "Higher embedding similarity score",
+        "Shared specific relations"
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "officialvisits"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations."
+    },
+    "agent_b": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "intergovorgs"
+      ],
+      "path_found": "india --commonbloc2--> burma",
+      "reasoning": "India shares the 'commonbloc2' relation specifically with Burma.",
+      "failure_diagnosis": "The model was misled by the'relintergovorgs' relation which UK shares with India, but this relation is less specific compared to 'commonbloc2'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "officialvisits"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "officialvisits"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "officialvisits"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.5,
+      "quality_score": 0.375,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "commonbloc2"
+      ],
+      "overlap_pred": [
+        "intergovorgs"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "intergovorgs"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "officialvisits"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "burma",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B identified better structural evidence despite lower quality score.",
+      "selected_relations": [
+        "commonbloc2",
+        "intergovorgs"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  "jordan|reltreaties|indonesia": {
+    "triple": "(jordan, reltreaties, indonesia)",
+    "true_tail": "indonesia",
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.85,
+      "evidence": [
+        "The embedding similarity score of 'indonesia' is higher than 'uk'",
+        "Indonesia shares more relation types with 'jordan'"
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations not directly connected to the triple."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.9,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "jordan --commonbloc1--> uk or jordan --commonbloc1--> china",
+      "reasoning": "Jordan shares the 'commonbloc1' relation with both UK and China, but Indonesia does not share any specific relation with Jordan.",
+      "failure_diagnosis": "The model incorrectly prioritized relations that are more unique to the UK, leading to a lower score for the correct answer."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.85
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.9,
+      "reason": "Agent B has a higher confidence score.",
+      "selected_relations": [
+        "commonbloc1"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  "egypt|reltreaties|poland": {
+    "triple": "(egypt, reltreaties, poland)",
+    "true_tail": "poland",
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "The model incorrectly prioritized USA over POLAND despite POLAND having higher embedding similarity and more shared relations."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "independence",
+        "ngoorgs3",
+        "reltreaties"
+      ],
+      "failure_diagnosis": "The model may be influenced by other relations or entities in the local subgraph, leading to a preference for USA over POLAND."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.85,
+      "key_relations": [
+        "reltreaties"
+      ],
+      "path_found": "egypt --reltreaties--> usa",
+      "reasoning": "The model was influenced by the presence of multiple relations between Egypt and USA, including'reltreaties', which is not shared with Poland.",
+      "failure_diagnosis": "The model overvalued the number of relations and undervalued the specific nature of the relations, mistaking the quantity for quality."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 0.875,
+      "contamination": 0.25,
+      "overlap_tail": [
+        "independence",
+        "ngoorgs3",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [
+        "reltreaties"
+      ],
+      "agent_relations": [
+        "independence",
+        "ngoorgs3",
+        "reldiplomacy",
+        "reltreaties"
+      ],
+      "only_tail_has": [
+        "independence",
+        "ngoorgs3",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "reltreaties"
+      ],
+      "agent_relations": [
+        "reltreaties"
+      ],
+      "only_tail_has": [
+        "independence",
+        "ngoorgs3",
+        "reldiplomacy"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.85
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "Agent A",
+      "confidence": 0.95,
+      "reason": "Agent A has a higher quality score than Agent B.",
+      "selected_relations": [
+        "independence",
+        "ngoorgs3",
+        "reldiplomacy",
+        "reltreaties"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "cuba|relintergovorgs|egypt": {
+    "triple": "(cuba, relintergovorgs, egypt)",
+    "true_tail": "egypt",
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between cuba and egypt is high (sim=0.89, shared_rels=15)."
+      ],
+      "shared_relations": [
+        "commonbloc1",
+        "independence",
+        "embassy"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over Egypt due to the presence of more specific relations unique to USA."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "independence",
+        "embassy"
+      ],
+      "path_found": "cuba --commonbloc1--> egypt",
+      "reasoning": "Egypt shares the 'commonbloc1' relation with Cuba, which is unique among the similar entities.",
+      "failure_diagnosis": "The model may have been influenced by the stronger relations between Cuba and USA, leading it to overlook the specific relation that connects Cuba and Egypt."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Both agents had equal quality scores, but Agent B has a history of winning on structural gaps involving 'commonbloc1'.",
+      "selected_relations": [
+        "commonbloc1",
+        "embassy",
+        "independence"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "uk|timesinceally|egypt": {
+    "triple": "(uk, timesinceally, egypt)",
+    "true_tail": "egypt",
+    "agent_a": {
+      "prediction": "usa",
+      "confidence": 0.4,
+      "evidence": [
+        "usa was more similar to uk in embedding space",
+        "usa had more shared relations with uk"
+      ],
+      "shared_relations": [
+        "students",
+        "relexports",
+        "commonbloc2",
+        "militaryalliance",
+        "relintergovorgs",
+        "eemigrants",
+        "tourism3",
+        "relemigrants",
+        "reltreaties",
+        "emigrants3",
+        "nonviolentbehavior",
+        "ngoorgs3",
+        "officialvisits"
+      ],
+      "failure_diagnosis": "The model favored USA over Egypt likely due to stronger embedding similarities and more shared relations between UK and USA."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.4,
+      "key_relations": [
+        "timesinceally",
+        "commonbloc1",
+        "unweightedunvote",
+        "students",
+        "relexports",
+        "commonbloc2",
+        "militaryalliance",
+        "relintergovorgs",
+        "eemigrants",
+        "tourism3",
+        "relemigrants",
+        "reltreaties",
+        "emigrants3",
+        "nonviolentbehavior",
+        "ngoorgs3",
+        "officialvisits"
+      ],
+      "path_found": "uk --commonbloc1--> egypt",
+      "reasoning": "The key relation 'timesinceally' connects UK and Egypt, indicating a historical alliance which supports Egypt as the correct tail.",
+      "failure_diagnosis": "The model was influenced by the stronger relations between UK and USA, such as student exchanges and military alliances, leading to a higher score for USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.4
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.667,
+      "quality_score": 0.396,
+      "contamination": 0.812,
+      "overlap_tail": [
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "agent_relations": [
+        "commonbloc1",
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "timesinceally",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar",
+        "unweightedunvote"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.4
+    },
+    "aggregator": {
+      "final_answer": "usa",
+      "chosen_agent": "B",
+      "confidence": 0.4,
+      "reason": "Agent B had a higher quality score despite both being incorrect.",
+      "selected_relations": [
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": false
+  },
+  "china|intergovorgs3|ussr": {
+    "triple": "(china, intergovorgs3, ussr)",
+    "true_tail": "ussr",
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "ussr has higher embedding similarity score",
+        "ussr shares more specific relations with China"
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "tourism",
+        "boycottembargo",
+        "embassy",
+        "accusation"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of 'intergovorgs3' in the UK's shared relations, which is not as strongly associated with China."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.9,
+      "key_relations": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "path_found": "china --accusation--> ussr",
+      "reasoning": "The key relations between China and USSR include accusation, boycottembargo, commonbloc2, tourism, and embassy, which strongly support the USSR as the correct tail entity.",
+      "failure_diagnosis": "The model may have been influenced by the presence of unique relations between China and UK, leading to a lower score for USSR despite its stronger supporting relations."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.9,
+      "reason": "Agent B has a slightly higher quality score in identifying the correct separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "tourism",
+        "boycottembargo",
+        "embassy",
+        "accusation"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "cuba|officialvisits|china": {
+    "triple": "(cuba, officialvisits, china)",
+    "true_tail": "china",
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.85,
+      "evidence": [
+        "The embedding similarity score between 'cuba' and 'china' is high (sim=0.91) with 16 shared relations."
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "relexports",
+        "independence",
+        "exports3",
+        "embassy"
+      ],
+      "failure_diagnosis": "The model was misled by the shared relations unique to 'usa', which are not relevant to the given triple."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.85,
+      "key_relations": [
+        "commonbloc2",
+        "relexports",
+        "independence",
+        "exports3",
+        "embassy"
+      ],
+      "path_found": "cuba --commonbloc2--> china",
+      "reasoning": "The key relations between Cuba and China include commonbloc2, relexports, independence, exports3, and embassy, which strongly support the connection.",
+      "failure_diagnosis": "The model was misled by the numerous relations unique to USA, which did not contribute to the actual connection between Cuba and China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.85
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.85
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.85,
+      "reason": "Agent B identified better structural evidence based on past patterns.",
+      "selected_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "uk|duration|indonesia": {
+    "triple": "(uk, duration, indonesia)",
+    "true_tail": "indonesia",
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between uk and Indonesia was higher than other countries",
+        "Indonesia shares more specific relations with UK such as commonbloc1, negativebehavior, and warning"
+      ],
+      "shared_relations": [
+        "commonbloc1",
+        "negativebehavior",
+        "warning",
+        "militaryactions"
+      ],
+      "failure_diagnosis": "The model likely failed due to the higher embedding similarity of USA with UK, overshadowing the more specific and relevant relations with Indonesia."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.9,
+      "key_relations": [
+        "commonbloc1",
+        "negativebehavior",
+        "warning",
+        "militaryactions"
+      ],
+      "path_found": "uk --commonbloc1--> burma --commonbloc1--> egypt --commonbloc1--> indonesia",
+      "reasoning": "The key relations 'commonbloc1', 'negativebehavior', 'warning', and'militaryactions' strongly connect UK to Indonesia.",
+      "failure_diagnosis": "The model may have been influenced by the more diverse set of relations connecting UK to USA, leading to a higher score for USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.9,
+      "reason": "Agent B has a slightly higher confidence score.",
+      "selected_relations": [
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "warning"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "uk|embassy|netherlands": {
+    "triple": "(uk, embassy, netherlands)",
+    "true_tail": "netherlands",
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between uk and netherlands is higher than that of uk and usa",
+        "Netherlands is the only entity that shares the relations relngo, conferences, timesinceally, exports3, unweightedunvote with uk"
+      ],
+      "shared_relations": [
+        "relngo",
+        "conferences",
+        "timesinceally",
+        "exports3",
+        "unweightedunvote"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of more shared relations between uk and usa, which are not relevant to the embassy relation."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.9,
+      "key_relations": [
+        "embassy",
+        "relngo",
+        "conferences",
+        "timesinceally",
+        "exports3",
+        "unweightedunvote"
+      ],
+      "path_found": "uk --commonbloc1--> israel --embassy--> netherlands",
+      "reasoning": "The key relations between UK and Netherlands include embassy, which directly connects them.",
+      "failure_diagnosis": "The model likely failed due to the presence of multiple shared relations between UK and USA, making the embassy relation less prominent in the embedding space."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.917,
+      "contamination": 0.167,
+      "overlap_tail": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [
+        "embassy"
+      ],
+      "agent_relations": [
+        "conferences",
+        "embassy",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.9,
+      "reason": "Agent B has a higher quality score despite both predicting correctly.",
+      "selected_relations": [
+        "conferences",
+        "embassy",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  "china|embassy|indonesia": {
+    "triple": "(china, embassy, indonesia)",
+    "true_tail": "indonesia",
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between china and Indonesia is very high (sim=0.91), and they share multiple relations including pprotests, releconomicaid, economicaid, treaties, and reldiplomacy."
+      ],
+      "shared_relations": [
+        "pprotests",
+        "releconomicaid",
+        "economicaid",
+        "treaties",
+        "reldiplomacy"
+      ],
+      "failure_diagnosis": "The model may have been influenced by the shared relations with USA, which have unique relations not shared with China and Indonesia."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "boycottembargo",
+        "commonbloc0",
+        "pprotests",
+        "releconomicaid",
+        "economicaid",
+        "treaties",
+        "reldiplomacy"
+      ],
+      "path_found": "china --accusation--> indonesia",
+      "reasoning": "Indonesia is the only country that shares multiple direct relations with China, including 'accusation', 'pprotests','releconomicaid', 'economicaid', 'treaties', and'reldiplomacy'.",
+      "failure_diagnosis": "The model may have been misled by the shared relations with USA, which include unique relations not found with Indonesia."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.818,
+      "contamination": 0.364,
+      "overlap_tail": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "overlap_pred": [
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "boycottembargo",
+        "commonbloc0",
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its higher quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "economicaid",
+        "pprotests",
+        "reldiplomacy",
+        "releconomicaid",
+        "treaties"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  }
+}
