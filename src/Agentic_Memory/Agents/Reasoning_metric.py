@@ -27,7 +27,7 @@ def load_results_safe(path: str) -> list:
     return clean
 
 
-results = load_results_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\dump\val_hard_checkpoint (3).json")
+results = load_results_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\val_hard_results.json")
 
 # ── if that's empty try the checkpoint ───────────────────
 if not results:
