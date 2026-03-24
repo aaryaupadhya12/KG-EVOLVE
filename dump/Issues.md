@@ -1,0 +1,2 @@
+The Agent B is skewed towards The higher degreee nodes hence causing Higher amount of bias to such nodes 
+The Agent prompts must be changed so that the lower degrees nodes must be trusted with higher amount of prompting to help with lower hallucinations     
