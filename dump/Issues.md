@@ -1,5 +1,11 @@
+15:46 - 23-03-2026
 The Agent B is skewed towards The higher degreee nodes hence causing Higher amount of bias to such nodes 
 The Agent prompts must be changed so that the lower degrees nodes must be trusted with higher amount of prompting to help with lower hallucinations     
 -- Fixed 
 
-Boosted routing vs learned reward model over reasnoning traces 
+22:26 - 24-03-2026
+Boosted routing vs learned reward model over reasnoning traces -- Take a look at this we reasoned why it wont work 
+
+
+23:09 - 24-03-2026
+Policy-level differences in agentic reasoning can be learned and optimized via a learned reasoning critic. - this is the real thing and look into how to solve this with PRM800K 
