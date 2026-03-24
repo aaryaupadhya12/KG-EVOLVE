@@ -7,3 +7,6 @@ Unlike weight-space continual learning methods that suffer from catastrophic for
 A lightweight meta-learner distills agent experience into sub-millisecond inference without graph access at runtime.
 
 Validated on the Nations dataset, we show that MRR improves monotonically across outer-loop cycles and that failure vector stability across random seeds is a more reliable model selection criterion than MRR alone — establishing typed graph writeback as a scalable and effective memory substrate for continual agentic learning.
+
+
+A structured reasoning evanluation dataset comparing 2 agents on KG completion tasks, wiht fioine grained signals about reasoning quality , noise and missing information 

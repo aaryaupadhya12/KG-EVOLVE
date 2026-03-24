@@ -1,0 +1,6376 @@
+[
+  {
+    "triple": "burma|relintergovorgs|egypt",
+    "true_tail": "egypt",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.6,
+      "evidence": [
+        "The model prioritized 'india' over 'egypt' based on shared relation counts."
+      ],
+      "shared_relations": [
+        "relintergovorgs",
+        "commonbloc2",
+        "conferences"
+      ],
+      "failure_diagnosis": "The model's prediction was influenced by the shared relations with 'india', which were more specific and numerous compared to 'egypt'."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.6,
+      "key_relations": [
+        "relintergovorgs",
+        "commonbloc2",
+        "conferences"
+      ],
+      "path_found": "burma --commonbloc2--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc2' which is semantically related to'relintergovorgs', the query relation.",
+      "failure_diagnosis": "RotatE missed the stronger signal from the 'commonbloc2' relation, which directly connects Burma to India."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "conferences",
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "conferences",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": false,
+      "confidence": 0.6
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "conferences",
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "conferences",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": false,
+      "confidence": 0.6
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.6,
+      "reason": "Agent B had no overlap with the true separating relationships and a quality score of 0.0, indicating it was not trusted.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": false
+  },
+  {
+    "triple": "china|officialvisits|burma",
+    "true_tail": "burma",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "burma",
+      "confidence": 0.85,
+      "evidence": [
+        "The only entity that shares the 'officialvisits' relation with China is Egypt, which is ranked 11th in similarity, while Burma is not listed among the top similarities."
+      ],
+      "shared_relations": [
+        "officialvisits"
+      ],
+      "failure_diagnosis": "The model failed to prioritize the shared 'officialvisits' relation between China and Burma."
+    },
+    "agent_b": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "key_relations": [
+        "officialvisits"
+      ],
+      "path_found": "china --officialvisits--> burma",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'officialvisits'.",
+      "failure_diagnosis": "RotatE likely missed the direct relation between China and Burma, focusing instead on less relevant relations like 'officialvisits' from Egypt."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "officialvisits"
+      ],
+      "agent_relations": [
+        "officialvisits"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.85
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "officialvisits"
+      ],
+      "agent_relations": [
+        "officialvisits"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "burma",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a lower quality score and no overlap with the true separating relations.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "uk|intergovorgs3|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'netherlands' has the highest embedding similarity score (0.89) with the head entity 'uk'."
+      ],
+      "shared_relations": [
+        "relngo",
+        "exports3",
+        "unweightedunvote",
+        "conferences",
+        "timesinceally"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of the relation 'intergovorgs3' which is unique to the incorrect prediction 'usa'."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "relngo",
+        "exports3",
+        "unweightedunvote",
+        "conferences",
+        "timesinceally"
+      ],
+      "path_found": "uk --commonbloc0--> cuba --relngo--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation'relngo', which is semantically similar to the query relation 'intergovorgs3'.",
+      "failure_diagnosis": "RotatE missed the stronger signal from the'relngo' relation between UK and Netherlands."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a higher overlap with the true separating relationships.",
+      "selected_relations": [
+        "conferences",
+        "exports3",
+        "relngo",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "netherlands|embassy|china",
+    "true_tail": "china",
+    "model_rank": 13,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'china' has the relation 'blockpositionindex' with 'netherlands'"
+      ],
+      "shared_relations": [
+        "blockpositionindex"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant similarities over the primary signal of shared relations."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex"
+      ],
+      "path_found": "netherlands --blockpositionindex--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'blockpositionindex'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' relation between 'netherlands' and 'china'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex"
+      ],
+      "only_tail_has": [
+        "blockpositionindex"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex"
+      ],
+      "only_tail_has": [
+        "blockpositionindex"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it provided the correct separating relation that matched the true triple structure.",
+      "selected_relations": [
+        "blockpositionindex"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|ngoorgs3|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'netherlands' shares the 'commonbloc1' relation with 'jordan'",
+        "The correct tail entity 'netherlands' has more shared relations with 'jordan' compared to 'egypt'"
+      ],
+      "shared_relations": [
+        "weightedunvote",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model was misled by the higher embedding similarity scores of Egypt, despite having fewer shared relations."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "path_found": "jordan --commonbloc1--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'commonbloc1' relation, which is semantically equivalent to the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc1' relation between Jordan and Netherlands."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relationships.",
+      "selected_relations": [
+        "commonbloc1",
+        "weightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "india|commonbloc1|poland",
+    "true_tail": "poland",
+    "model_rank": 5,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'poland' has the shared relation 'unweightedunvote' with India"
+      ],
+      "shared_relations": [
+        "unweightedunvote"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over POLAND due to unrelated shared relations."
+    },
+    "agent_b": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "key_relations": [
+        "unweightedunvote",
+        "commonbloc1"
+      ],
+      "path_found": "india --commonbloc1--> brazil --commonbloc1--> cuba --commonbloc1--> netherlands --commonbloc1--> poland",
+      "path_relation_matches_query": true,
+      "reasoning": "The only_tail_has relation 'unweightedunvote' is a strong signal pointing to Poland.",
+      "failure_diagnosis": "RotatE failed to recognize the 'unweightedunvote' relation as the primary signal."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.75,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "unweightedunvote"
+      ],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "commonbloc1",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted because it had a higher quality score and its overlap with the true separating relations was more accurate.",
+      "selected_relations": [
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|conferences|indonesia",
+    "true_tail": "indonesia",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'indonesia' has the relations blockpositionindex, commonbloc1, militaryalliance with USA"
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of more shared relations with USSR, but the primary signal is the unique relations between USA and Indonesia."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "path_found": "usa --blockpositionindex--> indonesia",
+      "path_relation_matches_query": true,
+      "reasoning": "The path usa --blockpositionindex--> indonesia directly uses the relation from the query triple (conferences) and is the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' relation, which is semantically close to 'conferences'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relations.",
+      "selected_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "militaryalliance"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|militaryalliance|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'netherlands' shares the 'booktranslations' relation with 'usa'",
+        "The model incorrectly prioritized 'uk' which has additional relations like'relstudents', 'emigrants3', etc., that are not relevant here"
+      ],
+      "shared_relations": [
+        "booktranslations"
+      ],
+      "failure_diagnosis": "The model was misled by the additional irrelevant relations of 'uk' and failed to prioritize the relevant ones of 'netherlands'."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "path_found": "usa --booktranslations--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The only_tail_has relations 'booktranslations', 'embassy', and 'tourism' strongly indicate that 'netherlands' should be the correct tail entity.",
+      "failure_diagnosis": "RotatE likely missed the strong signal from the 'booktranslations' relation between USA and Netherlands."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.333,
+      "quality_score": 0.333,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "booktranslations"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "booktranslations"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high quality score and relevant overlapping relationships with the correct separating relation.",
+      "selected_relations": [
+        "booktranslations",
+        "embassy",
+        "tourism"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "cuba|reltreaties|china",
+    "true_tail": "china",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'china' shares the 'commonbloc2' relation with Cuba",
+        "The correct answer should be among entities sharing relations with Cuba"
+      ],
+      "shared_relations": [
+        "commonbloc2"
+      ],
+      "failure_diagnosis": "The model failed to recognize the importance of the 'commonbloc2' relation between Cuba and China."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "embassy",
+        "relexports",
+        "exports3",
+        "independence",
+        "timesinceally"
+      ],
+      "path_found": "cuba --commonbloc2--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the query relation'reltreaties' through the 'commonbloc2' relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc2' relation, which directly connects Cuba to China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.167,
+      "quality_score": 0.167,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports",
+        "timesinceally"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports",
+        "timesinceally"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports",
+        "timesinceally"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports",
+        "timesinceally"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "independence",
+        "relexports",
+        "timesinceally"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "egypt|treaties|china",
+    "true_tail": "china",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'china' shares the 'commonbloc1' relation with Egypt"
+      ],
+      "shared_relations": [
+        "relexports",
+        "embassy",
+        "exports3",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations not directly relevant to the query."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "relexports",
+        "embassy",
+        "exports3"
+      ],
+      "path_found": "egypt --commonbloc1--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc1', which is semantically equivalent to the query relation 'treaties'.",
+      "failure_diagnosis": "RotatE missed the strong signal from the 'commonbloc1' relation, which directly connects Egypt and China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "relexports"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|reltourism|india",
+    "true_tail": "india",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'india' shares the 'blockpositionindex' relation with USA"
+      ],
+      "shared_relations": [
+        "economicaid",
+        "blockpositionindex",
+        "officialvisits",
+        "ngoorgs3",
+        "releconomicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "tourism",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized 'UK' over 'India' due to a lower embedding similarity score."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex",
+        "tourism"
+      ],
+      "path_found": "usa --blockpositionindex--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The path usa --blockpositionindex--> india closely matches the query relation reltourism.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' relation between usa and india."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc1",
+        "economicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "ngoorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "tourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "economicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "ngoorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "economicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "ngoorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.2,
+      "quality_score": 0.2,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "tourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "economicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "ngoorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high overlap with true separating relations.",
+      "selected_relations": [
+        "blockpositionindex",
+        "commonbloc1",
+        "economicaid",
+        "embassy",
+        "militaryalliance",
+        "negativebehavior",
+        "ngoorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "tourism"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|weightedunvote|cuba",
+    "true_tail": "cuba",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'cuba' shares the 'weightedunvote' relation with 'usa'"
+      ],
+      "shared_relations": [
+        "intergovorgs",
+        "negativecomm",
+        "booktranslations",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "timesincewar",
+        "conferences"
+      ],
+      "failure_diagnosis": "The model likely failed to prioritize the 'weightedunvote' relation between 'usa' and 'cuba'."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "booktranslations",
+        "weightedunvote"
+      ],
+      "path_found": "usa --booktranslations--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'weightedunvote' is the query relation, and 'usa --booktranslations--> cuba' is a valid path.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'booktranslations' relation, which directly connects 'usa' to 'cuba'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "booktranslations",
+        "conferences",
+        "intergovorgs",
+        "negativebehavior",
+        "negativecomm",
+        "nonviolentbehavior",
+        "timesincewar"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "booktranslations",
+        "conferences",
+        "intergovorgs",
+        "negativebehavior",
+        "negativecomm",
+        "nonviolentbehavior",
+        "timesincewar"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "conferences",
+        "intergovorgs",
+        "negativebehavior",
+        "negativecomm",
+        "nonviolentbehavior",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.143,
+      "quality_score": 0.107,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "booktranslations"
+      ],
+      "overlap_pred": [
+        "weightedunvote"
+      ],
+      "agent_relations": [
+        "booktranslations",
+        "weightedunvote"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "conferences",
+        "intergovorgs",
+        "negativebehavior",
+        "negativecomm",
+        "nonviolentbehavior",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "booktranslations",
+        "conferences",
+        "intergovorgs",
+        "negativebehavior",
+        "negativecomm",
+        "nonviolentbehavior",
+        "timesincewar"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|negativecomm|brazil",
+    "true_tail": "brazil",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'brazil' shares more relations with 'usa' than 'ussr'",
+        "The model incorrectly prioritized 'negativecomm' relation with 'ussr' over the shared relations with 'brazil'"
+      ],
+      "shared_relations": [
+        "economicaid",
+        "intergovorgs3",
+        "relngo",
+        "exportbooks",
+        "releconomicaid",
+        "militaryalliance",
+        "commonbloc2",
+        "relexportbooks",
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model was misled by the stronger negative communication relation with 'ussr', overlooking the multiple shared relations with 'brazil'."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "negativecomm",
+        "economicaid",
+        "intergovorgs3",
+        "militaryalliance",
+        "commonbloc2",
+        "relexportbooks",
+        "relintergovorgs"
+      ],
+      "path_found": "usa --negativecomm--> brazil",
+      "path_relation_matches_query": true,
+      "reasoning": "The path usa --negativecomm--> brazil closely matches the query relation negativecomm.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'negativecomm' relation between usa and brazil."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "economicaid",
+        "exportbooks",
+        "intergovorgs3",
+        "militaryalliance",
+        "releconomicaid",
+        "relexportbooks",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "economicaid",
+        "exportbooks",
+        "intergovorgs3",
+        "militaryalliance",
+        "releconomicaid",
+        "relexportbooks",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "economicaid",
+        "exportbooks",
+        "intergovorgs3",
+        "militaryalliance",
+        "releconomicaid",
+        "relexportbooks",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.667,
+      "quality_score": 0.619,
+      "contamination": 0.143,
+      "overlap_tail": [
+        "commonbloc2",
+        "economicaid",
+        "intergovorgs3",
+        "militaryalliance",
+        "relexportbooks",
+        "relintergovorgs"
+      ],
+      "overlap_pred": [
+        "negativecomm"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "economicaid",
+        "intergovorgs3",
+        "militaryalliance",
+        "negativecomm",
+        "relexportbooks",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "economicaid",
+        "exportbooks",
+        "intergovorgs3",
+        "militaryalliance",
+        "releconomicaid",
+        "relexportbooks",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with true separating relationships.",
+      "selected_relations": [
+        "commonbloc2",
+        "economicaid",
+        "exportbooks",
+        "intergovorgs3",
+        "militaryalliance",
+        "releconomicaid",
+        "relexportbooks",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "egypt|independence|brazil",
+    "true_tail": "brazil",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'brazil' has an 'embassy' with Egypt, which is the primary signal for this prediction."
+      ],
+      "shared_relations": [
+        "independence"
+      ],
+      "failure_diagnosis": "The model was misled by the numerous shared relations between Egypt and the UK, ignoring the critical 'embassy' relation."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "embassy"
+      ],
+      "path_found": "egypt --booktranslations--> uk",
+      "path_relation_matches_query": false,
+      "reasoning": "The only_tail_has relation 'embassy' between Egypt and Brazil provides a strong signal.",
+      "failure_diagnosis": "RotatE failed to prioritize the 'embassy' relation over the multiple related relations between Egypt and UK."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "independence"
+      ],
+      "agent_relations": [
+        "independence"
+      ],
+      "only_tail_has": [
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "embassy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "embassy"
+      ],
+      "only_tail_has": [
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had a higher quality score and overlapping relations with the correct separating relation.",
+      "selected_relations": [
+        "embassy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "poland|weightedunvote|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'netherlands' has the highest embedding similarity score and shares the most relevant relations with the head entity 'poland'."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "unweightedunvote",
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of the 'usa' entity, which shares more relations with other entities but not specifically with 'poland'."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "unweightedunvote",
+        "relintergovorgs"
+      ],
+      "path_found": "poland --blockpositionindex--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'blockpositionindex', which is semantically related to the query relation 'weightedunvote'.",
+      "failure_diagnosis": "RotatE missed the stronger signal from the 'blockpositionindex' relation, which directly connects Poland to the Netherlands."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had the highest overlap with the true separating relationships.",
+      "selected_relations": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "india|commonbloc1|china",
+    "true_tail": "china",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The model should prioritize the shared relations between the head and tail entities."
+      ],
+      "shared_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over China due to a lower embedding similarity score despite having more shared relations."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "commonbloc1"
+      ],
+      "path_found": "india --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The 'accusation' relation directly connects India to China, which is semantically equivalent to the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct accusation relation between India and China, instead predicting a less relevant relation like commonbloc1."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.25,
+      "quality_score": 0.188,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "accusation",
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and relevant overlapping relations with the correct separating relationships.",
+      "selected_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|relintergovorgs|israel",
+    "true_tail": "israel",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.9,
+      "evidence": [
+        "The correct tail entity 'israel' has the relation'relintergovorgs' with 'burma', which is the same as the given triple."
+      ],
+      "shared_relations": [
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized other similarities over the primary signal of shared relation."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "relintergovorgs",
+        "conferences"
+      ],
+      "path_found": "burma --commonbloc2--> india --relintergovorgs--> israel",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the query relation'relintergovorgs' and the only_tail_has relation 'commonbloc2'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc2' relation, which directly points to israel."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "conferences",
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "conferences",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had no overlap with the true separating relationships, indicating it did not provide any relevant information for the correct routing decision.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|ngoorgs3|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "'usa' has more shared relations but 'netherlands' has the exact required relation 'ngoorgs3'",
+        "'usa' has other relations that are not relevant to the current query"
+      ],
+      "shared_relations": [
+        "ngoorgs3",
+        "relbooktranslations",
+        "timesincewar",
+        "relngo",
+        "dependent"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized irrelevant shared relations over the exact required relation."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "ngoorgs3",
+        "relngo"
+      ],
+      "path_found": "indonesia --relngo--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'ngoorgs3' is the same as the query relation, and 'netherlands' is the only entity with this relation to Indonesia.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation 'ngoorgs3' between Indonesia and Netherlands."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 0.9,
+      "contamination": 0.2,
+      "overlap_tail": [
+        "dependent",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "overlap_pred": [
+        "ngoorgs3"
+      ],
+      "agent_relations": [
+        "dependent",
+        "ngoorgs3",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "only_tail_has": [
+        "dependent",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.25,
+      "quality_score": 0.188,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "relngo"
+      ],
+      "overlap_pred": [
+        "ngoorgs3"
+      ],
+      "agent_relations": [
+        "ngoorgs3",
+        "relngo"
+      ],
+      "only_tail_has": [
+        "dependent",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its higher quality score and greater overlap with true separating relations.",
+      "selected_relations": [
+        "dependent",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "egypt|timesinceally|ussr",
+    "true_tail": "ussr",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "The 'usa' had more shared relations with Egypt in the local subgraph but did not have the 'timesinceally' relation directly with Egypt."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "independence"
+      ],
+      "failure_diagnosis": "The model was misled by the higher number of shared relations with USA, but the 'timesinceally' relation was the key distinguishing factor."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "independence"
+      ],
+      "path_found": "egypt --reldiplomacy--> ussr",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'timesinceally', which is semantically related to'reldiplomacy'.",
+      "failure_diagnosis": "RotatE failed to prioritize the direct diplomatic relation between Egypt and USSR over the multiple indirect relations involving USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relationships.",
+      "selected_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "egypt|ngoorgs3|netherlands",
+    "true_tail": "netherlands",
+    "model_rank": 5,
+    "agent_a": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'netherlands' shares the 'commonbloc1' relation with Egypt",
+        "The model incorrectly prioritized 'UK' over 'Netherlands' due to additional relations unique to 'UK' which are not directly relevant to the query"
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model was misled by additional relations unique to 'UK' that are not directly relevant to the query, leading to an incorrect prediction."
+    },
+    "agent_b": {
+      "prediction": "netherlands",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "egypt --commonbloc1--> netherlands",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' directly connects Egypt to the Netherlands, matching the query relation 'ngoorgs3'.",
+      "failure_diagnosis": "RotatE missed the direct connection between Egypt and the Netherlands through the 'commonbloc1' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.5,
+      "quality_score": 0.5,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.5,
+      "quality_score": 0.5,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "netherlands",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to higher overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc1"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|commonbloc2|burma",
+    "true_tail": "burma",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'burma' shares no relations with 'indonesia'",
+        "The model incorrectly prioritized 'india' due to shared relations that do not apply to the given triple"
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "intergovorgs",
+        "relngo",
+        "embassy",
+        "nonviolentbehavior",
+        "intergovorgs3"
+      ],
+      "failure_diagnosis": "The model was misled by shared relations that do not apply to the specific triple, favoring a distant entity over the correct one."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.4,
+      "key_relations": [
+        "commonbloc2"
+      ],
+      "path_found": "indonesia --commonbloc2--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc2' is semantically equivalent to the query relation.",
+      "failure_diagnosis": "RotatE did not fully leverage the 'commonbloc2' relation, which is strongly indicative of the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "intergovorgs3",
+        "nonviolentbehavior",
+        "relngo"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "intergovorgs3",
+        "nonviolentbehavior",
+        "relngo"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2"
+      ],
+      "agent_relations": [
+        "commonbloc2"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": false,
+      "confidence": 0.4
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.4,
+      "reason": "Agent B was not trusted due to its low quality score and lack of overlap with the correct relationships.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": false
+  },
+  {
+    "triple": "egypt|treaties|indonesia",
+    "true_tail": "indonesia",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'indonesia' shares the 'commonbloc2' relation with Egypt",
+        "The correct tail entity 'indonesia' has more shared relations with Egypt compared to 'uk'"
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of multiple relations between Egypt and UK, which are not relevant to the current query."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "path_found": "egypt --commonbloc2--> indonesia",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc2' is the same as the query relation 'treaties', making it a strong match.",
+      "failure_diagnosis": "RotatE missed the direct and strong signal from 'commonbloc2' to 'indonesia'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "embassy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "netherlands|commonbloc0|china",
+    "true_tail": "china",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'china' has no shared relations with 'netherlands'"
+      ],
+      "shared_relations": [
+        "commonbloc0"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized 'poland' over 'china' due to the presence of multiple shared relations between 'netherlands' and 'poland', while 'china' had none."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc0"
+      ],
+      "path_found": "netherlands --commonbloc0--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The 'commonbloc0' relation directly connects the Netherlands to Cuba, which is semantically related to the query relation.",
+      "failure_diagnosis": "RotatE missed the direct connection between the Netherlands and China through the 'commonbloc0' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "commonbloc0"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "commonbloc0"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had a higher quality score than the other agent, even though both were zero.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "netherlands|lostterritory|indonesia",
+    "true_tail": "indonesia",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "The model incorrectly prioritized 'uk' over 'indonesia' based on embedding similarity scores and shared relation counts."
+      ],
+      "shared_relations": [
+        "timesincewar",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model failed to recognize the primary signal from the shared relations between 'netherlands' and 'indonesia'."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "path_found": "netherlands --commonbloc1--> indonesia",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' directly connects the Netherlands to Indonesia.",
+      "failure_diagnosis": "RotatE missed the direct relation between 'netherlands' and 'indonesia' which is stronger than the related relations like 'booktranslations'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had higher overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc1",
+        "timesincewar"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|exports3|india",
+    "true_tail": "india",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'india' shares the 'commonbloc2' relation with 'burma'"
+      ],
+      "shared_relations": [
+        "commonbloc2"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized the 'exports3' relation with 'ussr' over the 'commonbloc2' relation with 'india'."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "intergovorgs",
+        "officialvisits",
+        "embassy",
+        "commonbloc2",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "path_found": "burma --commonbloc2--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc2' which is strongly related to the query relation 'exports3'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc2' relation between Burma and India."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.125,
+      "quality_score": 0.125,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "intergovorgs3",
+        "officialvisits",
+        "reldiplomacy",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.75,
+      "quality_score": 0.75,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "officialvisits",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "officialvisits",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "intergovorgs3",
+        "officialvisits",
+        "reldiplomacy",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs",
+        "officialvisits",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|relngo|israel",
+    "true_tail": "israel",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "evidence": [
+        "The model incorrectly prioritized 'usa' over 'israel' based on embedding similarity scores."
+      ],
+      "shared_relations": [
+        "relngo",
+        "ngoorgs3",
+        "embassy",
+        "booktranslations",
+        "timesincewar",
+        "intergovorgs3",
+        "relbooktranslations",
+        "conferences",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model failed to recognize the importance of shared relations between 'burma' and 'israel'."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "relngo"
+      ],
+      "path_found": "burma --relngo--> israel",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation'relngo' is the only one connecting 'burma' to 'israel', which matches the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation'relngo' between 'burma' and 'israel'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "booktranslations",
+        "commonbloc1",
+        "conferences",
+        "embassy",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "agent_relations": [
+        "booktranslations",
+        "commonbloc1",
+        "conferences",
+        "embassy",
+        "intergovorgs3",
+        "ngoorgs3",
+        "relbooktranslations",
+        "relngo",
+        "timesincewar"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relngo"
+      ],
+      "agent_relations": [
+        "relngo"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had no overlap with the true separating relations and a quality score of 0.0, indicating it provided no useful information.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "egypt|embassy|ussr",
+    "true_tail": "ussr",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'ussr' has the relation 'embassy' with Egypt, which is the primary signal from the local subgraph."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "independence"
+      ],
+      "failure_diagnosis": "The model was misled by the higher number of shared relations with USA, but the primary signal from the local subgraph pointed towards USSR."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "independence"
+      ],
+      "path_found": "egypt --reldiplomacy--> ussr",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'embassy', which indicates a diplomatic relationship.",
+      "failure_diagnosis": "RotatE missed the direct diplomatic relation between Egypt and USSR."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relations.",
+      "selected_relations": [
+        "independence",
+        "reldiplomacy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "israel|embassy|brazil",
+    "true_tail": "brazil",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "The similarity score between israel and brazil is higher than any other pair involving the predicted entity usa."
+      ],
+      "shared_relations": [
+        "unweightedunvote",
+        "relngo"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations that are more specific to usa, overlooking the primary signal from shared relations."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "unweightedunvote",
+        "relngo"
+      ],
+      "path_found": "israel --commonbloc1--> brazil",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'commonbloc1' relation, which is semantically related to the query relation 'embassy'.",
+      "failure_diagnosis": "RotatE failed to recognize the 'commonbloc1' relation as a strong signal for the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "relngo",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had the highest quality score and an overlap with true separating relations.",
+      "selected_relations": [
+        "relngo",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "india|relexports|ussr",
+    "true_tail": "ussr",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "The only_tail_has relations between 'india' and 'ussr' include 'blockpositionindex', 'officialvisits', 'embassy', 'exports3', 'unweightedunvote', 'conferences', 'commonbloc1'. These relations are unique to 'ussr' and not found in 'egypt'."
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized Egypt over USSR due to lower embedding similarity scores, despite USSR having the primary signal of unique relations."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "path_found": "india --blockpositionindex--> ussr",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'blockpositionindex' relation, which is semantically related to the query relation'relexports'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' relation between India and USSR."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.286,
+      "quality_score": 0.286,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "conferences",
+        "embassy",
+        "exports3",
+        "officialvisits",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.286,
+      "quality_score": 0.286,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc1",
+        "conferences",
+        "embassy",
+        "exports3",
+        "officialvisits",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to higher overlap with the true separating relations.",
+      "selected_relations": [
+        "blockpositionindex",
+        "commonbloc1"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "ussr|relngo|poland",
+    "true_tail": "poland",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'poland' shares the most relevant relations with 'ussr' such as booktranslations, militaryalliance, commonbloc2, ngo, etc."
+      ],
+      "shared_relations": [
+        "economicaid",
+        "reltourism",
+        "ngoorgs3",
+        "releconomicaid",
+        "booktranslations",
+        "militaryalliance",
+        "commonbloc2",
+        "ngo",
+        "timesincewar",
+        "tourism",
+        "reldiplomacy",
+        "relexports",
+        "conferences",
+        "tourism3"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of relations unique to 'usa', which are not relevant to the given triple."
+    },
+    "agent_b": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "key_relations": [
+        "booktranslations",
+        "reltourism",
+        "ngoorgs3",
+        "releconomicaid",
+        "commonbloc2",
+        "ngo",
+        "timesincewar",
+        "tourism",
+        "reldiplomacy",
+        "relexports",
+        "conferences",
+        "tourism3"
+      ],
+      "path_found": "ussr --booktranslations--> poland",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'booktranslations' relation, which is semantically related to the query relation'relngo'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'booktranslations' relation between 'ussr' and 'poland'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "economicaid",
+        "militaryalliance",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "economicaid",
+        "militaryalliance",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "economicaid",
+        "militaryalliance",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.857,
+      "quality_score": 0.857,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "economicaid",
+        "militaryalliance",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher quality score and significant overlap with true separating relations.",
+      "selected_relations": [
+        "booktranslations",
+        "commonbloc2",
+        "conferences",
+        "ngo",
+        "ngoorgs3",
+        "reldiplomacy",
+        "releconomicaid",
+        "relexports",
+        "reltourism",
+        "timesincewar",
+        "tourism",
+        "tourism3"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|embassy|egypt",
+    "true_tail": "egypt",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'egypt' shares the relations 'officialvisits', 'treaties','releconomicaid', 'intergovorgs3', 'commonbloc1' with China"
+      ],
+      "shared_relations": [
+        "officialvisits",
+        "treaties",
+        "releconomicaid",
+        "intergovorgs3",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations unique to USSR over those unique to Egypt."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "officialvisits",
+        "treaties",
+        "releconomicaid",
+        "intergovorgs3",
+        "commonbloc1"
+      ],
+      "path_found": "china --officialvisits--> egypt",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'officialvisits' which is semantically close to the query relation 'embassy'.",
+      "failure_diagnosis": "RotatE missed the strong signal from the 'officialvisits' relation between China and Egypt."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high overlap with true separating relationships.",
+      "selected_relations": [
+        "commonbloc1",
+        "intergovorgs3",
+        "officialvisits",
+        "releconomicaid",
+        "treaties"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|reltreaties|china",
+    "true_tail": "china",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'china' shares the 'commonbloc1' relation with 'burma'"
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model was misled by the higher embedding similarity scores with India."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "burma --commonbloc1--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' directly connects burma to china, matching the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc1' relation, which is the only relation connecting burma to china."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.5,
+      "quality_score": 0.5,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "exports3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.5,
+      "quality_score": 0.5,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "exports3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had an overlap with the correct relationships, suggesting it was slightly more relevant to the query.",
+      "selected_relations": [
+        "commonbloc1"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "poland|intergovorgs3|israel",
+    "true_tail": "israel",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'israel' shares more relevant relations with 'poland' than 'usa' does."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations over the shared ones."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "relintergovorgs",
+        "commonbloc1"
+      ],
+      "path_found": "poland --commonbloc1--> burma --commonbloc1--> egypt --commonbloc1--> israel",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc1', which is semantically equivalent to'relintergovorgs3' given the context.",
+      "failure_diagnosis": "RotatE failed to recognize the indirect path through common bloc relationships."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc1",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|embassy|cuba",
+    "true_tail": "cuba",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'cuba' has the relation'severdiplomatic' with Indonesia"
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations that are not primary signals."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "severdiplomatic"
+      ],
+      "path_found": "indonesia --commonbloc1--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation'severdiplomatic' is the only one that only Cuba has with Indonesia, making it the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the unique relation'severdiplomatic' between Indonesia and Cuba."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "severdiplomatic"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "severdiplomatic"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "severdiplomatic"
+      ],
+      "only_tail_has": [
+        "severdiplomatic"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had a perfect quality score and its overlap with the true separating relations was high.",
+      "selected_relations": [
+        "severdiplomatic"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|intergovorgs3|israel",
+    "true_tail": "israel",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "evidence": [
+        "The embedding similarity score between jordan and israel is 0.92, which is the highest among all other entities."
+      ],
+      "shared_relations": [
+        "relngo",
+        "ngoorgs3",
+        "duration",
+        "pprotests",
+        "negativecomm",
+        "violentactions",
+        "accusation",
+        "commonbloc2",
+        "negativebehavior",
+        "timesincewar",
+        "militaryactions"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant shared relations between jordan and usa over the more specific and relevant ones between jordan and israel."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "commonbloc2",
+        "negativebehavior",
+        "militaryactions"
+      ],
+      "path_found": "jordan --accusation--> israel",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'intergovorgs3', which is semantically related to 'accusation'.",
+      "failure_diagnosis": "RotatE likely missed the strong signal from the 'accusation' relation between Jordan and Israel."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "militaryactions",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "pprotests",
+        "relngo",
+        "timesincewar",
+        "violentactions"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "militaryactions",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "pprotests",
+        "relngo",
+        "timesincewar",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "militaryactions",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "pprotests",
+        "relngo",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.364,
+      "quality_score": 0.364,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc2",
+        "militaryactions",
+        "negativebehavior"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc2",
+        "militaryactions",
+        "negativebehavior"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "militaryactions",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "pprotests",
+        "relngo",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with true separating relationships.",
+      "selected_relations": [
+        "accusation",
+        "commonbloc2",
+        "duration",
+        "militaryactions",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "pprotests",
+        "relngo",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|independence|china",
+    "true_tail": "china",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'china' has more shared relations with 'usa' including 'blockpositionindex', 'exportbooks', 'violentactions', 'duration', 'timesincewar', and'militaryactions'. The predicted entity 'ussr' does not share these relations with 'usa' as strongly."
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "exportbooks",
+        "violentactions",
+        "duration",
+        "timesincewar",
+        "militaryactions"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations between 'usa' and 'ussr' over the more specific and relevant relations between 'usa' and 'china'."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations"
+      ],
+      "path_found": "usa --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The 'accusation' relation directly connects usa to china, matching the query relation.",
+      "failure_diagnosis": "RotatE failed to prioritize the direct accusation relation over the less relevant but shared relations like 'booktranslations'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "duration",
+        "exportbooks",
+        "militaryactions",
+        "timesincewar",
+        "violentactions"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "duration",
+        "exportbooks",
+        "militaryactions",
+        "timesincewar",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "duration",
+        "exportbooks",
+        "militaryactions",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.167,
+      "quality_score": 0.139,
+      "contamination": 0.333,
+      "overlap_tail": [
+        "blockpositionindex"
+      ],
+      "overlap_pred": [
+        "booktranslations"
+      ],
+      "agent_relations": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "duration",
+        "exportbooks",
+        "militaryactions",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and lack of overlap with true separating relations.",
+      "selected_relations": [
+        "blockpositionindex",
+        "duration",
+        "exportbooks",
+        "militaryactions",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "netherlands|commonbloc1|burma",
+    "true_tail": "burma",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.75,
+      "evidence": [
+        "The model incorrectly favored India over Burma based on embedding similarity scores."
+      ],
+      "shared_relations": [
+        "commonbloc1",
+        "intergovorgs",
+        "treaties",
+        "intergovorgs3",
+        "timesinceally"
+      ],
+      "failure_diagnosis": "The model was misled by the higher embedding similarity scores of India, despite Burma being the correct answer."
+    },
+    "agent_b": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1"
+      ],
+      "path_found": "netherlands --commonbloc1--> burma",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' directly connects the head 'netherlands' to the correct tail 'burma'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection via 'commonbloc1' and instead predicted a less relevant but more similar entity like 'india'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc1",
+        "intergovorgs",
+        "intergovorgs3",
+        "timesinceally",
+        "treaties"
+      ],
+      "agent_relations": [
+        "commonbloc1",
+        "intergovorgs",
+        "intergovorgs3",
+        "timesinceally",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "embassy"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.75
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc1"
+      ],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "embassy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "burma",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was not trusted as it had a quality score of 0.0 and did not overlap with the correct relationships.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|officialvisits|egypt",
+    "true_tail": "egypt",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'egypt' shares the 'commonbloc2' relation with Jordan, which is a primary signal."
+      ],
+      "shared_relations": [
+        "reltourism",
+        "relngo",
+        "ngoorgs3",
+        "commonbloc2",
+        "tourism",
+        "reltreaties",
+        "timesinceally",
+        "intergovorgs3",
+        "reldiplomacy",
+        "conferences",
+        "tourism3"
+      ],
+      "failure_diagnosis": "The model likely failed due to insufficient embedding similarity between Jordan and Egypt compared to other countries."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "reltourism",
+        "relngo",
+        "commonbloc2",
+        "reldiplomacy",
+        "conferences"
+      ],
+      "path_found": "jordan --commonbloc2--> egypt",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc2', which is semantically related to the query relation 'officialvisits'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc2' relation, which directly connects Jordan and Egypt."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "reldiplomacy",
+        "relngo",
+        "reltourism",
+        "reltreaties",
+        "timesinceally",
+        "tourism",
+        "tourism3"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "reldiplomacy",
+        "relngo",
+        "reltourism",
+        "reltreaties",
+        "timesinceally",
+        "tourism",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "reldiplomacy",
+        "relngo",
+        "reltourism",
+        "reltreaties",
+        "timesinceally",
+        "tourism",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.455,
+      "quality_score": 0.455,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "conferences",
+        "reldiplomacy",
+        "relngo",
+        "reltourism"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "conferences",
+        "reldiplomacy",
+        "relngo",
+        "reltourism"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "reldiplomacy",
+        "relngo",
+        "reltourism",
+        "reltreaties",
+        "timesinceally",
+        "tourism",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs3",
+        "ngoorgs3",
+        "reldiplomacy",
+        "relngo",
+        "reltourism",
+        "reltreaties",
+        "timesinceally",
+        "tourism",
+        "tourism3"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "india|nonviolentbehavior|china",
+    "true_tail": "china",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The model should prioritize the shared relations between the head and tail entities."
+      ],
+      "shared_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over China due to a lower embedding similarity score despite having more shared relations."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation"
+      ],
+      "path_found": "india --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'accusation' is the only shared relation between India and China, and it is the same as the query relation.",
+      "failure_diagnosis": "RotatE did not recognize the 'accusation' relation as the primary signal for this prediction."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.25,
+      "quality_score": 0.25,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and relevant overlapping relations with the correct triple components.",
+      "selected_relations": [
+        "accusation",
+        "duration",
+        "timesincewar",
+        "violentactions"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|reltreaties|china",
+    "true_tail": "china",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'china' is most similar to 'indonesia' with high embedding similarity and shared relations."
+      ],
+      "shared_relations": [
+        "officialvisits",
+        "accusation",
+        "violentactions",
+        "duration",
+        "unoffialacts",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "exports3",
+        "students",
+        "reldiplomacy",
+        "relexports",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model likely failed due to insufficient consideration of the shared relations between 'indonesia' and 'china'."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "commonbloc1"
+      ],
+      "path_found": "indonesia --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'accusation' is the only one shared between Indonesia and China, matching the query relation'reltreaties'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'accusation' relation, which is the only shared relation between Indonesia and China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc1",
+        "duration",
+        "exports3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "students",
+        "unoffialacts",
+        "violentactions"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc1",
+        "duration",
+        "exports3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "students",
+        "unoffialacts",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc1",
+        "duration",
+        "exports3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "students",
+        "unoffialacts",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.167,
+      "quality_score": 0.167,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc1"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc1"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc1",
+        "duration",
+        "exports3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "students",
+        "unoffialacts",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with true separating relationships.",
+      "selected_relations": [
+        "accusation",
+        "commonbloc1",
+        "duration",
+        "exports3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "students",
+        "unoffialacts",
+        "violentactions"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "usa|embassy|uk",
+    "true_tail": "uk",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "uk",
+      "confidence": 0.95,
+      "evidence": [
+        "'uk' is more similar to 'usa' in terms of shared relations"
+      ],
+      "shared_relations": [
+        "relstudents",
+        "reltourism",
+        "independence",
+        "commonbloc2",
+        "emigrants3",
+        "eemigrants",
+        "students",
+        "unweightedunvote",
+        "relintergovorgs",
+        "tourism3"
+      ],
+      "failure_diagnosis": "The model may have been influenced by the higher embedding similarity scores of other entities like 'India', but the primary evidence points towards 'UK' due to shared relations."
+    },
+    "agent_b": {
+      "prediction": "uk",
+      "confidence": 0.95,
+      "key_relations": [
+        "relstudents",
+        "reltourism",
+        "independence",
+        "commonbloc2",
+        "emigrants3",
+        "eemigrants",
+        "students",
+        "unweightedunvote",
+        "relintergovorgs",
+        "tourism3"
+      ],
+      "path_found": "usa --blockpositionindex--> cuba --relstudents--> uk",
+      "path_relation_matches_query": true,
+      "reasoning": "The path usa --blockpositionindex--> cuba --relstudents--> uk closely matches the query relation 'embassy'.",
+      "failure_diagnosis": "RotatE missed the strong signal from the'relstudents' relation, which is a key relation between USA and UK."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "uk",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high overlap with true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "independence",
+        "relintergovorgs",
+        "relstudents",
+        "reltourism",
+        "students",
+        "tourism3",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|relngo|cuba",
+    "true_tail": "cuba",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'cuba' shares the'reldiplomacy' relation with 'indonesia'"
+      ],
+      "shared_relations": [
+        "reldiplomacy"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "severdiplomatic"
+      ],
+      "path_found": "indonesia --commonbloc1--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'commonbloc1', which is semantically related to the query relation'relngo'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc1' relation between Indonesia and Cuba."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.25,
+      "quality_score": 0.25,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "negativebehavior",
+        "nonviolentbehavior",
+        "reldiplomacy",
+        "severdiplomatic"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "negativebehavior",
+        "nonviolentbehavior",
+        "reldiplomacy",
+        "severdiplomatic"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "negativebehavior",
+        "nonviolentbehavior",
+        "reldiplomacy",
+        "severdiplomatic"
+      ],
+      "only_tail_has": [
+        "negativebehavior",
+        "nonviolentbehavior",
+        "reldiplomacy",
+        "severdiplomatic"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "negativebehavior",
+        "nonviolentbehavior",
+        "reldiplomacy",
+        "severdiplomatic"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|officialvisits|indonesia",
+    "true_tail": "indonesia",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'indonesia' shares the 'officialvisits' relation with 'china'"
+      ],
+      "shared_relations": [
+        "pprotests",
+        "economicaid",
+        "negativebehavior",
+        "accusation"
+      ],
+      "failure_diagnosis": "The model likely failed due to insufficient emphasis on the unique shared relation 'officialvisits' between 'china' and 'indonesia'."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "officialvisits",
+        "accusation"
+      ],
+      "path_found": "china --accusation--> indonesia",
+      "path_relation_matches_query": false,
+      "reasoning": "The only_tail_has relation 'accusation' provides the primary signal, but the path uses a related relation 'accusation' instead of the query relation 'officialvisits'.",
+      "failure_diagnosis": "RotatE missed the direct 'accusation' relation between China and Indonesia, which is the only_tail_has signal."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "economicaid",
+        "negativebehavior",
+        "pprotests"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "economicaid",
+        "negativebehavior",
+        "pprotests"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "economicaid",
+        "negativebehavior",
+        "pprotests"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.25,
+      "quality_score": 0.188,
+      "contamination": 0.5,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [
+        "officialvisits"
+      ],
+      "agent_relations": [
+        "accusation",
+        "officialvisits"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "economicaid",
+        "negativebehavior",
+        "pprotests"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "accusation",
+        "economicaid",
+        "negativebehavior",
+        "pprotests"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|reldiplomacy|egypt",
+    "true_tail": "egypt",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "The only entity with the relation'reldiplomacy' is Egypt based on the evidence provided."
+      ],
+      "shared_relations": [
+        "reldiplomacy"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized UK over Egypt due to a lower score but should have focused on the unique shared relation'reldiplomacy'."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy"
+      ],
+      "path_found": "burma --commonbloc1--> china --reldiplomacy--> egypt",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation'reldiplomacy' is used in both the query and the identified path.",
+      "failure_diagnosis": "RotatE missed the direct connection between 'burma' and 'egypt' through the 'commonbloc1' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "reldiplomacy"
+      ],
+      "agent_relations": [
+        "reldiplomacy"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "reldiplomacy"
+      ],
+      "agent_relations": [
+        "reldiplomacy"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a quality score of 0.0 and did not overlap with the true separating relations.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|timesinceally|brazil",
+    "true_tail": "brazil",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.85,
+      "evidence": [
+        "The only entity with the shared relation 'blockpositionindex' with China is Brazil."
+      ],
+      "shared_relations": [
+        "blockpositionindex"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized unrelated shared relations over the specific blockpositionindex relation."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex"
+      ],
+      "path_found": "china --blockpositionindex--> brazil",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'blockpositionindex' is semantically similar to 'timesinceally', and it directly connects China to Brazil.",
+      "failure_diagnosis": "RotatE failed to recognize the 'blockpositionindex' relation as a strong signal for the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.85
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a quality score of 0.0 and did not overlap with the true separating relations.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|relintergovorgs|cuba",
+    "true_tail": "cuba",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'uk' has relations like treaties, ngoorgs3, embassy, relbooktranslations, reltreaties, dependent, reldiplomacy, relintergovorgs with Jordan, but 'cuba' does not have any such relations with Jordan."
+      ],
+      "shared_relations": [
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized UK over Cuba due to a higher embedding similarity score for UK."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "relintergovorgs"
+      ],
+      "path_found": "jordan --commonbloc1--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' is semantically equivalent to'relintergovorgs', and both connect Jordan to Cuba.",
+      "failure_diagnosis": "RotatE missed the strong signal from the 'commonbloc1' relation, which directly connects Jordan to Cuba."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.5,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "commonbloc1",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had no overlap with the true separating relations and a quality score of 0.0, indicating it provided no useful information.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "cuba|reldiplomacy|egypt",
+    "true_tail": "egypt",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'egypt' shares the 'commonbloc1' relation with 'cuba'"
+      ],
+      "shared_relations": [
+        "embassy",
+        "reltreaties",
+        "intergovorgs3",
+        "independence",
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized the 'uk' over 'egypt' due to a lower embedding similarity score despite sharing more relevant relations."
+    },
+    "agent_b": {
+      "prediction": "egypt",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "embassy",
+        "reltreaties"
+      ],
+      "path_found": "cuba --commonbloc1--> egypt",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'commonbloc1' relation, which is semantically equivalent to the query relation'reldiplomacy'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc1' relation between Cuba and Egypt."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "independence",
+        "intergovorgs3",
+        "reltreaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "independence",
+        "intergovorgs3",
+        "reltreaties"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "independence",
+        "intergovorgs3",
+        "reltreaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.6,
+      "quality_score": 0.6,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc1",
+        "embassy",
+        "reltreaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "embassy",
+        "reltreaties"
+      ],
+      "only_tail_has": [
+        "commonbloc1",
+        "embassy",
+        "independence",
+        "intergovorgs3",
+        "reltreaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "egypt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher quality score and relevant overlapping relations.",
+      "selected_relations": [
+        "commonbloc1",
+        "embassy",
+        "reltreaties"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "ussr|blockpositionindex|burma",
+    "true_tail": "burma",
+    "model_rank": 12,
+    "agent_a": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'burma' is more similar to the head 'ussr' based on shared relations."
+      ],
+      "shared_relations": [
+        "reldiplomacy",
+        "conferences"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of the 'blockpositionindex' relation with USA, which is not shared with Burma."
+    },
+    "agent_b": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy",
+        "conferences",
+        "blockpositionindex"
+      ],
+      "path_found": "ussr --blockpositionindex--> burma",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'blockpositionindex'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path from 'ussr' to 'burma' using the 'blockpositionindex' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.833,
+      "contamination": 0.333,
+      "overlap_tail": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "overlap_pred": [
+        "blockpositionindex"
+      ],
+      "agent_relations": [
+        "blockpositionindex",
+        "conferences",
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "burma",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its higher quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "conferences",
+        "reldiplomacy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|negativecomm|china",
+    "true_tail": "china",
+    "model_rank": 7,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The model should prioritize the primary signal of shared relations, which indicates that 'usa' has fewer relevant relations compared to 'china'."
+      ],
+      "shared_relations": [
+        "negativecomm",
+        "duration",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized relations that are less relevant to the query."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "negativecomm",
+        "accusation"
+      ],
+      "path_found": "indonesia --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The 'accusation' relation between Indonesia and China is the strongest signal.",
+      "failure_diagnosis": "RotatE likely missed the direct accusation relation between Indonesia and China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 0.9,
+      "contamination": 0.2,
+      "overlap_tail": [
+        "duration",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "overlap_pred": [
+        "negativecomm"
+      ],
+      "agent_relations": [
+        "duration",
+        "negativecomm",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "only_tail_has": [
+        "duration",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.5,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "negativecomm"
+      ],
+      "agent_relations": [
+        "accusation",
+        "negativecomm"
+      ],
+      "only_tail_has": [
+        "duration",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with true separating relationships.",
+      "selected_relations": [
+        "duration",
+        "officialvisits",
+        "students",
+        "violentactions"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "uk|timesinceally|cuba",
+    "true_tail": "cuba",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'cuba' has more shared relations with the head entity 'uk' (3) compared to 'usa' (2)."
+      ],
+      "shared_relations": [
+        "conferences",
+        "unweightedunvote",
+        "commonbloc0"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over Cuba due to a lower but still significant embedding similarity score."
+    },
+    "agent_b": {
+      "prediction": "cuba",
+      "confidence": 0.95,
+      "key_relations": [
+        "timesinceally",
+        "commonbloc0"
+      ],
+      "path_found": "uk --commonbloc0--> cuba",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'timesinceally' through the 'commonbloc0' relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc0' relation between UK and Cuba."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc0",
+        "conferences",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc0",
+        "conferences",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "commonbloc0",
+        "conferences",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.333,
+      "quality_score": 0.333,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc0"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc0",
+        "timesinceally"
+      ],
+      "only_tail_has": [
+        "commonbloc0",
+        "conferences",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "cuba",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its higher quality score and overlap with the true separating relationships.",
+      "selected_relations": [
+        "commonbloc0",
+        "conferences",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "cuba|reldiplomacy|china",
+    "true_tail": "china",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "The UK has more shared relations but does not have the specific 'commonbloc2','relexports', 'independence', and 'embassy' relations with Cuba which 'China' has."
+      ],
+      "shared_relations": [
+        "commonbloc2",
+        "relexports",
+        "independence",
+        "embassy"
+      ],
+      "failure_diagnosis": "The model prioritized general diplomatic relations over specific economic and political ties."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "relexports",
+        "independence",
+        "embassy",
+        "reldiplomacy"
+      ],
+      "path_found": "cuba --commonbloc2--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the query relation'reldiplomacy' and the only_tail_has relation 'commonbloc2'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'commonbloc2' relation, which is the only relation connecting Cuba and China."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.9,
+      "contamination": 0.2,
+      "overlap_tail": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "overlap_pred": [
+        "reldiplomacy"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "reldiplomacy",
+        "relexports"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its higher quality score and complete overlap with the true separating relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "embassy",
+        "independence",
+        "relexports"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|commonbloc2|indonesia",
+    "true_tail": "indonesia",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "indonesia",
+      "confidence": 0.8,
+      "evidence": [
+        "The correct tail entity 'indonesia' has no shared relations with 'jordan', while 'india' has several shared relations including'relngo', 'ngoorgs3', 'embassy', 'commonbloc2', 'exports3', and'relexports'. Given that the model ranks 'india' higher than 'indonesia', it suggests a misalignment in the embedding space."
+      ],
+      "shared_relations": [
+        "relngo",
+        "ngoorgs3",
+        "embassy",
+        "commonbloc2",
+        "exports3",
+        "relexports"
+      ],
+      "failure_diagnosis": "The model's prediction of 'india' over 'indonesia' indicates a misalignment in the embedding space, likely due to the presence of multiple shared relations between 'india' and 'jordan'."
+    },
+    "agent_b": {
+      "prediction": "indonesia",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2"
+      ],
+      "path_found": "jordan --commonbloc2--> burma --commonbloc2--> indonesia",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc2' is used in both the query and the path, making it a strong match.",
+      "failure_diagnosis": "RotatE likely missed the direct connection through 'commonbloc2' as it did not fully capture the relation-specific path."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "ngoorgs3",
+        "relexports",
+        "relngo"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "exports3",
+        "ngoorgs3",
+        "relexports",
+        "relngo"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.8
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2"
+      ],
+      "agent_relations": [
+        "commonbloc2"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "indonesia",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had no overlap with the true separating relationships.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|intergovorgs3|india",
+    "true_tail": "india",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'india' shares the 'accusation' relation with 'china'"
+      ],
+      "shared_relations": [
+        "accusation"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant shared relations over the primary signal of shared 'accusation' between 'china' and 'india'."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation"
+      ],
+      "path_found": "china --accusation--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'accusation' is the only one that directly connects China to India.",
+      "failure_diagnosis": "RotatE likely did not sufficiently weight the 'accusation' relation as the primary signal."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.125,
+      "quality_score": 0.125,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "pprotests",
+        "timesincewar",
+        "violentactions",
+        "warning"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.125,
+      "quality_score": 0.125,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc1",
+        "militaryactions",
+        "negativebehavior",
+        "pprotests",
+        "timesincewar",
+        "violentactions",
+        "warning"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had the highest quality score among the two agents.",
+      "selected_relations": [
+        "accusation"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "india|relintergovorgs|brazil",
+    "true_tail": "brazil",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "The model incorrectly prioritized 'usa' over 'brazil' due to the presence of multiple relations unique to 'usa' that do not exist between 'india' and 'brazil'."
+      ],
+      "shared_relations": [
+        "commonbloc1"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of relations unique to 'usa' that do not exist between 'india' and 'brazil', leading to a lower score for the correct answer."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc1",
+        "relintergovorgs"
+      ],
+      "path_found": "india --commonbloc1--> brazil",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' is semantically similar to'relintergovorgs', and it directly connects India to Brazil.",
+      "failure_diagnosis": "RotatE missed the strong signal from the 'commonbloc1' relation, which indicates a common bloc association between India and Brazil."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.5,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "commonbloc1",
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a quality score of 0.0 and did not overlap with the true separating relations.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "cuba|reltreaties|uk",
+    "true_tail": "uk",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "uk",
+      "confidence": 0.95,
+      "evidence": [
+        "'uk' is the most similar entity to the head 'cuba' in terms of shared relations and embedding similarity scores."
+      ],
+      "shared_relations": [
+        "intergovorgs",
+        "boycottembargo",
+        "treaties",
+        "weightedunvote",
+        "exports3",
+        "reldiplomacy",
+        "unweightedunvote",
+        "commonbloc0",
+        "timesinceally"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations from India over the more specific and relevant relations from UK."
+    },
+    "agent_b": {
+      "prediction": "uk",
+      "confidence": 0.95,
+      "key_relations": [
+        "boycottembargo",
+        "treaties"
+      ],
+      "path_found": "cuba --boycottembargo--> uk",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the query relation'reltreaties' which is semantically similar to 'treaties'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'boycottembargo' and 'treaties' relations."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "boycottembargo",
+        "commonbloc0",
+        "exports3",
+        "intergovorgs",
+        "reldiplomacy",
+        "timesinceally",
+        "treaties",
+        "unweightedunvote",
+        "weightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "boycottembargo",
+        "commonbloc0",
+        "exports3",
+        "intergovorgs",
+        "reldiplomacy",
+        "timesinceally",
+        "treaties",
+        "unweightedunvote",
+        "weightedunvote"
+      ],
+      "only_tail_has": [
+        "boycottembargo",
+        "commonbloc0",
+        "exports3",
+        "intergovorgs",
+        "reldiplomacy",
+        "timesinceally",
+        "treaties",
+        "unweightedunvote",
+        "weightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.222,
+      "quality_score": 0.222,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "boycottembargo",
+        "treaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "boycottembargo",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "boycottembargo",
+        "commonbloc0",
+        "exports3",
+        "intergovorgs",
+        "reldiplomacy",
+        "timesinceally",
+        "treaties",
+        "unweightedunvote",
+        "weightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "uk",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A was trusted due to its high quality score and significant overlap with the true separating relations.",
+      "selected_relations": [
+        "boycottembargo",
+        "commonbloc0",
+        "exports3",
+        "intergovorgs",
+        "reldiplomacy",
+        "timesinceally",
+        "treaties",
+        "unweightedunvote",
+        "weightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "ussr|independence|china",
+    "true_tail": "china",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'uk' has the relation 'independence' with 'ussr', but 'china' shares more relevant relations such as 'commonbloc2' and 'accusation'."
+      ],
+      "shared_relations": [
+        "accusation",
+        "commonbloc2"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized less relevant relations over more specific ones."
+    },
+    "agent_b": {
+      "prediction": "china",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc2",
+        "accusation",
+        "negativecomm"
+      ],
+      "path_found": "ussr --accusation--> china",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'accusation', which is semantically equivalent to the query relation 'independence'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'accusation' relation between 'ussr' and 'china'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.667,
+      "quality_score": 0.667,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc2"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "negativecomm"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "commonbloc2",
+        "negativecomm"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "commonbloc2",
+        "negativecomm"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "commonbloc2",
+        "negativecomm"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "china",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "accusation",
+        "commonbloc2",
+        "negativecomm"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "indonesia|embassy|burma",
+    "true_tail": "burma",
+    "model_rank": 13,
+    "agent_a": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "evidence": [
+        "The model incorrectly prioritized 'usa' over 'burma' due to shared relations like 'blockpositionindex', 'boycottembargo', and others, which are unique to 'usa' and not 'burma'."
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "boycottembargo",
+        "negativecomm",
+        "booktranslations",
+        "embassy",
+        "unofficalacts",
+        "commonbloc1",
+        "intergovorgs",
+        "accusation",
+        "ngoorgs3",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "exports3",
+        "intergovorgs3",
+        "relexports"
+      ],
+      "failure_diagnosis": "The model was misled by the shared relations that are more prevalent with 'usa' than with 'burma'."
+    },
+    "agent_b": {
+      "prediction": "burma",
+      "confidence": 0.95,
+      "key_relations": [
+        "embassy"
+      ],
+      "path_found": "indonesia --embassy--> burma",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'embassy' is the same as the query relation and directly connects Indonesia to Burma.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between Indonesia and Burma for the 'embassy' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.933,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations",
+        "boycottembargo",
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "intergovorgs",
+        "intergovorgs3",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "relexports"
+      ],
+      "agent_relations": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations",
+        "boycottembargo",
+        "commonbloc1",
+        "embassy",
+        "exports3",
+        "intergovorgs",
+        "intergovorgs3",
+        "negativebehavior",
+        "negativecomm",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "relexports",
+        "unofficalacts"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "embassy"
+      ],
+      "agent_relations": [
+        "embassy"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "burma",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was not trusted as it had a quality score of 0.0 and did not overlap with the correct separating relations.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "uk|relngo|usa",
+    "true_tail": "usa",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "usa",
+      "confidence": 0.95,
+      "evidence": [
+        "usa is most similar to uk in terms of embedding similarity and shared relations"
+      ],
+      "shared_relations": [
+        "officialvisits",
+        "ngoorgs3",
+        "relemigrants",
+        "militaryalliance",
+        "commonbloc2",
+        "emigrants3",
+        "nonviolentbehavior",
+        "reltreaties",
+        "students",
+        "eemigrants",
+        "relexports",
+        "relintergovorgs",
+        "tourism3"
+      ],
+      "failure_diagnosis": "The model likely failed due to insufficient distinguishing features between Egypt and USA in the embedding space."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.95,
+      "key_relations": [
+        "officialvisits",
+        "ngoorgs3",
+        "relemigrants",
+        "militaryalliance",
+        "commonbloc2",
+        "emigrants3",
+        "nonviolentbehavior",
+        "reltreaties",
+        "students",
+        "eemigrants",
+        "relexports",
+        "relintergovorgs",
+        "tourism3"
+      ],
+      "path_found": "uk --commonbloc1--> egypt --timesincewar--> uk",
+      "path_relation_matches_query": false,
+      "reasoning": "The key relations between UK and USA are more numerous and closely match the query relation'relngo'.",
+      "failure_diagnosis": "RotatE missed the stronger signal from the 'commonbloc1' relation between UK and Egypt, which indirectly points to USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "only_tail_has": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "usa",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher overlap with the true separating relationships.",
+      "selected_relations": [
+        "commonbloc2",
+        "eemigrants",
+        "emigrants3",
+        "militaryalliance",
+        "ngoorgs3",
+        "nonviolentbehavior",
+        "officialvisits",
+        "relemigrants",
+        "relexports",
+        "relintergovorgs",
+        "reltreaties",
+        "students",
+        "tourism3"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|commonbloc0|brazil",
+    "true_tail": "brazil",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "evidence": [
+        "The only entity with the shared relation 'commonbloc0' with China is Brazil."
+      ],
+      "shared_relations": [
+        "commonbloc0"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over Brazil due to additional relations that are not the primary signal."
+    },
+    "agent_b": {
+      "prediction": "brazil",
+      "confidence": 0.95,
+      "key_relations": [
+        "commonbloc0"
+      ],
+      "path_found": "china --commonbloc0--> brazil",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation 'commonbloc0', which is the only relation connecting China to Brazil.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between China and Brazil through the 'commonbloc0' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "commonbloc0"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc0"
+      ],
+      "agent_relations": [
+        "commonbloc0"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "brazil",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had no overlap with the true separating relations and a quality score of 0.0, indicating it provided no useful information.",
+      "selected_relations": [],
+      "failure_type": "structural_gap"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "israel|booktranslations|ussr",
+    "true_tail": "ussr",
+    "model_rank": 10,
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "The only_tail_has relations between 'israel' and 'ussr' include 'unweightedunvote' and 'embassy', which are not present between 'israel' and 'usa'."
+      ],
+      "shared_relations": [
+        "commonbloc1",
+        "commonbloc2"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of multiple shared relations and the higher score of 'usa', despite the primary signal being the unique relations between 'israel' and 'ussr'."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "key_relations": [
+        "booktranslations",
+        "unweightedunvote",
+        "embassy"
+      ],
+      "path_found": "israel --booktranslations--> uk --booktranslations--> usa --booktranslations--> ussr",
+      "path_relation_matches_query": false,
+      "reasoning": "The relation 'booktranslations' is used in the path and closely matches the query relation.",
+      "failure_diagnosis": "RotatE failed to prioritize the direct relation 'booktranslations' between Israel and USSR over the indirect relations through other countries."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc1",
+        "commonbloc2"
+      ],
+      "only_tail_has": [
+        "embassy",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.833,
+      "contamination": 0.333,
+      "overlap_tail": [
+        "embassy",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [
+        "booktranslations"
+      ],
+      "agent_relations": [
+        "booktranslations",
+        "embassy",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "embassy",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a higher quality score and overlapping relations with the correct separating relation.",
+      "selected_relations": [
+        "embassy",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|relexports|ussr",
+    "true_tail": "ussr",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "evidence": [
+        "The UK has more shared relations with China than USSR in the local subgraph",
+        "The model incorrectly prioritized UK over USSR based on similarity scores and shared relations"
+      ],
+      "shared_relations": [
+        "relexports"
+      ],
+      "failure_diagnosis": "The model failed to recognize the primary signal of shared relations between China and USSR."
+    },
+    "agent_b": {
+      "prediction": "ussr",
+      "confidence": 0.95,
+      "key_relations": [
+        "relexports",
+        "boycottembargo",
+        "embassy",
+        "commonbloc2",
+        "tourism",
+        "accusation"
+      ],
+      "path_found": "china --accusation--> ussr",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation'relexports' and the only_tail_has relations 'boycottembargo', 'embassy', 'commonbloc2', 'tourism', and 'accusation'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'accusation' relation between China and USSR."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relexports"
+      ],
+      "agent_relations": [
+        "relexports"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 0.917,
+      "contamination": 0.167,
+      "overlap_tail": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "overlap_pred": [
+        "relexports"
+      ],
+      "agent_relations": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "relexports",
+        "tourism"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "ussr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its high quality score and relevant overlapping relations with the correct triple.",
+      "selected_relations": [
+        "accusation",
+        "boycottembargo",
+        "commonbloc2",
+        "embassy",
+        "tourism"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "burma|ngoorgs3|israel",
+    "true_tail": "israel",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'israel' has the'reldiplomacy' relation with 'burma'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized the'relngo', 'ngoorgs3', 'weightedunvote','relintergovorgs', and 'commonbloc1' relations of 'netherlands' over the direct'reldiplomacy' relation between 'burma' and 'israel'."
+    },
+    "agent_b": {
+      "prediction": "israel",
+      "confidence": 0.95,
+      "key_relations": [
+        "reldiplomacy"
+      ],
+      "path_found": "burma --commonbloc1--> china --reldiplomacy--> israel",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation'reldiplomacy' directly connects burma to israel.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the'reldiplomacy' relation between burma and israel."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "reldiplomacy"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "reldiplomacy"
+      ],
+      "only_tail_has": [
+        "reldiplomacy"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "israel",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted because it had a higher quality score and an overlap with the true separating relation.",
+      "selected_relations": [
+        "reldiplomacy"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "uk|ngo|poland",
+    "true_tail": "poland",
+    "model_rank": 6,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity 'poland' has more shared relations with 'uk' than 'usa'",
+        "The model incorrectly prioritized 'usa' over 'poland' due to lower embedding similarity scores"
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "unweightedunvote",
+        "conferences",
+        "timesinceally"
+      ],
+      "failure_diagnosis": "The model failed to recognize the stronger connection between 'uk' and 'poland' based on shared relations."
+    },
+    "agent_b": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "path_found": "uk --blockpositionindex--> poland",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the 'ngo' relation, which is semantically equivalent to the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' and 'commonbloc0' relations between UK and Poland."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc0",
+        "conferences",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "conferences",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc0",
+        "conferences",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.4,
+      "quality_score": 0.4,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc0",
+        "conferences",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "A",
+      "confidence": 0.95,
+      "reason": "Agent A had a higher quality score and overlapping relations with the correct triple, indicating its reliability.",
+      "selected_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "conferences",
+        "timesinceally",
+        "unweightedunvote"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "china|intergovorgs3|usa",
+    "true_tail": "usa",
+    "model_rank": 4,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.7,
+      "evidence": [
+        "The model prioritized shared relations over embedding similarity scores."
+      ],
+      "shared_relations": [
+        "treaties",
+        "embassy",
+        "commonbloc2",
+        "intergovorgs3",
+        "reldiplomacy",
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized shared relations with Poland over the direct relation with USA."
+    },
+    "agent_b": {
+      "prediction": "usa",
+      "confidence": 0.95,
+      "key_relations": [
+        "accusation",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0",
+        "aidenemy"
+      ],
+      "path_found": "china --accusation--> usa",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'accusation', which is semantically related to the query relation 'intergovorgs3'.",
+      "failure_diagnosis": "RotatE missed the strong signal from the 'accusation' relation between China and USA."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs3",
+        "reldiplomacy",
+        "relintergovorgs",
+        "treaties"
+      ],
+      "agent_relations": [
+        "commonbloc2",
+        "embassy",
+        "intergovorgs3",
+        "reldiplomacy",
+        "relintergovorgs",
+        "treaties"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0",
+        "duration",
+        "eemigrants",
+        "militaryactions",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "relbooktranslations",
+        "timesincewar",
+        "violentactions",
+        "warning"
+      ],
+      "prediction_correct": false,
+      "confidence": 0.7
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.357,
+      "quality_score": 0.357,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0"
+      ],
+      "only_tail_has": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0",
+        "duration",
+        "eemigrants",
+        "militaryactions",
+        "negativebehavior",
+        "nonviolentbehavior",
+        "relbooktranslations",
+        "timesincewar",
+        "violentactions",
+        "warning"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "usa",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B had a higher quality score and overlapping relations with the correct separating relation.",
+      "selected_relations": [
+        "accusation",
+        "aidenemy",
+        "blockpositionindex",
+        "booktranslations",
+        "commonbloc0"
+      ],
+      "failure_type": "similarity_confusion"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "jordan|relintergovorgs|poland",
+    "true_tail": "poland",
+    "model_rank": 11,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'uk' has relations like treaties, ngoorgs3, embassy, relbooktranslations, reltreaties, dependent, reldiplomacy, relintergovorgs with Jordan, while 'poland' does not have any such relations."
+      ],
+      "shared_relations": [
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized UK over Poland based on secondary signals rather than the primary signal of unique relations."
+    },
+    "agent_b": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "key_relations": [
+        "relintergovorgs"
+      ],
+      "path_found": "jordan --commonbloc1--> poland",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc1' is the strongest signal as it directly connects Jordan to Poland.",
+      "failure_diagnosis": "RotatE failed to recognize the 'commonbloc1' relation as the primary signal for the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "relintergovorgs"
+      ],
+      "agent_relations": [
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was not trusted because it had a quality score of 0.0 and did not overlap with the correct relationships.",
+      "selected_relations": [],
+      "failure_type": "both_failed"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "brazil|intergovorgs|poland",
+    "true_tail": "poland",
+    "model_rank": 9,
+    "agent_a": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "evidence": [
+        "Only 'poland' shares the 'blockpositionindex' and 'commonbloc0' relations with 'brazil'"
+      ],
+      "shared_relations": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized USA over POLAND due to a lower embedding similarity score despite sharing more relevant relations."
+    },
+    "agent_b": {
+      "prediction": "poland",
+      "confidence": 0.95,
+      "key_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "path_found": "brazil --blockpositionindex--> poland",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the relation 'blockpositionindex', which is semantically related to 'intergovorgs'.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'blockpositionindex' relation between Brazil and Poland."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.667,
+      "quality_score": 0.667,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc0"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 1.0,
+      "quality_score": 1.0,
+      "contamination": 0.0,
+      "overlap_tail": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "overlap_pred": [],
+      "agent_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "only_tail_has": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "poland",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B was trusted due to its higher quality score and overlap with true separating relations.",
+      "selected_relations": [
+        "blockpositionindex",
+        "commonbloc0",
+        "reltreaties"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  }
+]
