@@ -1,0 +1,56 @@
+Feature shapes:
+X_val : (80, 19)
+X_held: (66, 19)
+
+Routing label distribution (val):
+  A: 20
+  B: 60
+
+Correctness distribution (val):
+  1: 80
+
+Correctness distribution (held):
+  0: 2
+  1: 64
+
+Router CV: [0.938 1.    1.    1.    0.875]  mean=0.963
+
+=============================================
+HONEST ROUTER — held-out
+=============================================
+Naive majority:    0.727
+XGBoost held-out:  0.985
+Improvement:       +0.258
+
+All val cases correct — correctness model skipped
+
+Top features (routing):
+  quality_delta        0.365  ██████████████
+  a_trusted            0.241  █████████
+  contam_delta         0.113  ████
+  a_quality            0.110  ████
+  cited_delta          0.078  ███
+  b_quality            0.043  █
+  b_contam             0.027  █
+  b_trusted            0.013
+  b_cited              0.008
+  a_cited              0.001
+  a_conf               0.000
+  b_conf               0.000
+  conf_delta           0.000
+  a_contam             0.000
+  b_path_found         0.000
+  b_hub_risk           0.000
+  b_rel_match          0.000
+  true_rank            0.000
+  hop_type             0.000
+
+Saved: xgb_router_honest.json
+              precision    recall  f1-score   support
+
+           A       0.95      1.00      0.97        18
+           B       1.00      0.98      0.99        48
+
+    accuracy                           0.98        66
+   macro avg       0.97      0.99      0.98        66
+weighted avg       0.99      0.98      0.98        66

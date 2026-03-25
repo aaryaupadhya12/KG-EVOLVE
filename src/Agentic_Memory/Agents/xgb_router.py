@@ -205,3 +205,11 @@ for feat, imp in importance.items():
 # ─────────────────────────────────────────────
 router.save_model("xgb_router_honest.json")
 print("\nSaved: xgb_router_honest.json")
+
+from sklearn.metrics import classification_report
+
+y_pred = router.predict(X_held)
+print(classification_report(
+    y_held_route, y_pred,
+    target_names=le.classes_
+))
