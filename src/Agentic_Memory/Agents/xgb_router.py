@@ -5,115 +5,80 @@ import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 
-# ─────────────────────────────────────────────
-# CONFIG
-# ─────────────────────────────────────────────
 HOP_MAP = {"single": 0, "multi": 1, "none": 2}
 
-# ─────────────────────────────────────────────
-# FEATURE EXTRACTOR (UPGRADED)
-# ─────────────────────────────────────────────
-def extract_lower_r(record: dict):
+def extract_honest(record: dict):
+    sa = record.get("score_a", {})
+    sb = record.get("score_b", {})
 
-    if "score_a" in record:
-        sa = record["score_a"]
+    a_quality  = float(sa.get("quality_score",  0.0))
+    b_quality  = float(sb.get("quality_score",  0.0))
+    a_contam   = float(sa.get("contamination",  0.0))
+    b_contam   = float(sb.get("contamination",  0.0))
+    a_cited    = len(sa.get("agent_relations",  []))
+    b_cited    = len(sb.get("agent_relations",  []))
+    a_conf     = float(record.get("agent_a", {}).get("confidence", 0.0))
+    b_conf     = float(record.get("agent_b", {}).get("confidence", 0.0))
 
-        only_tail = sa.get("only_tail_has", [])
-        only_pred = sa.get("overlap_pred", [])
-        shared    = []
+    b_path     = int(bool(
+        record.get("agent_b", {}).get("path_found") and
+        record.get("agent_b", {}).get("path_found") != "none"
+    ))
+    b_rel_match = int(bool(
+        record.get("agent_b", {})
+              .get("path_relation_matches_query", False)
+    ))
 
-        hop_type  = record.get("aggregator", {}).get("failure_type", "multi")
-        hop_count = 1
+    true_rank  = int(record.get("model_rank",
+                    record.get("true_rank", 13)))
 
-        true_rank  = int(record.get("model_rank", 13))
-        score_true = 0.0
-        score_pred = 0.0
+    hop_raw    = record.get("hop_type",
+                 record.get("aggregator", {})
+                       .get("failure_type", "multi"))
+    hop_type   = HOP_MAP.get(str(hop_raw), 1)
 
-    else:
-        only_tail = record.get("only_tail_has", [])
-        only_pred = record.get("only_pred_has", [])
-        shared    = record.get("shared_relations", [])
+    quality_delta = a_quality - b_quality
+    contam_delta  = a_contam  - b_contam
+    conf_delta    = a_conf    - b_conf
+    cited_delta   = a_cited   - b_cited
 
-        hop_type  = record.get("hop_type", "multi")
-        hop_count = float(record.get("hop_count", 1))
-
-        true_rank  = int(record.get("true_rank", 13))
-        score_true = float(record.get("score_true", 0.0))
-        score_pred = float(record.get("score_predicted", 0.0))
-
-    # ── base counts ───────────────────────────
-    only_tail_count = len(only_tail)
-    only_pred_count = len(only_pred)
-    shared_count    = len(shared)
-
-    total = only_tail_count + only_pred_count + shared_count + 1
-
-    # ── derived features (CRITICAL) ───────────
-    signal_ratio = only_tail_count / max(only_tail_count + only_pred_count, 1)
+    a_trusted  = int(a_quality > 0.6 and a_contam < 0.3)
+    b_trusted  = int(b_quality > 0.6 and b_contam < 0.3)
+    b_hub_risk = int(b_conf > 0.5 and not b_rel_match)
 
     return {
-        # original
-        "true_rank":       true_rank,
-        "score_gap":       score_pred - score_true,
-        "only_tail_count": only_tail_count,
-        "only_pred_count": only_pred_count,
-        "shared_count":    shared_count,
-        "signal_exists":   int(only_tail_count > 0),
-        "signal_ratio":    signal_ratio,
-        "hop_type":        HOP_MAP.get(str(hop_type), 1),
-        "hop_count":       hop_count,
-
-        # ── NEW FEATURES ───────────────────────
-        "pred_density": only_pred_count / total,
-        "tail_density": only_tail_count / total,
-
-        "imbalance": only_tail_count - only_pred_count,
-        "abs_imbalance": abs(only_tail_count - only_pred_count),
-
-        "log_pred": np.log1p(only_pred_count),
-        "log_tail": np.log1p(only_tail_count),
-
-        "rank_x_signal": true_rank * only_tail_count,
-        "gap_x_pred": (score_pred - score_true) * only_pred_count,
-
-        "noise_flag": int(only_pred_count > only_tail_count),
-        "clean_flag": int(only_tail_count > only_pred_count),
-
-        "confidence_proxy": only_tail_count / (only_pred_count + 1),
+        "a_quality":     a_quality,
+        "b_quality":     b_quality,
+        "quality_delta": quality_delta,
+        "a_contam":      a_contam,
+        "b_contam":      b_contam,
+        "contam_delta":  contam_delta,
+        "a_conf":        a_conf,
+        "b_conf":        b_conf,
+        "conf_delta":    conf_delta,
+        "a_cited":       a_cited,
+        "b_cited":       b_cited,
+        "cited_delta":   cited_delta,
+        "b_path_found":  b_path,
+        "b_rel_match":   b_rel_match,
+        "b_hub_risk":    b_hub_risk,
+        "a_trusted":     a_trusted,
+        "b_trusted":     b_trusted,
+        "true_rank":     true_rank,
+        "hop_type":      hop_type,
     }
 
-
-# ─────────────────────────────────────────────
-# LABELS
-# ─────────────────────────────────────────────
-def get_label_routing(record: dict):
+def get_label_routing(record):
     return (
-        record["aggregator"]
-        .get("chosen_agent", "A")
-        .replace("Agent", "")
-        .strip()
+        record.get("aggregator", {})
+              .get("chosen_agent", "A")
+              .replace("Agent", "")
+              .strip()
     )
 
-def get_label_tier(record: dict):
-    if "score_a" in record:
-        sa = record["score_a"]
-        if len(sa.get("only_tail_has", [])) == 0:
-            return 0
-        if len(sa.get("overlap_tail", [])) == 0:
-            return 1
-        if sa.get("contamination", 0) > 0:
-            return 2
-        return 3
-    else:
-        only_tail = record.get("only_tail_has", [])
-        if len(only_tail) == 0:
-            return 0
-        return 1 if record.get("hard_failure", True) else 3
+def get_label_correct(record):
+    return int(record.get("final_correct", False))
 
-
-# ─────────────────────────────────────────────
-# LOAD
-# ─────────────────────────────────────────────
 def load_safe(path):
     if not os.path.exists(path):
         print(f"NOT FOUND: {path}")
@@ -121,44 +86,61 @@ def load_safe(path):
     with open(path) as f:
         raw = json.load(f)
     records = list(raw.values()) if isinstance(raw, dict) else raw
-    return [r for r in records if isinstance(r, dict)]
+    return [
+        r for r in records
+        if isinstance(r, dict)
+        and "aggregator" in r
+        and "score_a" in r
+        and "score_b" in r
+    ]
 
-
+# ─────────────────────────────────────────────
+# LOAD
+# ─────────────────────────────────────────────
 val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\val_hard_results.json")
 held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\held_out_results.json")
 
 print(f"Val records:  {len(val_results)}")
 print(f"Held records: {len(held_results)}")
 
-# ─────────────────────────────────────────────
-# BUILD MATRICES
-# ─────────────────────────────────────────────
-X_val  = pd.DataFrame([extract_lower_r(r) for r in val_results])
-X_held = pd.DataFrame([extract_lower_r(r) for r in held_results])
+X_val  = pd.DataFrame([extract_honest(r) for r in val_results])
+X_held = pd.DataFrame([extract_honest(r) for r in held_results])
 
-# stronger ablation (remove dominant signals)
-DROP_COLS = ["signal_ratio", "only_pred_count"]
-X_val_abl  = X_val.drop(columns=DROP_COLS)
-X_held_abl = X_held.drop(columns=DROP_COLS)
+print(f"\nFeature shapes:")
+print(f"X_val : {X_val.shape}")
+print(f"X_held: {X_held.shape}")
 
 le = LabelEncoder()
-y_val_route = le.fit_transform([get_label_routing(r) for r in val_results])
+y_val_route  = le.fit_transform(
+    [get_label_routing(r) for r in val_results]
+)
+y_held_route = le.transform(
+    [get_label_routing(r) for r in held_results]
+)
+y_val_correct  = np.array([get_label_correct(r) for r in val_results])
+y_held_correct = np.array([get_label_correct(r) for r in held_results])
 
-y_val_tier  = np.array([get_label_tier(r) for r in val_results])
-y_held_tier = np.array([get_label_tier(r) for r in held_results])
+print(f"\nRouting label distribution (val):")
+vals, counts = np.unique(y_val_route, return_counts=True)
+for v, c in zip(le.classes_, counts):
+    print(f"  {v}: {c}")
 
-print("\nFeature shapes:")
-print("X_val :", X_val.shape)
-print("X_held:", X_held.shape)
+print(f"\nCorrectness distribution (val):")
+for v, c in zip(*np.unique(y_val_correct, return_counts=True)):
+    print(f"  {v}: {c}")
+
+print(f"\nCorrectness distribution (held):")
+for v, c in zip(*np.unique(y_held_correct, return_counts=True)):
+    print(f"  {v}: {c}")
 
 # ─────────────────────────────────────────────
-# MODEL — ROUTER
+# ROUTER — train here before importance
 # ─────────────────────────────────────────────
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
-model = xgb.XGBClassifier(
-    n_estimators=300,
-    max_depth=5,
+router = xgb.XGBClassifier(
+    n_estimators=200,
+    max_depth=3,
     learning_rate=0.05,
     subsample=0.8,
     colsample_bytree=0.8,
@@ -166,63 +148,60 @@ model = xgb.XGBClassifier(
     random_state=42,
 )
 
-cv_full = cross_val_score(model, X_val, y_val_route, cv=cv, scoring="accuracy")
-cv_abl  = cross_val_score(model, X_val_abl, y_val_route, cv=cv, scoring="accuracy")
-
-model.fit(X_val, y_val_route)
-
-print(f"\nRouter FULL: {cv_full.mean():.3f}")
-print(f"Router ABL : {cv_abl.mean():.3f}")
-print(f"Drop       : {cv_full.mean() - cv_abl.mean():.3f}")
-
-# ─────────────────────────────────────────────
-# STRONG BASELINE (IMPORTANT)
-# ─────────────────────────────────────────────
-rule = (
-    (X_val["only_tail_count"] > X_val["only_pred_count"]) &
-    (X_val["true_rank"] <= 5)
-).astype(int)
-
-rule_acc = np.mean(rule == y_val_route)
-model_acc = np.mean(model.predict(X_val) == y_val_route)
-
-print("\nStrong baseline vs model:")
-print(f"Rule:  {rule_acc:.3f}")
-print(f"Model: {model_acc:.3f}")
-
-# ─────────────────────────────────────────────
-# TIER MODEL (TRANSFER)
-# ─────────────────────────────────────────────
-tier_model = xgb.XGBClassifier(
-    n_estimators=300,
-    max_depth=5,
-    learning_rate=0.05,
-    eval_metric="mlogloss",
-    random_state=42,
+cv_scores = cross_val_score(
+    router, X_val, y_val_route,
+    cv=cv, scoring="accuracy"
 )
 
-tier_model.fit(X_val_abl, y_val_tier)
-tier_pred = tier_model.predict(X_held_abl)
-tier_acc  = np.mean(tier_pred == y_held_tier)
+print(f"\nRouter CV: {cv_scores.round(3)}  "
+      f"mean={cv_scores.mean():.3f}")
 
-print(f"\nTier held-out accuracy: {tier_acc:.3f}")
+router.fit(X_val, y_val_route)
+
+held_acc = router.score(X_held, y_held_route)
+majority = np.bincount(y_held_route).argmax()
+naive    = np.mean(y_held_route == majority)
+
+print(f"\n{'='*45}")
+print(f"HONEST ROUTER — held-out")
+print(f"{'='*45}")
+print(f"Naive majority:    {naive:.3f}")
+print(f"XGBoost held-out:  {held_acc:.3f}")
+print(f"Improvement:       {held_acc - naive:+.3f}")
+
+# ─────────────────────────────────────────────
+# CORRECTNESS MODEL
+# ─────────────────────────────────────────────
+if len(np.unique(y_val_correct)) > 1:
+    corrector = xgb.XGBClassifier(
+        n_estimators=200,
+        max_depth=3,
+        learning_rate=0.05,
+        eval_metric="logloss",
+        random_state=42,
+    )
+    corrector.fit(X_val, y_val_correct)
+    held_corr = corrector.score(X_held, y_held_correct)
+    print(f"\nCorrectness held-out: {held_corr:.3f}")
+    corrector.save_model("xgb_correct_honest.json")
+else:
+    print("\nAll val cases correct — correctness model skipped")
 
 # ─────────────────────────────────────────────
 # FEATURE IMPORTANCE
 # ─────────────────────────────────────────────
 importance = pd.Series(
-    model.feature_importances_,
+    router.feature_importances_,
     index=X_val.columns
 ).sort_values(ascending=False)
 
-print("\nTop features:")
-for k, v in importance.items():
-    print(f"{k:<20} {v:.3f}")
+print(f"\nTop features (routing):")
+for feat, imp in importance.items():
+    bar = "█" * int(imp * 40)
+    print(f"  {feat:<20} {imp:.3f}  {bar}")
 
 # ─────────────────────────────────────────────
 # SAVE
 # ─────────────────────────────────────────────
-model.save_model("xgb_router.json")
-tier_model.save_model("xgb_tier.json")
-
-print("\nSaved models: xgb_router.json, xgb_tier.json")
+router.save_model("xgb_router_honest.json")
+print("\nSaved: xgb_router_honest.json")
