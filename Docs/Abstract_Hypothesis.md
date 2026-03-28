@@ -10,3 +10,16 @@ Validated on the Nations dataset, we show that MRR improves monotonically across
 
 
 A structured reasoning evanluation dataset comparing 2 agents on KG completion tasks, wiht fioine grained signals about reasoning quality , noise and missing information 
+
+
+Updated wrt to Agentic Mmemory 
+
+The KG usually is a static store. Our dynamic episodic memory that groows from Agent experience. We in this minimal dataset see KG link predictions , Their system has 0 memory - every query starts cold , Our accumaltion of relation triples across runs and injects that prior into future reasoning. Their agents do not disagree - there is only one reasoner , we have 2 structurally different agents who disagreemnt is the signal 
+
+The deepest differentce is teh use of PRM-800K as a dataset to build the static KG , we use it as a methadology - we use teacher student distillaton paraddigm where quality labels aer produced knowing the correct answers and enabling a learned scored that operates wihtout it at inference.
+
+We are here to demostrate that a quality scorrer aka a aggregator to be able to reason over thje mathematical prodedures over the qulity scores from the static KG itself , enabling a student - teacher distaillation training loop that produces quality labels without any answer leakage at inference , directly instatiating the PRM-8OOk methadology to a new domain that is the a reasoning domain we stand at the intesreaction of Agentic memory and LLm reeasning 
+
+We dont only baseline RotatE acoss multiple seeds , we had a system that runs without Mmeory KG-RAR where a LLM anotates it ones and we see if the new KG become sbetter  which is called as Cold start and then The delta between that and our system that is the Meemory augmented KG (MAKG) is our contribiution as the paper explcitly says that active resonin or dynamic KG is what is required 
+
+Through abilating this with the Nations dataset and then PRM-800K we have a s olida foundation , we will onyle vlaaute them based on a subset of maximum 1k examples as its a tedious process to run them forever and we would loose compute , if the hypothesis stands for PRM-800K susbset a full study will be created :) 
