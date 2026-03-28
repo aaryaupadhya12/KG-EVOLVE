@@ -78,8 +78,8 @@ def load_safe(path):
 # ─────────────────────────────────────────────
 # LOAD
 # ─────────────────────────────────────────────
-val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\Agents\json\Val_Hard\val_hard_results (6).json")
-held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\Agents\json\Held_out\held_out_results (1).json")
+val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\json\val_hard_results (9).json")
+held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\json\No_memory_held_out.json")
 
 print(f"Val records:  {len(val_results)}")
 print(f"Held records: {len(held_results)}")
@@ -240,3 +240,100 @@ always_b = sum(
     if r["aggregator"].get("chosen_agent", "").replace("Agent","").strip() == "B"
 )
 print(f"Aggregator always picks B: {always_b}/{len(held_results)}")
+
+
+from collections import Counter
+import csv
+
+print(f"\n{'='*45}")
+print(f"HYPOTHESIS VALIDATION")
+print(f"{'='*45}")
+
+# 1. Hits@1 on hard held set
+correct = sum(1 for r in held_results if r.get("final_correct"))
+print(f"\n[1] Hits@1 (hard held set)")
+print(f"    {correct}/{len(held_results)} = {correct/len(held_results):.3f}")
+print(f"    RotatE baseline: 0.000 (all rank >= 4 by construction)")
+
+# 2. Quality score distribution
+qa = [r["score_a"].get("quality_score", 0) or 0 for r in val_results]
+qb = [r["score_b"].get("quality_score", 0) or 0 for r in val_results]
+
+a_gt_b = sum(1 for a, b in zip(qa, qb) if a > b)
+b_gt_a = sum(1 for a, b in zip(qa, qb) if b > a)
+both_zero = sum(1 for a, b in zip(qa, qb) if a == 0 and b == 0)
+both_pos  = sum(1 for a, b in zip(qa, qb) if a > 0 and b > 0)
+
+print(f"\n[2] Quality score distribution (val, n={len(val_results)})")
+print(f"    Agent A mean: {sum(qa)/len(qa):.3f}  zeros: {sum(1 for q in qa if q==0)}")
+print(f"    Agent B mean: {sum(qb)/len(qb):.3f}  zeros: {sum(1 for q in qb if q==0)}")
+print(f"    A > B:        {a_gt_b}  |  B > A: {b_gt_a}  |  tied-zero: {both_zero}  |  both>0: {both_pos}")
+print(f"    Scorer discriminates: {'YES' if (a_gt_b + b_gt_a) > 0 else 'NO — degenerate labels'}")
+
+# 3. Lucky prediction rate
+lucky_a = sum(1 for r in val_results
+              if r["score_a"].get("prediction_correct")
+              and (r["score_a"].get("quality_score") or 0) == 0.0)
+lucky_b = sum(1 for r in val_results
+              if r["score_b"].get("prediction_correct")
+              and (r["score_b"].get("quality_score") or 0) == 0.0)
+
+print(f"\n[3] Lucky predictions (correct answer, quality=0.0)")
+print(f"    Agent A lucky: {lucky_a}/{len(val_results)} = {lucky_a/len(val_results):.1%}")
+print(f"    Agent B lucky: {lucky_b}/{len(val_results)} = {lucky_b/len(val_results):.1%}")
+print(f"    These are cases PRM must fix — correct answer, wrong reasoning")
+
+# 4. Failure type honesty
+ftypes = Counter(r["aggregator"].get("failure_type") for r in held_results)
+mislabelled = sum(1 for r in held_results
+                  if not r.get("final_correct")
+                  and r["aggregator"].get("failure_type") == "resolved")
+
+print(f"\n[4] Failure type distribution (held)")
+for ft, count in ftypes.most_common():
+    print(f"    {ft}: {count}")
+print(f"    Mislabelled (wrong but 'resolved'): {mislabelled}")
+
+# 5. Memory coverage ablation
+print(f"\n[5] Memory ablation")
+tsv_path = "episodic_memory.tsv"
+if not os.path.exists(tsv_path):
+    print(f"    episodic_memory.tsv not found — run writeback first")
+else:
+    memory_heads = set()
+    with open(tsv_path) as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            memory_heads.add(row["head"])
+
+    seen, unseen = [], []
+    for r in held_results:
+        triple = r.get("triple", "")
+        head = triple.replace("(","").split(",")[0].strip()
+        if head in memory_heads:
+            seen.append(r)
+        else:
+            unseen.append(r)
+
+    acc_seen   = sum(1 for r in seen   if r.get("final_correct")) / max(len(seen), 1)
+    acc_unseen = sum(1 for r in unseen if r.get("final_correct")) / max(len(unseen), 1)
+
+    print(f"    Memory TSV entities: {len(memory_heads)}")
+    print(f"    Held seen in memory:   {len(seen)}  Hits@1={acc_seen:.3f}")
+    print(f"    Held unseen in memory: {len(unseen)}  Hits@1={acc_unseen:.3f}")
+    print(f"    Memory delta: {acc_seen - acc_unseen:+.3f}")
+    if acc_seen > acc_unseen:
+        print(f"    MEMORY HELPS — seen entities score higher")
+    elif acc_seen == acc_unseen:
+        print(f"    NO DIFFERENCE — Nations too small or memory not queried")
+    else:
+        print(f"    MEMORY HURTS — check writeback quality")
+
+print(f"\n{'='*45}")
+print(f"SUMMARY FOR PAPER")
+print(f"{'='*45}")
+print(f"  Recovery:    {correct/len(held_results):.1%} Hits@1 on hard negatives (RotatE=0%)")
+print(f"  Scorer:      {'discriminates' if (a_gt_b+b_gt_a)>0 else 'DEGENERATE on this dataset'}")
+print(f"  Lucky rate:  A={lucky_a/len(val_results):.1%}  B={lucky_b/len(val_results):.1%} — PRM motivation")
+print(f"  Agreement:   {both_agree/len(held_results):.1%} — routing degenerate, larger dataset needed")
+print(f"  Mislabelled: {mislabelled} cases — fix before paper")
