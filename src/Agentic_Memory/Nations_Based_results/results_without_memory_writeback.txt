@@ -1,0 +1,29 @@
+
+[1] Hits@1 (hard held set)
+    64/66 = 0.970
+    RotatE baseline: 0.000 (all rank >= 4 by construction)
+
+[2] Quality score distribution (val, n=80)
+    Agent A mean: 0.570  zeros: 26
+    Agent B mean: 0.659  zeros: 13
+    A > B:        18  |  B > A: 21  |  tied-zero: 12  |  both>0: 53
+    Scorer discriminates: YES
+
+[3] Lucky predictions (correct answer, quality=0.0)
+    Agent A lucky: 26/80 = 32.5%
+    Agent B lucky: 12/80 = 15.0%
+    These are cases PRM must fix — correct answer, wrong reasoning
+
+[4] Failure type distribution (held)
+    both_failed: 42
+    resolved: 19
+    similarity_confusion: 5
+    Mislabelled (wrong but 'resolved'): 1
+
+[5] Memory ablation
+    episodic_memory.tsv not found — run writeback first
+
+  Recovery:    97.0% Hits@1 on hard negatives (RotatE=0%)
+  Scorer:      discriminates
+  Lucky rate:  A=32.5%  B=15.0% — PRM motivation
+  Agreement:   93.9%
