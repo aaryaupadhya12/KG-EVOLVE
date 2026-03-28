@@ -1,0 +1,95 @@
+{
+  "burma|relintergovorgs|egypt": {
+    "triple": "burma|relintergovorgs|egypt",
+    "true_tail": "egypt",
+    "model_rank": 8,
+    "agent_a": {
+      "prediction": "india",
+      "confidence": 0.85,
+      "evidence": [
+        "The model prioritized relations like'relexports','relngo', 'commonbloc2', 'officialvisits','relintergovorgs', 'intergovorgs','reldiplomacy', and 'conferences' which are unique to India and not Egypt."
+      ],
+      "shared_relations": [
+        "relintergovorgs"
+      ],
+      "failure_diagnosis": "The model was misled by the presence of multiple strong relations between Burma and India, overshadowing the direct relation to Egypt."
+    },
+    "agent_b": {
+      "prediction": "india",
+      "confidence": 0.4,
+      "key_relations": [
+        "relexports",
+        "relngo",
+        "commonbloc2",
+        "officialvisits",
+        "relintergovorgs",
+        "intergovorgs",
+        "reldiplomacy",
+        "conferences"
+      ],
+      "path_found": "burma --commonbloc2--> india",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation 'commonbloc2' is semantically related to'relintergovorgs' and provides a path from burma to india.",
+      "failure_diagnosis": "RotatE failed to recognize the stronger signal from the 'commonbloc2' relation, which directly connects burma to india."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": null,
+      "quality_score": null,
+      "contamination": null,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "relintergovorgs"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": null,
+      "confidence": 0.85,
+      "cited_count": 1,
+      "path_found": false,
+      "rel_match": false
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": null,
+      "quality_score": null,
+      "contamination": null,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": null,
+      "confidence": 0.4,
+      "cited_count": 8,
+      "path_found": true,
+      "rel_match": true
+    },
+    "aggregator": {
+      "final_answer": "india",
+      "chosen_agent": "B",
+      "confidence": 0.4,
+      "reason": "Agent B cited 'commonbloc2' as the sole discriminating relation via a direct path, while Agent A introduced path noise by citing multiple weaker relations.",
+      "selected_relations": [
+        "commonbloc2",
+        "conferences",
+        "intergovorgs",
+        "officialvisits",
+        "reldiplomacy",
+        "relexports",
+        "relintergovorgs",
+        "relngo"
+      ],
+      "failure_type": "resolved"
+    },
+    "final_correct": false
+  }
+}
