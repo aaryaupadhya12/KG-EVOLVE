@@ -13,3 +13,6 @@ Policy-level differences in agentic reasoning can be learned and optimized via a
 27-03-2026
 There are errors in the Aggregator agent due to to the monlithic code structure finding it hard to correct , mainly not resoaning it out rpoperly hence needs some error correction in the inference time as welll and working on that fix right now has very low chances of succeeding , needs a tuned prompt 
 Problem only existing during inference and seems fine during training need to enrichen the aggregator shcema or allow it have more space 
+
+28-03-2026
+The data set delta is 1.9% hence the dataset is proven that its the best that it can improve, SO we move forawrd to the FG15K link precition pred where the dataset is higher and then we go into deeper with the PRM based aggregator
