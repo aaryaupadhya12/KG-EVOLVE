@@ -78,8 +78,8 @@ def load_safe(path):
 # ─────────────────────────────────────────────
 # LOAD
 # ─────────────────────────────────────────────
-val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\val_hard_results.json")
-held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\held_out_results.json")
+val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\Agents\json\Val_Hard\val_hard_results (6).json")
+held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\Agents\json\Held_out\held_out_results (1).json")
 
 print(f"Val records:  {len(val_results)}")
 print(f"Held records: {len(held_results)}")
