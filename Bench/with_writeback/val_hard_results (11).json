@@ -1,0 +1,3170 @@
+[
+  {
+    "triple": "(/m/0b_71r, /base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team, /m/02pqcfz)",
+    "true_tail": "/m/02pqcfz",
+    "agent_a": {
+      "prediction": "/m/02pqcfz",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/02pqcfz' is the correct tail entity as it has the primary signal of the relation '/base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team' with the head '/m/0b_71r'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the primary signal of the relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/02pqcfz",
+      "confidence": 0.95,
+      "key_relations": [
+        "/base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team"
+      ],
+      "path_found": "/m/0b_71r --/base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team--> /m/02pqcfz",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation and is the only path connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE did not recognize the strong signal from the exact match of the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team"
+      ],
+      "agent_relations": [
+        "/base/marchmadness/ncaa_basketball_tournament/seeds./base/marchmadness/ncaa_tournament_seed/team"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02pqcfz",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation in its path and was the only path connecting the head to the correct tail entity, whereas Agent A did not cite any relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/06bc59, /film/film/edited_by, /m/0bn3jg)",
+    "true_tail": "/m/0bn3jg",
+    "agent_a": {
+      "prediction": "/m/0bn3jg",
+      "confidence": 0.9,
+      "evidence": [
+        "The correct tail entity '/m/0bn3jg' is most similar to the predicted entity with a higher score than '/m/08mbj5d'."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to insufficient embedding similarity scores and shared relation counts."
+    },
+    "agent_b": {
+      "prediction": "/m/0bn3jg",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/edited_by"
+      ],
+      "path_found": "/m/06bc59 --/film/film/edited_by--> /m/0bn3jg",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation /film/film/edited_by.",
+      "failure_diagnosis": "RotatE failed to recognize the direct edited_by relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/edited_by"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0bn3jg",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/film/film/edited_by' in its path, while Agent A did not cite any relations, leading to a more precise match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0fr61, /location/hud_foreclosure_area/estimated_number_of_mortgages./measurement_unit/dated_integer/source, /m/0jbk9)",
+    "true_tail": "/m/0jbk9",
+    "agent_a": {
+      "prediction": "/m/0jbk9",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/0jbk9' is more similar to the head entity '/m/0fr61' than the predicted entity '/m/08mbj5d'."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations and similar embedding scores."
+    },
+    "agent_b": {
+      "prediction": "/m/0jbk9",
+      "confidence": 0.95,
+      "key_relations": [
+        "/location/hud_foreclosure_area/estimated_number_of_mortgages"
+      ],
+      "path_found": "/m/0fr61 --/location/hud_foreclosure_area/estimated_number_of_mortgages./measurement_unit/dated_integer/source --/common/topic/webpage./common/webpage/category --/m/0jbk9",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/location/hud_foreclosure_area/estimated_number_of_mortgages', connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation path from the head to the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/location/hud_foreclosure_area/estimated_number_of_mortgages"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0jbk9",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B provided a path that exactly matched the query relation '/location/hud_foreclosure_area/estimated_number_of_mortgages' and connected the head to the correct tail entity, while Agent A did not cite any shared relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/07y9ts, /award/award_ceremony/awards_presented./award/award_honor/honored_for, /m/01j7mr)",
+    "true_tail": "/m/01j7mr",
+    "agent_a": {
+      "prediction": "/m/01j7mr",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/01j7mr' is the only entity that shares the exact query relation with the head entity '/m/07y9ts'"
+      ],
+      "shared_relations": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "failure_diagnosis": "The model failed to recognize the importance of the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/01j7mr",
+      "confidence": 0.95,
+      "key_relations": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "path_found": "/m/07y9ts --/award/award_ceremony/awards_presented./award/award_honor/honored_for-- /m/01j7mr",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/01j7mr is directly connected by the exact query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "agent_relations": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "agent_relations": [
+        "/award/award_ceremony/awards_presented./award/award_honor/honored_for"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01j7mr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the multi-hop path and correctly identified the key relation, while Agent A did not utilize the path information effectively.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0dq_5, /organization/role/leaders./organization/leadership/organization, /m/049mr)",
+    "true_tail": "/m/049mr",
+    "agent_a": {
+      "prediction": "/m/049mr",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/049mr' is the correct tail entity as it has the only relevant relation with the head entity '/m/0dq_5'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the relevant relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/049mr",
+      "confidence": 0.95,
+      "key_relations": [
+        "/organization/role/leaders./organization/leadership/organization"
+      ],
+      "path_found": "/m/0dq_5 --/organization/role/leaders./organization/leadership/organization--> /m/049mr",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/049mr is connected via the exact query relation /organization/role/leaders./organization/leadership/organization.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/organization/role/leaders./organization/leadership/organization"
+      ],
+      "agent_relations": [
+        "/organization/role/leaders./organization/leadership/organization"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/049mr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation /organization/role/leaders./organization/leadership/organization, which directly connected the head entity to the predicted tail entity, while Agent A did not cite any relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0157m, /people/person/spouse_s./people/marriage/location_of_ceremony, /m/0qxhc)",
+    "true_tail": "/m/0qxhc",
+    "agent_a": {
+      "prediction": "/m/0qxhc",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/0qxhc' is the most similar to the given head entity '/m/0157m' based on embedding similarity scores."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations between the head and the correct tail."
+    },
+    "agent_b": {
+      "prediction": "/m/0qxhc",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/spouse_s."
+      ],
+      "path_found": "/m/0157m --/people/person/spouse_s./people/marriage/location_of_ceremony-- /m/0qxhc",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation '/people/person/spouse_s.' is the only relation connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection through the spouse relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/people/person/spouse_s."
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0qxhc",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the specific relation '/people/person/spouse_s.' as the sole connecting relation, while Agent A did not introduce any relations, leading to a more precise path for the multi-hop query.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/03mh_tp, /film/film/music, /m/01m5m5b)",
+    "true_tail": "/m/01m5m5b",
+    "agent_a": {
+      "prediction": "/m/01m5m5b",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/01m5m5b' is most similar to the head entity '/m/03mh_tp' with a high embedding similarity score of 0.98 and 2 shared relations."
+      ],
+      "shared_relations": [
+        "none"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized an entity with no shared relations over the correct entity with no shared relations, indicating a potential issue with the scoring mechanism."
+    },
+    "agent_b": {
+      "prediction": "/m/01m5m5b",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/edited_by"
+      ],
+      "path_found": "/m/03mh_tp --/film/film/edited_by--> /m/01m5m5b",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/film/film/edited_by', which is the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection through the '/film/film/edited_by' relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "none"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/edited_by"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01m5m5b",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the direct path using the exact query relation '/film/film/edited_by', while Agent A did not introduce any additional paths, making B's choice more aligned with the query structure.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/06szd3, /award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee, /m/0p_2r)",
+    "true_tail": "/m/0p_2r",
+    "agent_a": {
+      "prediction": "/m/0p_2r",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0p_2r' is the most similar to the correct tail entity based on embedding similarity scores."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to the lack of shared relations between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0p_2r",
+      "confidence": 0.95,
+      "key_relations": [
+        "/award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee"
+      ],
+      "path_found": "/m/06szd3 --/award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee--> /m/0p_2r",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/0p_2r is connected via the exact query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the specific relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee"
+      ],
+      "agent_relations": [
+        "/award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0p_2r",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the specific query relation '/award/hall_of_fame/inductees./award/hall_of_fame_induction/inductee' and found a path that matched the query, while Agent A did not cite any shared relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/04hk0w, /film/film/other_crew./film/film_crew_gig/crewmember, /m/027y151)",
+    "true_tail": "/m/027y151",
+    "agent_a": {
+      "prediction": "/m/027y151",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/027y151' is the correct tail entity as it is the only one with the shared relation '/film/film/other_crew./film/film_crew_gig/crewmember' with the head entity '/m/04hk0w'"
+      ],
+      "shared_relations": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/027y151",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "path_found": "/m/04hk0w --/film/film/other_crew./film/film_crew_gig/crewmember --> /m/027y151",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/027y151 is connected via the same relation as the query.",
+      "failure_diagnosis": "RotatE missed the direct connection between the head and the correct tail entity using the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "agent_relations": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "agent_relations": [
+        "/film/film/other_crew./film/film_crew_gig/crewmember"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/027y151",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B provided a path that directly matched the query relation, while Agent A did not find this connection, leading to a higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/02r6c_, /award/award_nominee/award_nominations./award/award_nomination/award, /m/04dn09n)",
+    "true_tail": "/m/04dn09n",
+    "agent_a": {
+      "prediction": "/m/04dn09n",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/04dn09n' is the correct tail entity as it is the only one with the relevant relation '/award/award_nominee/award_nominations./award/award_nomination/award' in the local subgraph."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the relevant relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/04dn09n",
+      "confidence": 0.95,
+      "key_relations": [
+        "/award/award_nominee/award_nominations./award/award_nomination/award"
+      ],
+      "path_found": "/m/02r6c_ --/award/award_nominee/award_nominations./award/award_nomination/award--> /m/04dn09n",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/award/award_nominee/award_nominations./award/award_nomination/award', which is the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation, instead predicting a less relevant entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/award_nominee/award_nominations./award/award_nomination/award"
+      ],
+      "agent_relations": [
+        "/award/award_nominee/award_nominations./award/award_nomination/award"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/04dn09n",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation '/award/award_nominee/award_nominations./award/award_nomination/award' and found a path that matched this relation, while Agent A did not cite any relations and failed to recognize the relevant relation.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05_5_22, /film/film/production_companies, /m/05rrtf)",
+    "true_tail": "/m/05rrtf",
+    "agent_a": {
+      "prediction": "/m/05rrtf",
+      "confidence": 0.9,
+      "evidence": [
+        "The correct tail entity '/m/05rrtf' is the most similar to the head '/m/05_5_22' among all options."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized '/m/054lpb6' due to lower score despite '/m/05rrtf' being the correct answer."
+    },
+    "agent_b": {
+      "prediction": "/m/05rrtf",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/production_companies"
+      ],
+      "path_found": "/m/05_5_22 --/film/film/production_companies--> /m/05rrtf",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation /film/film/production_companies.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film/production_companies"
+      ],
+      "agent_relations": [
+        "/film/film/production_companies"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/05rrtf",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path /m/05_5_22 --/film/film/production_companies--> /m/05rrtf, citing the exact query relation and matching the path to the query, while Agent A did not cite any relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01gfhk, /location/location/time_zones, /m/02fqwt)",
+    "true_tail": "/m/02fqwt",
+    "agent_a": {
+      "prediction": "/m/02fqwt",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/02fqwt' is the most similar to the head entity '/m/01gfhk' in terms of embedding similarity and shared relations."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model likely failed due to insufficient consideration of embedding similarity scores."
+    },
+    "agent_b": {
+      "prediction": "/m/02fqwt",
+      "confidence": 0.95,
+      "key_relations": [
+        "/location/administrative_division/country"
+      ],
+      "path_found": "/m/01gfhk --/location/administrative_division/country--> /m/02fqwt",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/02fqwt is the only entity that has the relation '/location/administrative_division/country' with the head entity /m/01gfhk.",
+      "failure_diagnosis": "RotatE failed to recognize the direct country relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/location/administrative_division/country"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02fqwt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B provided a path that matched the query structure by finding the relation '/location/administrative_division/country', while Agent A did not cite any relations, indicating a more superficial analysis.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/013zyw, /film/director/film, /m/02v63m)",
+    "true_tail": "/m/02v63m",
+    "agent_a": {
+      "prediction": "/m/02v63m",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/02v63m' is the only entity that shares the '/film/director/film' relation with the head entity '/m/013zyw'"
+      ],
+      "shared_relations": [
+        "/film/director/film"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared '/film/director/film' relation between the head entity and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/02v63m",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/director/film"
+      ],
+      "path_found": "/m/013zyw --/film/director/film--> /m/02v63m",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity '/m/02v63m' has the exact query relation '/film/director/film'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/director/film"
+      ],
+      "agent_relations": [
+        "/film/director/film"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/director/film"
+      ],
+      "agent_relations": [
+        "/film/director/film"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02v63m",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B provided a path that matched the query relation exactly, while Agent A did not introduce any additional paths, leading to a higher confidence score and a more precise alignment with the query.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/06krf3, /film/film/estimated_budget./measurement_unit/dated_money_value/currency, /m/09nqf)",
+    "true_tail": "/m/09nqf",
+    "agent_a": {
+      "prediction": "/m/09nqf",
+      "confidence": 0.9,
+      "evidence": [
+        "The correct tail entity '/m/09nqf' is more similar to the head entity '/m/06krf3' based on embedding similarity scores."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model likely failed due to insufficient shared relations between the head and tail entities."
+    },
+    "agent_b": {
+      "prediction": "/m/09nqf",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/estimated_budget"
+      ],
+      "path_found": "/m/06krf3 --/film/film/estimated_budget./measurement_unit/dated_money_value/currency--> /m/09nqf",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/film/film/estimated_budget'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/estimated_budget"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/09nqf",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/film/film/estimated_budget' in its path, while Agent A did not cite any relations, leading to a more precise match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/019kyn, /film/film/produced_by, /m/081nh)",
+    "true_tail": "/m/081nh",
+    "agent_a": {
+      "prediction": "/m/081nh",
+      "confidence": 0.98,
+      "evidence": [
+        "The correct tail entity '/m/081nh' is most similar to entities that have shared relations with the head '/m/019kyn'",
+        "The model incorrectly predicted '/m/08mbj5d' which has no shared relations with the head '/m/019kyn'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations between the predicted entity and the head."
+    },
+    "agent_b": {
+      "prediction": "/m/081nh",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/produced_by"
+      ],
+      "path_found": "/m/019kyn --/film/film/produced_by--> /m/081nh",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation /film/film/produced_by.",
+      "failure_diagnosis": "RotatE failed to recognize the direct production relationship between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.98
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/produced_by"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/081nh",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/film/film/produced_by' in its path, while Agent A did not introduce any relations, leading to a more precise match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0g1rw, /film/film_distributor/films_distributed./film/film_film_distributor_relationship/film, /m/0gl3hr)",
+    "true_tail": "/m/0gl3hr",
+    "agent_a": {
+      "prediction": "/m/0gl3hr",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0gl3hr' is the correct tail entity as it has no shared relations with the head entity '/m/0g1rw', while the predicted entity '/m/0ndwt2w' has a relevant relation."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model was misled by the presence of a relevant relation in the predicted entity, while the correct entity had none."
+    },
+    "agent_b": {
+      "prediction": "/m/0gl3hr",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film"
+      ],
+      "path_found": "/m/0g1rw --/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film --> /m/0gl3hr",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/0gl3hr is the only entity that has the relation '/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film' with the head /m/0g1rw.",
+      "failure_diagnosis": "RotatE failed to recognize the specific film distributor relationship, likely due to the model's inability to prioritize the exact relation over other similar ones."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film"
+      ],
+      "agent_relations": [
+        "/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0gl3hr",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the specific film distributor relationship '/film/film_distributor/films_distributed./film/film_film_distributor_relationship/film', which matched the query and provided a valid path, whereas Agent A did not cite any relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/04cmrt, /people/person/languages, /m/0688f)",
+    "true_tail": "/m/0688f",
+    "agent_a": {
+      "prediction": "/m/0688f",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/03k50' has the relation '/people/person/languages' which is not present in the local subgraph of '/m/04cmrt'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized '/m/03k50' due to its presence in the local subgraph, overlooking the primary signal from the relation '/people/person/languages'."
+    },
+    "agent_b": {
+      "prediction": "/m/0688f",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/languages"
+      ],
+      "path_found": "/m/04cmrt --/people/person/languages--> /m/03k50",
+      "path_relation_matches_query": true,
+      "reasoning": "The query relation '/people/person/languages' is directly used in the path from the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation '/people/person/languages' between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/languages"
+      ],
+      "agent_relations": [
+        "/people/person/languages"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0688f",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the direct path using the relation '/people/person/languages', which matched the query, while Agent A did not cite any relations, leading to path noise.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/018s6c, /people/ethnicity/people, /m/0g_rs_)",
+    "true_tail": "/m/0g_rs_",
+    "agent_a": {
+      "prediction": "/m/0g_rs_",
+      "confidence": 0.9,
+      "evidence": [
+        "Only '/m/0g_rs_' has the relation '/people/ethnicity/people' with the head entity /m/018s6c"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized the distant relation over the direct one."
+    },
+    "agent_b": {
+      "prediction": "/m/0g_rs_",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/ethnicity/people"
+      ],
+      "path_found": "/m/018s6c --/people/ethnicity/people--> /m/09l3p; /m/018s6c --/people/ethnicity/people--> /m/0g_rs_",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation '/people/ethnicity/people' directly connects the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the query relation '/people/ethnicity/people'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/ethnicity/people"
+      ],
+      "agent_relations": [
+        "/people/ethnicity/people"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0g_rs_",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the direct relation '/people/ethnicity/people' and found a path that matches the query, while Agent A did not cite any relations, leading to higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0bscw, /film/film/produced_by, /m/0q9kd)",
+    "true_tail": "/m/0q9kd",
+    "agent_a": {
+      "prediction": "/m/0q9kd",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/0q9kd' is the correct tail entity as it is the only one with the same relation as the head entity."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations, instead predicting an entity that shares the query relation."
+    },
+    "agent_b": {
+      "prediction": "/m/0q9kd",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/produced_by"
+      ],
+      "path_found": "/m/0bscw --/film/film/produced_by-- /m/0q9kd",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/film/film/produced_by'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct production relationship between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film/produced_by"
+      ],
+      "agent_relations": [
+        "/film/film/produced_by"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0q9kd",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/film/film/produced_by' in its path, while Agent A did not introduce any shared relations, indicating a more accurate alignment with the query structure.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01qd_r, /education/educational_institution/colors, /m/01l849)",
+    "true_tail": "/m/01l849",
+    "agent_a": {
+      "prediction": "/m/01l849",
+      "confidence": 0.95,
+      "evidence": [
+        "Only '/m/03vtbc' has the relation '/education/educational_institution/colors' with the head entity '/m/01qd_r'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized the less relevant entity based on the shared relation count."
+    },
+    "agent_b": {
+      "prediction": "/m/01l849",
+      "confidence": 0.95,
+      "key_relations": [
+        "/education/educational_institution/colors"
+      ],
+      "path_found": "/m/01qd_r --/education/educational_institution/colors--> /m/019sc",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/education/educational_institution/colors', which is the only relation that '/m/03vtbc' has with '/m/01qd_r'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the query relation '/education/educational_institution/colors' between the head and the correct tail."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/educational_institution/colors"
+      ],
+      "agent_relations": [
+        "/education/educational_institution/colors"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01l849",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path using the exact query relation '/education/educational_institution/colors', which Agent A did not utilize, leading to a higher confidence score despite equal quality and contamination.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01s9vc, /film/film/estimated_budget./measurement_unit/dated_money_value/currency, /m/09nqf)",
+    "true_tail": "/m/09nqf",
+    "agent_a": {
+      "prediction": "/m/09nqf",
+      "confidence": 0.9,
+      "evidence": [
+        "The correct tail entity '/m/09nqf' is the most similar to the head entity '/m/1s9vc' in terms of embedding similarity scores."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to insufficient shared relations and embedding similarity scores."
+    },
+    "agent_b": {
+      "prediction": "/m/09nqf",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/estimated_budget"
+      ],
+      "path_found": "/m/01s9vc --/film/film/estimated_budget./measurement_unit/dated_money_value/currency --> /m/09nqf",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/film/film/estimated_budget'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/estimated_budget"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/09nqf",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/film/film/estimated_budget' in its path, while Agent A did not cite any relations, leading to a more precise match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0rlz, /government/politician/government_positions_held./government/government_position_held/basic_title, /m/060c4)",
+    "true_tail": "/m/060c4",
+    "agent_a": {
+      "prediction": "/m/060c4",
+      "confidence": 0.95,
+      "evidence": [
+        "Only '/m/060c4' has the shared relation '/government/politician/government_positions_held./government/government_position_held/basic_title' with the head entity '/m/0rlz'."
+      ],
+      "shared_relations": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/060c4",
+      "confidence": 0.95,
+      "key_relations": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "path_found": "/m/0rlz --/government/politician/government_positions_held./government/government_position_held/basic_title--> /m/01gkgk",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/government/politician/government_positions_held./government/government_position_held/basic_title'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path from the head to the correct tail entity using the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "agent_relations": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "agent_relations": [
+        "/government/politician/government_positions_held./government/government_position_held/basic_title"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/060c4",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B's path used the exact query relation '/government/politician/government_positions_held./government/government_position_held/basic_title', while Agent A did not find the correct relation, leading to a higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01xk7r, /organization/organization/headquarters./location/mailing_address/citytown, /m/0d6lp)",
+    "true_tail": "/m/0d6lp",
+    "agent_a": {
+      "prediction": "/m/0d6lp",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0d6lp' is the only entity that shares the same relation with '/m/01xk7r' in the local subgraph."
+      ],
+      "shared_relations": [
+        "/organization/organization/headquarters./location/mailing_address/citytown"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0d6lp",
+      "confidence": 0.95,
+      "key_relations": [
+        "/organization/organization/headquarters./location/mailing_address/citytown"
+      ],
+      "path_found": "/m/01xk7r --/organization/organization/headquarters./location/mailing_address/citytown-- /m/0d6lp",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/organization/organization/headquarters./location/mailing_address/citytown'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/organization/organization/headquarters./location/mailing_address/citytown"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/organization/organization/headquarters./location/mailing_address/citytown"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0d6lp",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B's path used the exact query relation '/organization/organization/headquarters./location/mailing_address/citytown', while Agent A did not find any relations, indicating a more accurate alignment with the query structure.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/016t_3, /education/educational_degree/people_with_this_degree./education/education/institution, /m/07vfj)",
+    "true_tail": "/m/07vfj",
+    "agent_a": {
+      "prediction": "/m/07vfj",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/07vfj' is the correct tail entity as it has the same relation as the head entity '/m/016t_3' in the local subgraph."
+      ],
+      "shared_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/07vfj",
+      "confidence": 0.95,
+      "key_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "path_found": "/m/016t_3 --/education/educational_degree/people_with_this_degree./education/education/institution--> /m/07vfj",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/education/educational_degree/people_with_this_degree./education/education/institution', which is the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the exact query relation in the path, leading to a lower score for the correct answer."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "agent_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "agent_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/07vfj",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path's exact match to the query relation, which had the strongest signal, despite both agents having equal quality and contamination scores.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05zdk2, /people/person/gender, /m/02zsn)",
+    "true_tail": "/m/02zsn",
+    "agent_a": {
+      "prediction": "/m/02zsn",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/02zsn' is more similar to the head entity '/m/05zdk2' than the predicted entity '/m/08mbj5d'."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations."
+    },
+    "agent_b": {
+      "prediction": "/m/02zsn",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/gender"
+      ],
+      "path_found": "/m/05zdk2 --/people/person/gender--> /m/02zsn",
+      "path_relation_matches_query": true,
+      "reasoning": "The query relation '/people/person/gender' directly connects the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct gender relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/people/person/gender"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02zsn",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the direct path /m/05zdk2 --/people/person/gender--> /m/02zsn, citing the key relation '/people/person/gender' and matching the query, while Agent A did not cite any shared relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/09r8l, /people/person/profession, /m/016z4k)",
+    "true_tail": "/m/016z4k",
+    "agent_a": {
+      "prediction": "/m/016z4k",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/016z4k' is the correct tail entity as it is the only one with the shared relation '/people/person/profession' with the head entity '/m/09r8l'."
+      ],
+      "shared_relations": [
+        "/people/person/profession"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation '/people/person/profession' between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/016z4k",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/profession"
+      ],
+      "path_found": "/m/09r8l --/people/person/profession--> /m/016z4k",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity '/m/016z4k' has the '/people/person/profession' relation with the head '/m/09r8l', which matches the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/profession"
+      ],
+      "agent_relations": [
+        "/people/person/profession"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/profession"
+      ],
+      "agent_relations": [
+        "/people/person/profession"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/016z4k",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the same key relation '/people/person/profession' as Agent A and successfully found a multi-hop path that matched the query, whereas Agent A did not recognize the shared relation in its path.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0fs9jn, /film/actor/film./film/performance/film, /m/076tw54)",
+    "true_tail": "/m/076tw54",
+    "agent_a": {
+      "prediction": "/m/076tw54",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/076tw54' is more similar to the head entity '/m/0fs9jn' based on embedding similarity scores."
+      ],
+      "shared_relations": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "failure_diagnosis": "The model incorrectly prioritized the relation associated with the wrong entity, leading to a lower score for the correct answer."
+    },
+    "agent_b": {
+      "prediction": "/m/076tw54",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "path_found": "/m/0fs9jn --/film/actor/film./film/performance/film--> /m/0czyxs",
+      "path_relation_matches_query": false,
+      "reasoning": "The correct tail entity '/m/076tw54' is the only one with the 'only_tail_has' relation '/film/film/genre', which is a strong signal.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'only_tail_has' relation '/film/film/genre' for '/m/076tw54'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "agent_relations": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "agent_relations": [
+        "/film/actor/film./film/performance/film"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/076tw54",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B's path included the relevant relation '/film/actor/film./film/performance/film' and cited the same number of relations as Agent A, making it more consistent with the query structure.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0gmd3k7, /film/film/release_date_s./film/film_regional_release_date/film_release_region, /m/05b4w)",
+    "true_tail": "/m/05b4w",
+    "agent_a": {
+      "prediction": "/m/05b4w",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/05b4w' is the correct tail entity as it shares the same relation with the head entity '/m/0gmd3k7'"
+      ],
+      "shared_relations": [
+        "/film/film/release_date_s./film/film_regional_release_date/film_release_region"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/05b4w",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/regional_release_date"
+      ],
+      "path_found": "/m/0gmd3k7 --/film/film/regional_release_date-- /m/05b4w",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/05b4w is connected through the regional release date relation, which closely matches the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the regional release date relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/film/film/release_date_s./film/film_regional_release_date/film_release_region"
+      ],
+      "agent_relations": [
+        "/film/film/release_date_s./film/film_regional_release_date/film_release_region"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/regional_release_date"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/05b4w",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited more precise relations and had lower contamination compared to Agent A, specifically using '/film/film/regional_release_date' which closely matched the query relation.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/06mkj, /location/country/form_of_government, /m/01fpfn)",
+    "true_tail": "/m/01fpfn",
+    "agent_a": {
+      "prediction": "/m/01fpfn",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/01fpfn' is the only entity with the relation '/location/country/form_of_government' with the head entity '/m/06mkj'",
+        "'/m/01q20' does not have any shared relations with the head entity '/m/06mkj'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to the lack of shared relations, prioritizing entities with the query relation."
+    },
+    "agent_b": {
+      "prediction": "/m/01fpfn",
+      "confidence": 0.95,
+      "key_relations": [
+        "/location/country/form_of_government"
+      ],
+      "path_found": "/m/06mkj --/location/country/form_of_government--> /m/01fpfn",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/location/country/form_of_government'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/location/country/form_of_government"
+      ],
+      "agent_relations": [
+        "/location/country/form_of_government"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01fpfn",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/location/country/form_of_government' in its path, while Agent A did not introduce any shared relations, leading to a path that did not match the query.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/014l7h, /business/job_title/people_with_this_title./business/employment_tenure/company, /m/0152x_)",
+    "true_tail": "/m/0152x_",
+    "agent_a": {
+      "prediction": "/m/0152x_",
+      "confidence": 0.9,
+      "evidence": [
+        "Only '/m/0152x_' has the relation '/business/job_title/people_with_this_title./business/employment_tenure/company' with the head entity '/m/014l7h'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the relevant relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0152x_",
+      "confidence": 0.95,
+      "key_relations": [
+        "/business/job_title/people_with_this_title./business/employment_tenure/company"
+      ],
+      "path_found": "/m/014l7h --/business/job_title/people_with_this_title./business/employment_tenure/company--> /m/0152x_",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/business/job_title/people_with_this_title./business/employment_tenure/company'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/business/job_title/people_with_this_title./business/employment_tenure/company"
+      ],
+      "agent_relations": [
+        "/business/job_title/people_with_this_title./business/employment_tenure/company"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0152x_",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/business/job_title/people_with_this_title./business/employment_tenure/company' and found a valid path, while Agent A did not cite any relations, leading to higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/016t_3, /education/educational_degree/people_with_this_degree./education/education/institution, /m/01wv24)",
+    "true_tail": "/m/01wv24",
+    "agent_a": {
+      "prediction": "/m/01wv24",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/01wv24' is the correct tail entity as it is the only one with the shared relation '/education/educational_degree/people_with_this_degree./education/education/institution'"
+      ],
+      "shared_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/01wv24",
+      "confidence": 0.95,
+      "key_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "path_found": "/m/016t_3 --/education/educational_degree/people_with_this_degree./education/education/institution--> /m/01wv24",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/education/educational_degree/people_with_this_degree./education/education/institution', which is the strongest signal.",
+      "failure_diagnosis": "RotatE failed to recognize the exact match of the query relation in the path, likely due to model complexity or data representation issues."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "agent_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "agent_relations": [
+        "/education/educational_degree/people_with_this_degree./education/education/institution"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01wv24",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B's path used the exact query relation '/education/educational_degree/people_with_this_degree./education/education/institution', which matched the query perfectly, while Agent A did not introduce any additional path noise.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/045qmr, /tv/tv_program/regular_cast./tv/regular_tv_appearance/actor, /m/04j5fx)",
+    "true_tail": "/m/04j5fx",
+    "agent_a": {
+      "prediction": "/m/04j5fx",
+      "confidence": 0.98,
+      "evidence": [
+        "The correct tail entity '/m/04j5fx' is most similar to entities like '/m/01nsyf' with a high embedding similarity score of 0.96 and shared relation count of 1."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model likely failed due to insufficient shared relations between the head and tail entities."
+    },
+    "agent_b": {
+      "prediction": "/m/04j5fx",
+      "confidence": 0.95,
+      "key_relations": [
+        "/tv/tv_program/regular_cast",
+        "/tv/regular_tv_appearance/actor"
+      ],
+      "path_found": "/m/045qmr --/tv/tv_program/regular_cast./tv/regular_tv_appearance/actor--> /m/04j5fx",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/tv/tv_program/regular_cast./tv/regular_tv_appearance/actor', connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation path between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.98
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/tv/regular_tv_appearance/actor",
+        "/tv/tv_program/regular_cast"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/04j5fx",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited two relevant relations and found a path that exactly matched the query, whereas Agent A did not cite any relations, leading to a higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05148p4, /music/performance_role/regular_performances./music/group_membership/group, /m/02ht0ln)",
+    "true_tail": "/m/02ht0ln",
+    "agent_a": {
+      "prediction": "/m/02ht0ln",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/02ht0ln' is the most similar tail entity to the head '/m/05148p4' based on embedding similarity scores."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized an unrelated entity over the correct one due to lack of shared relations."
+    },
+    "agent_b": {
+      "prediction": "/m/02ht0ln",
+      "confidence": 0.95,
+      "key_relations": [
+        "/music/performance_role/regular_performances./music/group_membership/group"
+      ],
+      "path_found": "/m/05148p4 --/music/instrument/instrumentalists--> /m/01qqwp9 --/music/performance_role/regular_performances./music/group_membership/group--> /m/02ht0ln",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/music/performance_role/regular_performances./music/group_membership/group', indicating a strong match.",
+      "failure_diagnosis": "RotatE likely missed the direct connection through the instrumentalists relation, leading to a less confident prediction."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/music/performance_role/regular_performances./music/group_membership/group"
+      ],
+      "agent_relations": [
+        "/music/performance_role/regular_performances./music/group_membership/group"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02ht0ln",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path /m/05148p4 --/music/instrument/instrumentalists--> /m/01qqwp9 --/music/performance_role/regular_performances./music/group_membership/group--> /m/02ht0ln, which exactly matched the query relation and had no contamination, while Agent A introduced path noise without citing any relevant relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0dqcm, /people/person/languages, /m/06nm1)",
+    "true_tail": "/m/06nm1",
+    "agent_a": {
+      "prediction": "/m/06nm1",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/06nm1' is the correct tail entity as it is the only one with the given relation '/people/person/languages'",
+        "'/m/064_8sq' has the given relation but is not the tail entity in the triple."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized the head entity's relation over the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/06nm1",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/languages"
+      ],
+      "path_found": "/m/0dqcm --/people/person/languages--> /m/06nm1",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation '/people/person/languages' directly matches the query relation.",
+      "failure_diagnosis": "RotatE missed the direct path using the query relation '/people/person/languages'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/languages"
+      ],
+      "agent_relations": [
+        "/people/person/languages"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/06nm1",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the direct relation '/people/person/languages' that matches the query, while Agent A did not cite any relations, leading to a higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01m23s, /location/location/time_zones, /m/02hcv8)",
+    "true_tail": "/m/02hcv8",
+    "agent_a": {
+      "prediction": "/m/02hcv8",
+      "confidence": 0.95,
+      "evidence": [
+        "The correct tail entity '/m/02hcv8' is the most similar to the head entity '/m/1m23s' in terms of embedding similarity and shared relations."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct relationship between the head and tail entities, likely due to insufficient training on time zone relationships."
+    },
+    "agent_b": {
+      "prediction": "/m/02hcv8",
+      "confidence": 0.95,
+      "key_relations": [
+        "/location/location/time_zones"
+      ],
+      "path_found": "/m/01m23s --/location/location/time_zones--> /m/02hcv8",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/location/location/time_zones'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/location/location/time_zones"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02hcv8",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/location/location/time_zones' in its path, while Agent A did not cite any relations, leading to a more accurate match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/01gtcc, /government/legislative_session/members./government/government_position_held/district_represented, /m/04ly1)",
+    "true_tail": "/m/04ly1",
+    "agent_a": {
+      "prediction": "/m/04ly1",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/04ly1' is the correct tail entity as it is the only one with the shared relation '/government/legislative_session/members./government/government_position_held/district_represented' with the head entity '/m/01gtcc'"
+      ],
+      "shared_relations": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/04ly1",
+      "confidence": 0.95,
+      "key_relations": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "path_found": "/m/01gtcc --/government/legislative_session/members./government/government_position_held/district_represented--> /m/04ly1",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/government/legislative_session/members./government/government_position_held/district_represented'.",
+      "failure_diagnosis": "RotatE failed to recognize the exact relation path, likely due to the model's inability to capture the precise relation semantics."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "agent_relations": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "agent_relations": [
+        "/government/legislative_session/members./government/government_position_held/district_represented"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/04ly1",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B provided a path that exactly matched the query relation, while Agent A did not introduce any additional path noise, leading to a higher trust in B\u2019s solution.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/02f77y, /award/award_category/winners./award/award_honor/award_winner, /m/01vrt_c)",
+    "true_tail": "/m/01vrt_c",
+    "agent_a": {
+      "prediction": "/m/01vrt_c",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/01vrt_c' is most similar to entities with shared relations"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the relevant relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/01vrt_c",
+      "confidence": 0.95,
+      "key_relations": [
+        "/award/award_category/winners./award/award_honor/award_winner"
+      ],
+      "path_found": "/m/02f77y --/award/award_category/winners./award/award_honor/award_winner--> /m/016fmf",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/01vrt_c is directly connected by the query relation /award/award_category/winners./award/award_honor/award_winner.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/award_category/winners./award/award_honor/award_winner"
+      ],
+      "agent_relations": [
+        "/award/award_category/winners./award/award_honor/award_winner"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/01vrt_c",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path relation matches query and cited the correct relation ['/award/award_category/winners./award/award_honor/award_winner'], while Agent A did not cite any relations, leading to higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0713r, /sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft, /m/02x2khw)",
+    "true_tail": "/m/02x2khw",
+    "agent_a": {
+      "prediction": "/m/02x2khw",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/02x2khw' is the correct tail entity as it is the only one with the same relation as the head entity '/m/0713r'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head entity and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/02x2khw",
+      "confidence": 0.95,
+      "key_relations": [
+        "/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft"
+      ],
+      "path_found": "/m/0713r --/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft --> /m/02z6872 and /m/0713r --/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft --> /m/02x2khw",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity '/m/02x2khw' has the exact query relation '/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft', which is the primary signal.",
+      "failure_diagnosis": "RotatE failed to prioritize the exact query relation, leading to a less relevant prediction."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft"
+      ],
+      "agent_relations": [
+        "/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02x2khw",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation '/sports/professional_sports_team/draft_picks./sports/sports_league_draft_pick/draft' and found multiple paths supporting this relation, while Agent A did not cite any relations, leading to higher confidence in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0329qp, /sports/sports_team/sport, /m/02vx4)",
+    "true_tail": "/m/02vx4",
+    "agent_a": {
+      "prediction": "/m/02vx4",
+      "confidence": 0.9,
+      "evidence": [
+        "Only '/m/02vx4' has the relation '/sports/sports_team/sport' with '/m/0329qp'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations and focused on unrelated entities."
+    },
+    "agent_b": {
+      "prediction": "/m/02vx4",
+      "confidence": 0.95,
+      "key_relations": [
+        "/sports/sports_team/sport"
+      ],
+      "path_found": "/m/0329qp --/sports/sports_team/sport--> /m/02vx4",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/sports/sports_team/sport', indicating a strong connection.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation, likely due to the model's inability to prioritize the most relevant relation in the subgraph."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/sports/sports_team/sport"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/02vx4",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path /m/0329qp --/sports/sports_team/sport--> /m/02vx4, which used the exact query relation '/sports/sports_team/sport', indicating a strong connection and higher confidence.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05d1y, /people/person/places_lived./people/place_lived/location, /m/05qtj)",
+    "true_tail": "/m/05qtj",
+    "agent_a": {
+      "prediction": "/m/05qtj",
+      "confidence": 0.95,
+      "evidence": [
+        "Only '/m/05qtj' has the required relation '/people/person/places_lived./people/place_lived/location' with the head entity '/m/05d1y'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the critical relation between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/05qtj",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/places_lived./people/place_lived/location"
+      ],
+      "path_found": "/m/05d1y --/people/person/places_lived./people/place_lived/location--> /m/0d1yn --/people/person/places_lived./people/place_lived/location--> /m/05qtj",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation '/people/person/places_lived./people/place_lived/location' is the only relation connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the correct path due to the presence of multiple similar entities and the model's ranking mechanism."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/places_lived./people/place_lived/location"
+      ],
+      "agent_relations": [
+        "/people/person/places_lived./people/place_lived/location"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/05qtj",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the path /m/05d1y --/people/person/places_lived./people/place_lived/location--> /m/0d1yn --/people/person/places_lived./people/place_lived/location--> /m/05qtj, citing the sole discriminating relation '/people/person/places_lived./people/place_lived/location' while Agent A did not introduce any relations, leading to a higher score despite equal quality and contamination.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0345h, /olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics, /m/0lbbj)",
+    "true_tail": "/m/0lbbj",
+    "agent_a": {
+      "prediction": "/m/0lbbj",
+      "confidence": 0.95,
+      "evidence": [
+        "Only '/m/0lbbj' has the required shared relation with the head entity '/m/0345h'"
+      ],
+      "shared_relations": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head entity and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0lbbj",
+      "confidence": 0.95,
+      "key_relations": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "path_found": "/m/0345h --/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics --> /m/0lbbj",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics', strongly connecting the head to the correct tail.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation, likely due to the complexity of the graph and the model's inability to prioritize the exact match."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "agent_relations": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "agent_relations": [
+        "/olympics/olympic_participating_country/athletes./olympics/olympic_athlete_affiliation/olympics"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0lbbj",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation in the path, which matched the query relation directly, while Agent A did not utilize this information effectively.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0f__1, /base/biblioness/bibs_location/state, /m/0498y)",
+    "true_tail": "/m/0498y",
+    "agent_a": {
+      "prediction": "/m/0498y",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0498y' is the only entity with the shared relation '/base/biblioness/bibs_location/country' with the head entity '/m/0f__1'"
+      ],
+      "shared_relations": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "failure_diagnosis": "The model failed to recognize the shared relation between the head entity and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0498y",
+      "confidence": 0.95,
+      "key_relations": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "path_found": "/m/0f__1 --/base/biblioness/bibs_location/country--> /m/09c7w0",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/0498y has the relation '/base/biblioness/bibs_location/country' which matches the query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the strong signal from the 'only_tail_has' relation '/base/biblioness/bibs_location/country'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "agent_relations": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "agent_relations": [
+        "/base/biblioness/bibs_location/country"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0498y",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B preferred the multi-hop query path /m/0f__1 --/base/biblioness/bibs_location/country--> /m/09c7w0, which matched the query relation, while Agent A did not introduce any path evidence.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/03c_cxn, /film/film/edited_by, /m/03crcpt)",
+    "true_tail": "/m/03crcpt",
+    "agent_a": {
+      "prediction": "/m/03crcpt",
+      "confidence": 0.99,
+      "evidence": [
+        "The correct tail entity '/m/03crcpt' is the most similar to the head entity '/m/3c_cxn' in terms of embedding similarity."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed due to insufficient embedding similarity and shared relations between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/03crcpt",
+      "confidence": 0.95,
+      "key_relations": [
+        "/film/film/edited_by"
+      ],
+      "path_found": "/m/03c_cxn --/film/film/edited_by-- /m/03crcpt",
+      "path_relation_matches_query": true,
+      "reasoning": "The path directly uses the exact query relation '/film/film/edited_by'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.99
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/film/film/edited_by"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/03crcpt",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation '/film/film/edited_by' in its path, while Agent A did not cite any relations, leading to a more accurate path match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0167km, /people/person/spouse_s./people/marriage/type_of_union, /m/04ztj)",
+    "true_tail": "/m/04ztj",
+    "agent_a": {
+      "prediction": "/m/04ztj",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/04ztj' is the correct tail entity as it is the only one with the shared relation '/people/person/gender' with the head entity '/m/0167km'. This is the primary signal for the prediction."
+      ],
+      "shared_relations": [
+        "/people/person/gender"
+      ],
+      "failure_diagnosis": "The model failed to recognize the critical shared relation '/people/person/gender' between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/04ztj",
+      "confidence": 0.95,
+      "key_relations": [
+        "/people/person/spouse_s."
+      ],
+      "path_found": "/m/0167km --/people/person/spouse_s./people/marriage/type_of_union-- /m/04ztj",
+      "path_relation_matches_query": true,
+      "reasoning": "The relation '/people/person/spouse_s.' is the only relation that directly connects the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the specific relation '/people/person/spouse_s.' as the key connecting relation between the head and the correct tail entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/people/person/gender"
+      ],
+      "agent_relations": [
+        "/people/person/gender"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/people/person/spouse_s."
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/04ztj",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the more precise relation '/people/person/spouse_s.' with lower contamination compared to Agent A, providing a clearer path to the correct entity.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0ktx_, /award/award_winning_work/awards_won./award/award_honor/award, /m/0gr4k)",
+    "true_tail": "/m/0gr4k",
+    "agent_a": {
+      "prediction": "/m/0gr4k",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0gr4k' is the correct tail entity as it has the highest embedding similarity score and no shared relations with the head entity '/m/0ktx_'."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized '/m/04dn09n' due to its presence in the local subgraph, despite having no shared relations with the head entity."
+    },
+    "agent_b": {
+      "prediction": "/m/0gr4k",
+      "confidence": 0.95,
+      "key_relations": [
+        "/award/award_winning_work/awards_won./award/award_honor/award"
+      ],
+      "path_found": "/m/0ktx_ --/award/award_winning_work/awards_won./award/award_honor/award--> /m/04dn09n",
+      "path_relation_matches_query": false,
+      "reasoning": "The path uses the exact query relation '/award/award_winning_work/awards_won./award/award_honor/award', which strongly indicates the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the exact query relation and instead predicted a less relevant entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/award/award_winning_work/awards_won./award/award_honor/award"
+      ],
+      "agent_relations": [
+        "/award/award_winning_work/awards_won./award/award_honor/award"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0gr4k",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation '/award/award_winning_work/awards_won./award/award_honor/award' in its path, while Agent A did not cite any shared relations, indicating a more direct alignment with the query.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/03g3w, /education/field_of_study/students_majoring./education/education/major_field_of_study, /m/04rjg)",
+    "true_tail": "/m/04rjg",
+    "agent_a": {
+      "prediction": "/m/04rjg",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/04rjg' is the only entity with no shared relations with the head entity '/m/03g3w'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the correct tail entity due to lack of shared relations."
+    },
+    "agent_b": {
+      "prediction": "/m/04rjg",
+      "confidence": 0.95,
+      "key_relations": [
+        "/education/field_of_study/students_majoring./education/education/major_field_of_study"
+      ],
+      "path_found": "/m/03g3w --/education/field_of_study/students_majoring./education/education/major_field_of_study--> /m/04rjg",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/education/field_of_study/students_majoring./education/education/major_field_of_study'.",
+      "failure_diagnosis": "RotatE missed the direct path using the exact query relation, instead predicting a less relevant entity."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/education/field_of_study/students_majoring./education/education/major_field_of_study"
+      ],
+      "agent_relations": [
+        "/education/field_of_study/students_majoring./education/education/major_field_of_study"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/04rjg",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation '/education/field_of_study/students_majoring./education/education/major_field_of_study' and found a valid path, while Agent A did not cite any relations and failed to recognize the correct tail entity.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/0j5fv, /medicine/symptom/symptom_of, /m/09d11)",
+    "true_tail": "/m/09d11",
+    "agent_a": {
+      "prediction": "/m/09d11",
+      "confidence": 0.9,
+      "evidence": [
+        "'/m/074m2' has the relation '/medicine/symptom/symptom_of' with the head entity, while '/m/09d11' does not have any shared relations with the head entity."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized entities that share the same relation with the head entity over the correct entity."
+    },
+    "agent_b": {
+      "prediction": "/m/09d11",
+      "confidence": 0.95,
+      "key_relations": [
+        "/medicine/symptom/symptom_of"
+      ],
+      "path_found": "/m/0j5fv --/medicine/symptom/symptom_of--> /m/09d11",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation /medicine/symptom/symptom_of.",
+      "failure_diagnosis": "RotatE failed to recognize the direct relationship between the head and the correct tail entity, likely due to the model's inability to prioritize the exact match over other similar entities."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.9
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/medicine/symptom/symptom_of"
+      ],
+      "agent_relations": [
+        "/medicine/symptom/symptom_of"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/09d11",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation /medicine/symptom/symptom_of in its path, while Agent A did not cite any relations, leading to a more accurate path match.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/02ldmw, /education/educational_institution/students_graduates./education/education/major_field_of_study, /m/05qjc)",
+    "true_tail": "/m/05qjc",
+    "agent_a": {
+      "prediction": "/m/05qjc",
+      "confidence": 0.98,
+      "evidence": [
+        "The correct tail entity '/m/05qjc' is most similar to the head entity '/m/02ldmw' in terms of embedding similarity and shared relations."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed due to lack of shared relations between the head and tail entities."
+    },
+    "agent_b": {
+      "prediction": "/m/05qjc",
+      "confidence": 0.95,
+      "key_relations": [
+        "/education/educational_institution/students_graduates./education/education/major_field_of_study"
+      ],
+      "path_found": "/m/02ldmw --/education/educational_institution/students_graduates./education/education/student--> /m/05qjc",
+      "path_relation_matches_query": true,
+      "reasoning": "The path uses the exact query relation '/education/educational_institution/students_graduates./education/education/major_field_of_study'.",
+      "failure_diagnosis": "RotatE failed to recognize the direct path using the exact query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.98
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [
+        "/education/educational_institution/students_graduates./education/education/major_field_of_study"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/05qjc",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the exact query relation '/education/educational_institution/students_graduates./education/education/major_field_of_study' and found a path that matches the query, while Agent A did not cite any relations.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05148p4, /music/instrument/instrumentalists, /m/0ftps)",
+    "true_tail": "/m/0ftps",
+    "agent_a": {
+      "prediction": "/m/0ftps",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/0ftps' is the most similar tail entity to the head '/m/05148p4'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly prioritized an unrelated entity over the correct one."
+    },
+    "agent_b": {
+      "prediction": "/m/0ftps",
+      "confidence": 0.95,
+      "key_relations": [
+        "/music/instrument/instrumentalists"
+      ],
+      "path_found": "/m/05148p4 --/music/instrument/instrumentalists--> /m/010hn",
+      "path_relation_matches_query": false,
+      "reasoning": "The relation '/music/instrument/instrumentalists' is the only relation connecting the head to the correct tail entity.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity through the relation '/music/instrument/instrumentalists'."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/music/instrument/instrumentalists"
+      ],
+      "agent_relations": [
+        "/music/instrument/instrumentalists"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/0ftps",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the correct relation '/music/instrument/instrumentalists' as the sole connecting relation, while Agent A did not cite any relations, leading to a higher trust in B despite equal quality and contamination scores.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/05ljv7, /music/performance_role/track_performances./music/track_contribution/role, /m/05842k)",
+    "true_tail": "/m/05842k",
+    "agent_a": {
+      "prediction": "/m/05842k",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/05842k' is the correct tail entity based on the given relation and the model's score comparison."
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model incorrectly predicted '/m/018j2' due to the presence of related entities in the local subgraph, despite '/m/05842k' having the exact required relation."
+    },
+    "agent_b": {
+      "prediction": "/m/05842k",
+      "confidence": 0.95,
+      "key_relations": [
+        "/music/performance_role/track_performances./music/track_contribution/role"
+      ],
+      "path_found": "/m/05ljv7 --/music/performance_role/track_performances./music/track_contribution/role--> /m/05842k",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/05842k is connected via the exact query relation.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection through the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/music/performance_role/track_performances./music/track_contribution/role"
+      ],
+      "agent_relations": [
+        "/music/performance_role/track_performances./music/track_contribution/role"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/05842k",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B trusted the exact query relation and found a valid path, while Agent A did not cite any relations and introduced path noise, leading to a higher score for Agent B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  },
+  {
+    "triple": "(/m/07_l6, /music/instrument/instrumentalists, /m/016wvy)",
+    "true_tail": "/m/016wvy",
+    "agent_a": {
+      "prediction": "/m/016wvy",
+      "confidence": 0.95,
+      "evidence": [
+        "'/m/016wvy' is the correct tail entity as it is the only entity with the relation '/music/instrument/instrumentalists' with the head '/m/07_l6'"
+      ],
+      "shared_relations": [],
+      "failure_diagnosis": "The model failed to recognize the critical relation '/music/instrument/instrumentalists' between the head and the correct tail entity."
+    },
+    "agent_b": {
+      "prediction": "/m/016wvy",
+      "confidence": 0.95,
+      "key_relations": [
+        "/music/instrument/instrumentalists"
+      ],
+      "path_found": "/m/07_l6 --/music/instrument/instrumentalists--> /m/016wvy",
+      "path_relation_matches_query": true,
+      "reasoning": "The correct tail entity /m/016wvy is directly connected by the query relation /music/instrument/instrumentalists.",
+      "failure_diagnosis": "RotatE failed to recognize the direct connection between the head and the correct tail entity using the query relation."
+    },
+    "score_a": {
+      "agent": "A",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 0.0,
+      "overlap_tail": [],
+      "overlap_pred": [],
+      "agent_relations": [],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "score_b": {
+      "agent": "B",
+      "relation_score": 0.0,
+      "quality_score": 0.0,
+      "contamination": 1.0,
+      "overlap_tail": [],
+      "overlap_pred": [
+        "/music/instrument/instrumentalists"
+      ],
+      "agent_relations": [
+        "/music/instrument/instrumentalists"
+      ],
+      "only_tail_has": [],
+      "prediction_correct": true,
+      "confidence": 0.95
+    },
+    "aggregator": {
+      "final_answer": "/m/016wvy",
+      "chosen_agent": "B",
+      "confidence": 0.95,
+      "reason": "Agent B cited the correct relation '/music/instrument/instrumentalists' and found a path that matches the query, while Agent A did not cite any relations, leading to a higher trust in B.",
+      "selected_relations": [],
+      "failure_type": "resolved"
+    },
+    "final_correct": true
+  }
+]
