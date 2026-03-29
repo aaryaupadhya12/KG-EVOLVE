@@ -1,7 +1,7 @@
 import pandas as pd
 from collections import Counter
 
-df = pd.read_csv(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\json\episodic_memory (10).tsv", sep="\t")
+df = pd.read_csv(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\Bench\with_writeback\episodic_memory (11).tsv", sep="\t")
 
 print(f"Total rows:        {len(df)}")
 print(f"Unique entities:   {df['head'].nunique()}")

@@ -3,7 +3,7 @@
 import json
 
 # load from checkpoint instead
-with open(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\src\Agentic_Memory\val_hard_results.json") as f:
+with open(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\Bench\with_writeback\val_hard_results (11).json") as f:
     results = json.load(f)
 
 print(f"Total records: {len(results)}")
