@@ -23,3 +23,8 @@ We are here to demostrate that a quality scorrer aka a aggregator to be able to 
 We dont only baseline RotatE acoss multiple seeds , we had a system that runs without Mmeory KG-RAR where a LLM anotates it ones and we see if the new KG become sbetter  which is called as Cold start and then The delta between that and our system that is the Meemory augmented KG (MAKG) is our contribiution as the paper explcitly says that active resonin or dynamic KG is what is required 
 
 Through abilating this with the Nations dataset and then PRM-800K we have a s olida foundation , we will onyle vlaaute them based on a subset of maximum 1k examples as its a tedious process to run them forever and we would loose compute , if the hypothesis stands for PRM-800K susbset a full study will be created :) 
+
+
+Upadate changes to the POST-HOC evaluation metrics are as follows:
+Correctness in knowledge graph link prediction is insufficient to evaluate reasoning quality. We hypothesize that a post-hoc reasoning metric (PACS) can distinguish between spurious and grounded predictions, and that this signal can be learned and used to improve inference-time decision making
+Mainly an easy way for us to qunitfy where agent are able to guess the correct answer but not able to show the correct path that they traced.
