@@ -16,3 +16,7 @@ Problem only existing during inference and seems fine during training need to en
 
 28-03-2026
 The data set delta is 1.9% hence the dataset is proven that its the best that it can improve, SO we move forawrd to the FG15K link precition pred where the dataset is higher and then we go into deeper with the PRM based aggregator
+
+
+1=04-2026
+We need to look into posthoc methods on how to qunotfy the Lucky rate and the pass@k metric and how that works into the workflow and change inot the Posthoc HYpothesis - check the issues -md for the future logs - Aarya Upadhy
