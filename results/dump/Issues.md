@@ -19,4 +19,8 @@ The data set delta is 1.9% hence the dataset is proven that its the best that it
 
 
 1=04-2026
-We need to look into posthoc methods on how to qunotfy the Lucky rate and the pass@k metric and how that works into the workflow and change inot the Posthoc HYpothesis - check the issues -md for the future logs - Aarya Upadhy
+We need to look into posthoc methods on how to qunotfy the Lucky rate and the pass@k metric and how that works into the workflow and change inot the Posthoc HYpothesis - check the issues -md for the future logs - Aarya Upadhya
+
+1-04-2026
+We hypothesize that different LLM families specialize in distinct reasoning regimes, where instruction-tuned models excel at similarity-based inference but hallucinate under structural constraints, while reasoning-optimized models produce more faithful multi-hop reasoning with reduced hallucination
+-- The abilation should include hte working of MOE , Qwen instruct alone and then Deepseek R1 code isntruct alone and then PRM instroduction into the model so that tabilations are complete 
