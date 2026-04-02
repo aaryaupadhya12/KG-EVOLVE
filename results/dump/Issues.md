@@ -24,3 +24,7 @@ We need to look into posthoc methods on how to qunotfy the Lucky rate and the pa
 1-04-2026
 We hypothesize that different LLM families specialize in distinct reasoning regimes, where instruction-tuned models excel at similarity-based inference but hallucinate under structural constraints, while reasoning-optimized models produce more faithful multi-hop reasoning with reduced hallucination
 -- The abilation should include hte working of MOE , Qwen instruct alone and then Deepseek R1 code isntruct alone and then PRM instroduction into the model so that tabilations are complete 
+
+
+2-04-2026
+The major probelsm in memorization in lower datasets look into slower warmups to help us move forward and understnd how to lower the data without the increase in the memorization of the dataset
