@@ -78,8 +78,8 @@ def load_safe(path):
 # ─────────────────────────────────────────────
 # LOAD
 # ─────────────────────────────────────────────
-val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\Bench\with_writeback\val_hard_results (11).json")
-held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\KG-schema-evolution-agents\Bench\with_writeback\held_out_results (4).json")
+val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\val_hard_results (16).json")
+held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\held_out_results (8).json")
 
 print(f"Val records:  {len(val_results)}")
 print(f"Held records: {len(held_results)}")
@@ -100,6 +100,12 @@ le.fit(all_labels)  # fit on both so it knows A and B
 
 y_val_route  = le.transform([get_label_routing(r) for r in val_results])
 y_held_route = le.transform([get_label_routing(r) for r in held_results])
+
+
+y_val_correct  = np.array([get_label_correct(r) for r in val_results])
+y_held_correct = np.array([get_label_correct(r) for r in held_results])
+
+
 
 print(f"\nRouting label distribution (val):")
 vals, counts = np.unique(y_val_route, return_counts=True)
