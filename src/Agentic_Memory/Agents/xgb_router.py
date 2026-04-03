@@ -79,7 +79,7 @@ def load_safe(path):
 # LOAD
 # ─────────────────────────────────────────────
 val_results  = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\val_hard_results (16).json")
-held_results = load_safe(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\held_out_results (8).json")
+held_results = load_safe(r"C:\Users\Aarya-2\Downloads\held_out_results (9).json")
 
 print(f"Val records:  {len(val_results)}")
 print(f"Held records: {len(held_results)}")
