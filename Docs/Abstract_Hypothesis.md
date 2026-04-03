@@ -27,4 +27,21 @@ Through abilating this with the Nations dataset and then PRM-800K we have a s ol
 
 Upadate changes to the POST-HOC evaluation metrics are as follows:
 Correctness in knowledge graph link prediction is insufficient to evaluate reasoning quality. We hypothesize that a post-hoc reasoning metric (PACS) can distinguish between spurious and grounded predictions, and that this signal can be learned and used to improve inference-time decision making
-Mainly an easy way for us to qunitfy where agent are able to guess the correct answer but not able to show the correct path that they traced.
+Mainly an easy way for us to qunitfy where agent are able to guess the correct answer but not able to show the correct path that they 
+traced.
+
+As KG size increases , path availability increaes but path relaiability decreses , necassitating path quality reasoning rather than path existance based reasoning. 
+Symmetry - ambiguit score , symmetric relation measured and present in the CODEX 
+CoDEx-S → 17.46% symmetric
+CoDEx-M → ~4%
+CoDEx-L → ~3%
+The more symmetruc the dataset its more ambigoius , large dataset = less symmetric and more directional structure 
+
+Composiotinal Paths 
+Your findings:
+Dataset	Path coverage	Confidence
+CoDEx-S	10%	0.63
+CoDEx-M	16%	0.56
+CoDEx-L	31%	0.46
+
+When paths increases the confidence decreases

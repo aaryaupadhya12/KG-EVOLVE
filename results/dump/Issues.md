@@ -28,3 +28,6 @@ We hypothesize that different LLM families specialize in distinct reasoning regi
 
 2-04-2026
 The major probelsm in memorization in lower datasets look into slower warmups to help us move forward and understnd how to lower the data without the increase in the memorization of the dataset
+
+3-04-2026
+Another major bug that was fixed on the LLm editor was the agent B hallucination they where makingup paths not even related to head to solve problem which causes naunce in the files and hence a path verifer a deterministc agent that is just a Pythons script was entered so that no hallucinated paths are taken and LLm drift is quantified 
