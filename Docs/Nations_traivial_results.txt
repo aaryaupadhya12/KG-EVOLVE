@@ -1,0 +1,35 @@
+Mainly to check whether the data was just a look up table and hence we quantiifed it via by seeing if the held out and the TSV memory file where simillar in any way so we checked that as well 
+The results are as follows 
+Loaded TSV triples: 164
+Unique (head, relation): 126
+Held-out records: 101
+
+
+Exact triple overlap:      0/101 = 0.000
+(head, relation) overlap:  41/101 = 0.406
+Unique candidate cases:    26/101 = 0.257
+
+
+Avg candidates:    0.60
+Median candidates: 0.00
+Max candidates:    3
+
+
+0/101 exact triples overlap thos means the system was mmeorizing answers the TSV and the held out set would be the same,
+Since its 0 it rules out that our agent just caches the answers 
+
+41/101, there is 40.6% overlap between the head and relations between the TSV and the held out memory , so for  40% of 
+the held out set we can query the episodic memory , so it gives a relational pattern and not the answer to a new tail 
+candidate amd genarilizes and does not lookup 
+
+60% with no overlap , there is a 60 cases where memory contributes nothing are precision the case where the system has to 
+reason from scratch using only the subgraph and the failure signal. We get a high recovery on those cases as we haeve rate without 
+writeback as is 95.5% means the agent are actually reasoning , not just retriving , hence a biot additive over the baseline without the writeback
+
+the 4.5% delta on nations but with only 14 relations and can be git on a single subgraph , Memory has almost no structural signal and hence we need to 
+try on a alrger dataset with larger and sparser graph and has lower neighbourhood information and would be a better desing choice than this 
+
+The max 3 candiates and median 0 
+reviewers would worry about selection bias in memory retrival , when firing the episodic memory it has high precision on a small candiate rather than retrive every single relation possible 
+this helps in writeback should produce hence gated 
+
