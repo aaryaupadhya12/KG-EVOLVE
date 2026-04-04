@@ -31,3 +31,6 @@ The major probelsm in memorization in lower datasets look into slower warmups to
 
 3-04-2026
 Another major bug that was fixed on the LLm editor was the agent B hallucination they where makingup paths not even related to head to solve problem which causes naunce in the files and hence a path verifer a deterministc agent that is just a Pythons script was entered so that no hallucinated paths are taken and LLm drift is quantified 
+
+04-04-2026
+There is might be problem in how the episodic memory is being used we need to fix this and then the other main problem is that we might need to use co-attentaion as theyre might be masking problem and we need to fix that , make changes to the user template to force the usuage of the Epsidoic hints sent 
