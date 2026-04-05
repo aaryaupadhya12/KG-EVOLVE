@@ -44,4 +44,5 @@ CoDEx-S	10%	0.63
 CoDEx-M	16%	0.56
 CoDEx-L	31%	0.46
 
-When paths increases the confidence decreases
+New Findings that RotatE is not the best method for CODEX-S its ComplEX which is a Convolutional based KGE extractor adn from the finidings is that we need get rank > 10 and not like 4 or 3 like in nations as this dataset basic benchmarks excepts it to be near 10 not above that :)
+
