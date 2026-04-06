@@ -43,3 +43,5 @@ We need to tracj the weighted lucky score as the problesm dont get segregated eq
 
 06-04-26
 The main problem is that the agents are not enfrocing the episodic memory during inferece stage and hence completly collapsing to the paramteric weights of the LLm and that has to be changed else its going to be a Hige problem this was seen by the pass@k values and hence that should be the main goal to check during the next steps that we take 
+
+2) The inference stage just has to be Static that dynamic and has to just abide the rules that is the KGE prior union the tsv memory and this should be added with the path verifier and then be grounded for the next runs this is how it must be moved forward. 
