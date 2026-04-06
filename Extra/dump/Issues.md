@@ -34,3 +34,9 @@ Another major bug that was fixed on the LLm editor was the agent B hallucination
 
 04-04-2026
 There is might be problem in how the episodic memory is being used we need to fix this and then the other main problem is that we might need to use co-attentaion as theyre might be masking problem and we need to fix that , make changes to the user template to force the usuage of the Epsidoic hints sent 
+
+
+05-04-2026
+We need to tracj the weighted lucky score as the problesm dont get segregated equally and Agent A need not be the the actual culprit and as Agent B gets more routed towards it based on the Grounded score that we created 
+
+2) We need to recreated the KGC values for the COEDEX-S meet the SOTA that they claim so taht we have the right priors right now diw to low KGE MRR the mode is collapsing to the LLm weights to solve the answer and would still get ut correct as Qwen was trained on the wikipedia dataset and hence knows the answer and hence we will reduce the weights on the LLm as well. 
