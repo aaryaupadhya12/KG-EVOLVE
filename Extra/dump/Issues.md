@@ -40,3 +40,6 @@ There is might be problem in how the episodic memory is being used we need to fi
 We need to tracj the weighted lucky score as the problesm dont get segregated equally and Agent A need not be the the actual culprit and as Agent B gets more routed towards it based on the Grounded score that we created 
 
 2) We need to recreated the KGC values for the COEDEX-S meet the SOTA that they claim so taht we have the right priors right now diw to low KGE MRR the mode is collapsing to the LLm weights to solve the answer and would still get ut correct as Qwen was trained on the wikipedia dataset and hence knows the answer and hence we will reduce the weights on the LLm as well. 
+
+06-04-26
+The main problem is that the agents are not enfrocing the episodic memory during inferece stage and hence completly collapsing to the paramteric weights of the LLm and that has to be changed else its going to be a Hige problem this was seen by the pass@k values and hence that should be the main goal to check during the next steps that we take 

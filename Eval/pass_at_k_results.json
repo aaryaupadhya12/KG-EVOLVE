@@ -1,0 +1,40 @@
+{
+  "val": {
+    "split": "Nations VAL",
+    "n": 80,
+    "pass@1_routed": 1.0,
+    "pass@2_total": 1.0,
+    "pass@2_grounded": 0.9125,
+    "pass@2_lucky": 0.0875,
+    "both_correct": 0.9875,
+    "routing_loss": 0.0,
+    "routing_efficiency": 1.0,
+    "grounded_ceiling": 0.9125,
+    "only_A_correct": 0,
+    "only_B_correct": 1,
+    "neither_correct": 0,
+    "agreement_rate": 0.9875,
+    "A_lucky_rate": 0.0886,
+    "B_lucky_rate": 0.225,
+    "B_verified_correct": 65
+  },
+  "held": {
+    "split": "Nations HELD",
+    "n": 66,
+    "pass@1_routed": 0.9848,
+    "pass@2_total": 1.0,
+    "pass@2_grounded": 0.0,
+    "pass@2_lucky": 1.0,
+    "both_correct": 0.9394,
+    "routing_loss": 0.0152,
+    "routing_efficiency": 0.9848,
+    "grounded_ceiling": 0.0,
+    "only_A_correct": 3,
+    "only_B_correct": 1,
+    "neither_correct": 0,
+    "agreement_rate": 0.9394,
+    "A_lucky_rate": 1.0,
+    "B_lucky_rate": 1.0,
+    "B_verified_correct": 48
+  }
+}
