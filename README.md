@@ -1,38 +1,2 @@
 ﻿# KG Schema Evolution Agents
-
-This repository contains code, experiments, and documentation for knowledge graph schema evolution using PyKEEN and agentic reasoning approaches.
-
-## Repository structure
-
-- src/ - core project code and experiment scripts
-  - Agentic_Memory/ - agentic memory and routing utilities
-  - Nations_minimal_Run/ - PyKEEN/Nations embedding experiment scripts
-- data_preprocessing/ - dataset preprocessing scripts and utilities
-- esults/ - consolidated experiment outputs and checkpoint JSON files
-- enchmarks/ - benchmark experiment data for writeback and no-writeback runs
-- docs/ - architecture diagrams and project notes
-- migration/ - migration notes and results
-- papers/ - research papers and references
-- equirements.txt - Python dependencies
-- README.md - project overview and usage
-
-## Getting started
-
-1. Create a virtual environment:
-   `powershell
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   `
-2. Install dependencies:
-   `powershell
-   python -m pip install --upgrade pip
-   python -m pip install -r requirements.txt
-   `
-3. Explore code in src/ and run experiment scripts from there.
-
-## Notes
-
-- All original files are preserved and reorganized into a cleaner structure.
-- esults/ now contains JSON and TSV outputs previously stored at the repository root.
-- enchmarks/ groups benchmark data under writeback and no-writeback scenarios.
-- docs/ contains supplemental diagrams and design notes.
+Knowledge Graph Embedding models such as RotatE, RESCAL, and TransE fail silently on hard triples where geometric representations conflate structurally similar entities — they rank the correct answer below position four and have no mechanism to diagnose, remember, or recover from this failure. We introduce a memory-augmented dual-agent framework for agentic KGE failure recovery that converts each failure into a structured diagnostic episode, accumulates validated reasoning experience through quality-gated episodic writeback, and recovers hard triples across heterogeneous benchmark datasets without retraining the embedding model. Two structurally differentiated agents operate in parallel on each failure: Agent A performs System 1 similarity-based reasoning over embedding neighbourhoods, while Agent B performs System 2 structural path reasoning over the local subgraph. A grounded scorer uses the known correct answer at training time to label which agent produced verified separating-relation evidence rather than a lucky correct prediction — operationalising the teacher-student dynamic of PRM800K annotation for relational KG reasoning. We formalise the Lucky Prediction Rate as a metric that dissociates prediction correctness from reasoning quality, finding that Agent A produces correct predictions with zero grounded evidence 32.5% of the time versus Agent B at 15.0%, quantifying the asymmetry that motivates both the quality gate and a BERT-based reasoning classifier that replaces hand-crafted XGBoost features with full reasoning trace evaluation. A deterministic path verifier checks all claimed relation paths against the training graph adjacency list before scoring, eliminating hallucinated structural evidence from quality labels. Episodic memory satisfies all four principles of DeChant's safe memory framework by construction — interpretable structured JSON, user-controllable external stores, detachable from model weights, no agent self-editing — and we introduce Memory Ossification as a fifth principle specific to continual learning settings. We evaluate across three heterogeneous KGs varying in graph density, entity vocabulary, and relation interpretability: Nations as a small factual benchmark where our system achieves 98.5% Hits@1 on hard triples where RotatE achieves 0.000, UMLS as a dense semantic taxonomy where both agents degenerate due to the absence of separating relations establishing necessary conditions for quality-gated memory, and CoDEx-S as a Wikidata-sourced benchmark with diverse real-world entities and interpretable Wikidata relation labels. Cross-dataset evaluation is complemented by G-EVAL cross-validation of the Lucky Prediction Rate, a KG-RAG baseline comparison using BM25 retrieval, and pass@k evaluation across three KGE baselines, providing a multi-metric benchmark for agentic KGR evaluation methodology under heterogeneous graph conditions.
