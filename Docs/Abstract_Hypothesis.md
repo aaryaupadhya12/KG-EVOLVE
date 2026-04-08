@@ -46,3 +46,4 @@ CoDEx-L	31%	0.46
 
 New Findings that RotatE is not the best method for CODEX-S its ComplEX which is a Convolutional based KGE extractor adn from the finidings is that we need get rank > 10 and not like 4 or 3 like in nations as this dataset basic benchmarks excepts it to be near 10 not above that :)
 
+Parametric models provide soft reasoning signals, while structured agents enforce grounding and the aggregator performs deterministic decision-making.
