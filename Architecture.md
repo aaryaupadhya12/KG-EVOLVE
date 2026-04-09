@@ -1,1 +1,1 @@
-![Model Architecture](image.png)
+![Model Architecture](Arch.png)
