@@ -290,7 +290,7 @@ def print_pass_at_k_report(results: dict):
     print(f"    (fraction correct only via parametric recall)")
 
     if results['agreement_rate'] > 0.90:
-        print(f"\n  ⚠ Agreement rate {results['agreement_rate']:.1%} > 90%")
+        print(f"\n Agreement rate {results['agreement_rate']:.1%} > 90%")
         print(f"    Routing is degenerate on this dataset.")
         print(f"    CoDEx-S will show larger disagreement.")
 
