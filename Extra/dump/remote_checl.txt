@@ -1,0 +1,1 @@
+Remote check from HP pavlion pc check -> will delte after git commoit functionality checked frim Native GPU Clsuter 
