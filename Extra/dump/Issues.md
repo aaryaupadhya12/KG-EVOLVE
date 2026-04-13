@@ -49,3 +49,9 @@ The main problem is that the agents are not enfrocing the episodic memory during
 
 12-04-2026
 3) Increased the K to 50 in UMLS as the entites are higher as Top-10 makes it very easier for the model as we want to make the model reason out more -- 
+
+
+13-04-2026
+1) Problems in re-runnign and matching SOTA in CODEX-S , we need to rereun the experiments with LibKGE and not Pykeen and that changes are need to be made 
+2) Agent C based co-0occurance metrices need to be added so that we understand context mainly in UMLS and CODEXS-S and we need to make that happen  work mainly in UMLS as the context staus that same betweeen UMLS nad then CODEX-S as well , 
+3) For the next we need to make sure to get the Paper done adn get the benchamrk results and then the architecture diagram updated and correctly valued proposition 
