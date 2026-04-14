@@ -1,0 +1,1 @@
+![Model Architecture](KG-schema-evolution-agents\Images\Animated_Figure_Github.png)
