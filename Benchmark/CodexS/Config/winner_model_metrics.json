@@ -1,0 +1,11 @@
+{
+  "model": "ComplEx",
+  "dataset": "CoDEx-S",
+  "task": "link-prediction",
+  "MRR": 0.474,
+  "Hits@1": 0.377,
+  "Hits@3": 0.522,
+  "Hits@10": 0.664,
+  "epochs_trained": 345,
+  "early_stopped": true
+}
