@@ -7,9 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1gPdmW88mCNbHx8vfs8Wr125t5IjXLLhx
 """
 
-!pip install pykeen -q
+# !pip install pykeen -q
 
-!pip install -q \
+# !pip install -q \
     langchain \
     langchain-community \
     langchain-core \
