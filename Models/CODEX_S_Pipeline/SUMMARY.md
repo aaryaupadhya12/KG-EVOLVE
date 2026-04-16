@@ -316,29 +316,6 @@ run_full_pipeline(..., use_llm_aggregation=True)
 
 ---
 
-## Expected Performance
-
-### CODEX-S (val_hard, ~1000 hard triples)
-
-**Baseline** (no memory, simple routing):
-- Accuracy: ~75%
-- Agent A chosen: ~50%
-- Agent B chosen: ~50%
-- Time: ~20 minutes (1000 triples, Qwen 7B)
-
-**With optimizations**:
-- Accuracy: 78-82% (with good prompts + routing tuning)
-- Time: same (dominated by LLM inference)
-
-### Other Datasets (CODEX-M/L, Nations, UMLS)
-- Same agents should work
-- May need prompt retuning for domain
-- Performance depends on ComplEx model quality
-- Nations: typically 85%+ accuracy (simpler dataset)
-- UMLS: depends on medical knowledge in LLM
-
----
-
 ## Troubleshooting Guide
 
 | Problem | Cause | Solution |
