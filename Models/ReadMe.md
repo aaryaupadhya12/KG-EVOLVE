@@ -1,3 +1,0 @@
-This foldeer consist of the whole Nations Hypothesis being converted to have FIASS backbone and then Use langchain langmem for episodic , semantic and procedural memeory of the agents.
-Previous design usedd a siimpler appraoch of storign it in a json dump and using retrival over past N claims instread of using production ready versions 
-More about the theory will be seen in the Docs folder section in the upper tree :)
