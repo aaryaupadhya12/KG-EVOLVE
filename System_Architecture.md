@@ -1,1 +1,0 @@
-![Model Architecture](Images/Animated_Figure_Github.png)
