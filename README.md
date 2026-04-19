@@ -115,7 +115,7 @@ Beyond DeChant, this work identifies a **fifth risk specific to continual learni
 
 ### Training Pipeline
 
-![Training Architecture](images/slide_p5-05.png)
+![Training Architecture](Images/Research_Grade_Architecture_Image.png)
 
 The offline training pipeline consists of five stages:
 
@@ -147,7 +147,7 @@ Patterns and signals extracted from the distillation layer are used to train a B
 
 ### Inference Pipeline
 
-![Inference Architecture](images/slide_p6-06.png)
+![Inference Architecture](Images/Inference_Images/Inference_Pipeline.png)
 
 The online inference pipeline re-ranks KGE candidates using the distilled memory:
 
@@ -222,7 +222,7 @@ A high Grounding Rate means the model's predictions are causally explained by th
 
 ### CODEX-S Results
 
-![CODEX-S Evaluation Results](images/slide_p8-08.png)
+![CODEX-S Evaluation Results](Vizulization/plots_Codex_S/model_performance.png)
 
 #### Main Performance Table
 
@@ -264,7 +264,7 @@ A `pass@2_lucky` of 0.0 is a significant finding — every case where the system
 
 ### UMLS Results
 
-![UMLS Evaluation Results](images/slide_p9-09.png)
+![UMLS Evaluation Results](Vizulization/plots_UMLS/model_performance.png)
 
 #### Main Performance Table
 
