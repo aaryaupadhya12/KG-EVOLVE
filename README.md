@@ -2,6 +2,7 @@
 
 > **Course Project** — Natural Language Processing with Deep Learning  
 
+> **Contributors** — Aarya Upadhya (Aarya.upadhya@gmail.com) , Anshull M Udyavar (anshullmudyavar@gmail.com)
 ---
 
 ## Table of Contents
