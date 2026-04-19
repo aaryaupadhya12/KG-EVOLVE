@@ -300,8 +300,8 @@ def print_pass_at_k_report(results: dict):
 if __name__ == "__main__":
 
     # load both result files
-    val_records  = load_results(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\val_hard_results.json")
-    held_records = load_results(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\Nations_minimal_Run\Without_hallucination\held_out_results (11).json")
+    val_records  = load_results(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\CODEX_MinimalRun\Codex_Dataset_Runs\val_hard_results (23).json")
+    held_records = load_results(r"C:\Users\Aarya-2\Documents\ADOG\PESU\3rd Year --PESU\6th Sem\NLP\Agentic_AI\KG-schema-evolution-agents\CODEX_MinimalRun\Codex_Dataset_Runs\CODEX_S_held_out (2).json")
 
     # compute pass@k for each split
     val_results    = compute_pass_at_k(val_records,  "Nations VAL")
