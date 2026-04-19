@@ -1,0 +1,23 @@
+=======================================================  FINAL SUMMARY
+Total processed:  85
+Errors/skipped:   0
+Clean results:    85
+Correct:          77 / 85  (90.6%)
+
+Agent chosen breakdown:
+  Agent B: 84
+  Agent A: 1
+
+Failure type breakdown:
+  resolved: 66
+  similarity_confusion: 9
+  both_failed: 9
+  structural_gap: 1
+
+Files written:
+  val_hard_checkpoint.json  (checkpoint — safe to delete after XGBoost)
+  val_hard_results.json
+  episodic_memory.tsv
+  episodic.faiss/  semantic.faiss
+
+INFRERENCE

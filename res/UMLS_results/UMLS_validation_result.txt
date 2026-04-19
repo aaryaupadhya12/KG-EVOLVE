@@ -1,0 +1,11 @@
+Metric                                VAL       
+
+  pass@1_routed                    0.9059     
+  pass@2_total                     0.9412     
+  pass@2_grounded                  0.3059     
+  pass@2_lucky                     0.6353     
+  routing_efficiency               0.9625     
+  routing_loss                     0.0353     
+  A_lucky_rate                     0.7843     
+  B_lucky_rate                     0.6623     
+  agreement_rate                   0.6235     
