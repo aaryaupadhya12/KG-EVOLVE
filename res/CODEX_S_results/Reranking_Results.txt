@@ -1,0 +1,40 @@
+═══════════════════════════════════════════
+FINAL RESULTS
+═══════════════════════════════════════════
+
+KGE  (RotatE baseline)
+  Hits@1  : 0.1247
+  Hits@3  : 0.2352
+  Hits@10 : 0.5120
+  MRR     : 0.2382
+
+BERT (reranker only)
+  Hits@1  : 0.3632
+  Hits@3  : 0.5755
+  Hits@10 : 0.7998
+  MRR     : 0.5062
+
+COMBINED
+  Hits@1  : 0.3993
+  Hits@3  : 0.6138
+  Hits@10 : 0.8282
+  MRR     : 0.5381
+
+── Lucky rate  (T=3) ─────────────────────
+  Rank-1 queries : 365
+  Grounded       :  341  (93.4%)  ← BERT agreed independently
+  Lucky          :   24  (6.6%)  ← KGE rescued it
+  Verdict        : reranker drives wins ✓
+
+── vs RotatE rank in top-K ─────────────────
+  Improved  : 685
+  Unchanged : 130
+  Worsened  : 99
+
+── By hop type ─────────────────────────────
+  multi     n= 399  Hits@1=0.481  MRR=0.605  █████████
+  none      n= 515  Hits@1=0.336  MRR=0.486  ██████
+
+── Hard failure recovery ────────────────────
+  hard=True   n=  95  Hits@1=0.558  MRR=0.705
+  hard=False  n= 819  Hits@1=0.381  MRR=0.519
