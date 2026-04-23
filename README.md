@@ -148,7 +148,7 @@ Patterns and signals extracted from the distillation layer are used to train a B
 
 ### Inference Pipeline
 
-![Inference Architecture](Images/Inference_Images/Inference_Pipeline.png)
+![Inference Architecture](Images/Inference_Images/Inference_Pipline.png)
 
 The online inference pipeline re-ranks KGE candidates using the distilled memory:
 
