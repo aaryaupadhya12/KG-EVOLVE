@@ -1,4 +1,4 @@
-﻿# Heterogeneous Memory Augmented Reasoning for Knowledge Graph Completion
+﻿# Quality Gated Episodic Distillation for Verified Multi Agent Reasoning 
 
 > **Course Project** — Natural Language Processing with Deep Learning  
 
