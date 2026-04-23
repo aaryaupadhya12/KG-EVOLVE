@@ -223,7 +223,7 @@ A high Grounding Rate means the model's predictions are causally explained by th
 
 ### CODEX-S Results
 
-![CODEX-S Evaluation Results](Vizulization/plots_Codex_S/model_performance.png)
+![CODEX-S Evaluation Results](Vizulization/plots_Codex_S/Model_performance_new.png)
 
 #### Main Performance Table
 
@@ -265,7 +265,7 @@ A `pass@2_lucky` of 0.0 is a significant finding — every case where the system
 
 ### UMLS Results
 
-![UMLS Evaluation Results](Vizulization/plots_UMLS/model_performance.png)
+![UMLS Evaluation Results](Vizulization/plots_UMLS/UMLS_performance_new.png)
 
 #### Main Performance Table
 
